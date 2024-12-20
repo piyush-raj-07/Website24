@@ -5,6 +5,7 @@ import Home from './components/Home';
 
 import TeamPage from './components/Teampage';
 import Activities from "./components/Activities";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <div className="app">
 
       <Routes>
+        <Navbar/>
         <Route path="/" element={<Home />} />
 
          <Route path="/teampage" element={<TeamPage />} />
