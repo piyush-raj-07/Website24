@@ -11,9 +11,8 @@ function App() {
   return (
     <Router>
     <div className="app">
-
+    <Navbar/>
       <Routes>
-        <Navbar/>
         <Route path="/" element={<Home />} />
 
          <Route path="/teampage" element={<TeamPage />} />
