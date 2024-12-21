@@ -27,6 +27,62 @@
 .App-link {
   color: #61dafb;
 }
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 10px 20px rgba(128, 0, 128, 0.5); /* Add a glow effect */
+}
+
+.card-hover:hover img {
+  transform: scale(1.1); /* Slightly enlarge the image inside */
+  transition: transform 0.3s ease;
+}
+
+.card-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover:hover .hover-overlay {
+  opacity: 1; /* Show the button on hover */
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 16px; /* Align to top */
+  right: 16px; /* Align to right */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+.hover-overlay a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between logo and text */
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px; /* Rounded button */
+  background-color: #6b21a8; /* Purple background */
+  transition: background-color 0.3s ease; /* Smooth hover color transition */
+}
+
+.hover-overlay a:hover {
+  background-color: #4c1d95; /* Darker purple on hover */
+}
+
+.hover-overlay img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
 
 @keyframes App-logo-spin {
   from {
