@@ -27,6 +27,59 @@
 .App-link {
   color: #61dafb;
 }
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Default shadow for the card */
+  transition: box-shadow 0.3s ease; /* Optional card shadow on hover */
+}
+
+.card-hover img {
+  transition: transform 0.3s ease, border 0.3s ease; /* Smooth transform effect for the image and border */
+}
+
+.card-hover img:hover {
+  transform: scale(1.1); /* Enlarge the image on hover */
+  border: 3px solid #6b21a8; /* Apply a purple border of 3px on hover */
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+.card-hover img:hover ~ .hover-overlay {
+  opacity: 1; /* Show the button when the image is hovered */
+}
+
+.hover-overlay a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between logo and text */
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px; /* Rounded button */
+  background-color: #6b21a8; /* Purple background */
+  transition: background-color 0.3s ease; /* Smooth hover color transition */
+}
+
+.hover-overlay a:hover {
+  background-color: #4c1d95; /* Darker purple on hover */
+}
+
+.hover-overlay img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
 
 .gradient_background {
   background: linear-gradient(

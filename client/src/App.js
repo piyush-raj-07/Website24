@@ -2,6 +2,11 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './components/Home';
+
+import TeamPage from './components/Teampage';
+import Activities from "./components/Activities";
+import Navbar from "./components/Navbar";
+
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import EmailVerificationPage from "./components/EmailVerificationPage";
@@ -25,9 +30,13 @@ function App() {
   return (
     <Router>
       <div className="app">
-
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/Activities" element={<Activities />} />
+
           <Route path="/signup" element={
             <RedirectAuthenticatedUser>
               <SignupPage />
