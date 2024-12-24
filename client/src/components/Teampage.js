@@ -222,25 +222,27 @@ function TeamPage() {
       {/* Heads Section */}
       <section className="bg-gradient-to-t from-black via-[rgba(142,44,192,0.9)] to-black py-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-white text-center">Meet Our Heads</h2>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-8 px-4">
-          {teamData.heads.map((member) => (
-            <div key={member.id} className="text-center w-40 sm:w-48 md:w-56">
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
-                <img
-                  src={member.imageUrl}
-                  alt={member.name}
-                  className="w-full h-full object-cover bg-gray-200 transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
-                    <Linkedin size={32} />
-                  </a>
+        <div className="px-12">
+          <Slider {...carouselSettings} className="py-8">
+            {teamData.heads.map((member) => (
+              <div key={member.id} className="text-center px-4">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
+                  <img
+                    src={member.imageUrl}
+                    alt={member.name}
+                    className="w-full h-full object-cover bg-gray-200 transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
+                      <Linkedin size={32} />
+                    </a>
+                  </div>
                 </div>
+                <h3 className="text-white font-semibold text-lg md:text-xl">{member.name}</h3>
+                <p className="text-gray-400 text-sm">{member.role}</p>
               </div>
-              <h3 className="text-white font-semibold text-lg md:text-xl">{member.name}</h3>
-              <p className="text-gray-400 text-sm">{member.role}</p>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </section>
 
@@ -266,7 +268,7 @@ function WebTeamSection({ team }) {
         <Slider {...carouselSettings} className="py-8">
           {team.map((member) => (
             <div key={member.name} className="text-center px-4">
-              <div className="relative w-48 h-48 sm:w-60 sm:h-60 mb-6 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
@@ -298,7 +300,7 @@ function DesignTeamSection({ team }) {
         <Slider {...carouselSettings} className="py-8">
           {team.map((member) => (
             <div key={member.name} className="text-center px-4">
-              <div className="relative w-48 h-48 sm:w-60 sm:h-60 mb-6 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
@@ -330,7 +332,7 @@ function ContentTeamSection({ team }) {
         <Slider {...carouselSettings} className="py-8">
           {team.map((member) => (
             <div key={member.name} className="text-center px-4">
-              <div className="relative w-48 h-48 sm:w-60 sm:h-60 mb-6 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
@@ -362,7 +364,7 @@ function AutonomyTeamSection({ team }) {
         <Slider {...carouselSettings} className="py-8">
           {team.map((member) => (
             <div key={member.name} className="text-center px-4">
-              <div className="relative w-48 h-48 sm:w-60 sm:h-60 mb-6 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
@@ -385,4 +387,6 @@ function AutonomyTeamSection({ team }) {
 }
 
 export default TeamPage;
+
+
 
