@@ -1,2 +1,13 @@
-.env
+# Dependencies
 node_modules/
+
+# Environment
+.env
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.DS_Store
