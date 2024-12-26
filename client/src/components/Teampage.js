@@ -175,12 +175,12 @@ function TeamPage() {
   return (
     <div className="bg-[#0c0c0c]">
       {/* Hero Section */}
-      <div className="relative bg-[#312b31] h-[600px] ">
+      <div className="relative bg-[#312b31] h-screen ">
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
           style={{
             backgroundImage: "url('https://res.cloudinary.com/duir0ktqb/image/upload/v1734713680/Screenshot_2024-12-20_222342_fjuoar.png')",
-            filter: "brightness(80%)",
+            filter: "brightness(65%)",
           }}
           role="img"
           aria-label="Team background image"

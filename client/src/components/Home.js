@@ -1,10 +1,14 @@
 import React from "react";
-
+import Bg from './Background.js'
 const Home = () =>{
 
     return (<>
-    <div className="flex justify-center items-center">
-    <h1 className="text-xl">Home Hu </h1>
+    <div className="flex ">
+
+    <div className="w-full">
+    <Bg />
+        </div>
+   
     </div>
    
     </>
