@@ -114,7 +114,7 @@ export default function ProfilePage() {
     return (
         <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen min-w-screen ">
 
-            <div className="absolute inset-0 z-10 ">
+            <div className="absolute z-10 ">
                 <img
                     src={background} // Replace with your image URL
                     alt="Background"
