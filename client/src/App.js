@@ -16,6 +16,7 @@ import ResetPasswordPage from "./components/ResetPasswordPage";
 import { Toaster } from 'react-hot-toast';
 import { useAuthStore } from './store/authStore';
 import { RedirectAuthenticatedUser, RequireUnverifiedUser } from './utils/routeProtection';
+import ProfilePage from "./components/ProfilePage"
 
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
@@ -39,6 +40,7 @@ function App() {
           <Route path="/Activities" element={<Activities />} />
           <Route path ="/Blogs" element={<Blogs />}/>
           <Route path ="/Blogs/:id" element={<BlogDetails />}/>
+          <Route path ="/ProfilePage" element={<ProfilePage />}/>
           <Route path="/signup" element={
             <RedirectAuthenticatedUser>
               <SignupPage />
