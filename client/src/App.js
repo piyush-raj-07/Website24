@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './components/Home';
-
+import Blogs from "./components/Blogs";
+import BlogDetails from "./components/BlogDetails";
 import TeamPage from './components/Teampage';
 import Activities from "./components/Activities";
 import Navbar from "./components/Navbar";
@@ -36,7 +37,8 @@ function App() {
 
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
-
+          <Route path ="/Blogs" element={<Blogs />}/>
+          <Route path ="/Blogs/:id" element={<BlogDetails />}/>
           <Route path="/signup" element={
             <RedirectAuthenticatedUser>
               <SignupPage />
