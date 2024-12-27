@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`fixed flex w-full items-center transition-all duration-300 h-24 ${scrolled ? 'bg-opacity-60 bg-purple-700 text-white' : 'bg-black text-purple-300'} ${window.innerWidth < 768 ? 'h-auto bg-purple-700 bg-opacity-100 z-50 text-white border-white': ''}`}>
+    <div className={` flex w-full items-center transition-all duration-300 h-24 ${scrolled ? 'bg-opacity-60 bg-purple-700 text-white' : 'bg-black text-purple-300'} ${window.innerWidth < 768 ? 'h-auto bg-purple-700 bg-opacity-100 z-50 text-white border-white': ''}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-4">
@@ -42,20 +42,76 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
-            {['/', '/blogs', '/activities', '/btp', '/study', '/team', '/notices', '/contact', '/about'].map((path, index) => (
-              <Link
-              key={index}
-              to={path}
+            <Link
+              to="/"
               className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
-                isActive(path)
+                isActive('/')
                   ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
                   : 'hover:border-b-2 hover:border-b-purple-600'
               }`}
             >
-              {path === '/' ? 'Home' : path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
+              Home
             </Link>
-            
-            ))}
+            <Link
+              to="/blogs"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/blogs')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+            >
+              Blogs
+            </Link>
+            <Link
+              to="/activities"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/activities')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+            >
+              Activities
+            </Link>
+            <Link
+              to="/projects"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/projects')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+            >
+              Projects
+            </Link>
+            <Link
+              to="/team"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/team')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+            >
+              Team
+            </Link>
+            <Link
+              to="/notices"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/notices')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+            >
+              Notices
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/contact')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+            >
+              Contact
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -70,18 +126,69 @@ const Navbar = () => {
 
         {isMenuOpen && (
           <div className="md:hidden flex flex-col items-center space-y-6 mt-6 bg-purple-700 py-6">
-            {['/', '/blogs', '/activities', '/btp', '/study', '/team', '/notices', '/contact', '/about'].map((path, index) => (
-              <Link
-              key={index}
-              to={path}
+            <Link
+              to="/"
               className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
-                isActive(path) ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+                isActive('/') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
-                {path === '/' ? 'Home' : path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
-              </Link>
-            ))}
+              Home
+            </Link>
+            <Link
+              to="/blogs"
+              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
+                isActive('/blogs') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blogs
+            </Link>
+            <Link
+              to="/activities"
+              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
+                isActive('/activities') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Activities
+            </Link>
+            <Link
+              to="/projects"
+              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
+                isActive('/projects') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </Link>
+            <Link
+              to="/team"
+              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
+                isActive('/team') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Team
+            </Link>
+            <Link
+              to="/notices"
+              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
+                isActive('/notices') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Notices
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${
+                isActive('/contact') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
           </div>
         )}
       </div>

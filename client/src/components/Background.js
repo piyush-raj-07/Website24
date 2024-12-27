@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Navbar from "./Navbar";
 
-const ParallaxBackground = () => {
+
+const Bg = () => {
   const canvasRef = useRef(null);
   const largeHeaderRef = useRef(null);
 
@@ -148,7 +148,7 @@ const ParallaxBackground = () => {
     <div>
       
 
-      <div ref={largeHeaderRef} className="w-full bg-black overflow-hidden">
+      <div ref={largeHeaderRef} className="w-screen bg-black overflow-hidden">
         <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl md:text-7xl font-extrabold tracking-wide z-10">
           EESA <span className="font-light text-purple-400">Website</span>
         </h1>
@@ -158,7 +158,7 @@ const ParallaxBackground = () => {
       
       <div >
         
-        <section className="min-h-screen bg-gray-900 flex flex-col justify-center items-center text-center mt-[100px]" data-aos="fade-up">
+        <section className="min-h-screen bg-gray-900 flex flex-col justify-center items-center text-center " data-aos="fade-up">
           <h2 className="text-5xl font-bold text-white mb-6">Welcome</h2>
           <p className="text-lg text-gray-300 max-w-3xl">
             Discover our community, events, and opportunities to grow your skills in electronics and electrical systems.
@@ -181,4 +181,4 @@ const ParallaxBackground = () => {
   );
 };
 
-export default ParallaxBackground;
+export default Bg;
