@@ -38,7 +38,7 @@ export default function ProfilePage() {
         
         const handleScroll = (e, sectionRef) => {
             e.preventDefault(); 
-            const scrollSpeed = 5; 
+            const scrollSpeed = 1; 
             const delta = e.deltaY; 
 
             
@@ -162,7 +162,7 @@ export default function ProfilePage() {
                             </div>
 
                             <h1 className='px-2 py-1 text-3xl font-serif'>Username</h1>
-                            <h4 className='p-1 text-base font-serif'>B. Tech| 2026'</h4>
+                            <h4 className='p-1 text-base font-serif'>B. Tech | 2026'</h4>
 
 
                         </div>
