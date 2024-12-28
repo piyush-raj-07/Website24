@@ -3,6 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Linkedin } from 'lucide-react';
+import  gsap  from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const carouselSettings = {
   dots: false,
@@ -46,6 +50,7 @@ const carouselSettings = {
   ],
 };
 
+
 function TeamPage() {
   // const [teamData, setTeamData] = useState(null);
 
@@ -59,6 +64,7 @@ function TeamPage() {
   // if (!teamData) {
   //   return <div className="text-center text-white">Loading...</div>;
   // }
+
   const teamData = {
     presidentFounder: [
       { id: "1", name: "Dr. Vijay", role: "Founder", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1734711523/Screenshot_2024-12-20_214659_bddpps.png", linkedinUrl: "https://www.linkedin.com/in/dr-vijay" },
@@ -105,6 +111,21 @@ function TeamPage() {
       // Add more autonomy team members as needed
     ],
   };  
+
+  useEffect(() => {
+    gsap.to(".gradient-background", {
+      backgroundPosition: "200% 50%",
+      ease: "power1.inOut", // Smooth easing for a natural feel
+      duration: 2, 
+      scrollTrigger: {
+        trigger: ".gradient-background",
+        start: "-75% center",
+        markers : false,
+        scrub: true,
+      },
+    });
+  }, []);
+
   const customStyles = `
   .slick-slide {
     opacity: 0.7;
@@ -173,7 +194,7 @@ function TeamPage() {
 `;
 
   return (
-    <div className="bg-[#0c0c0c]">
+    <div className="bg-[#0c0c0c] ">
       {/* Hero Section */}
       <div className="relative bg-[#312b31] h-screen ">
         <div 
@@ -193,9 +214,17 @@ function TeamPage() {
           </button> */}
         </div>
       </div>
-
+     
+      <div
+      className="gradient-background"
+      style={{
+        background: "linear-gradient(90deg, rgba(6,3,8,1) 10%,  rgba(160,88,190,1) 50%, rgba(6,3,8,1) 86%)",
+        backgroundSize: "200% 200%",
+        position: "relative",
+      }}
+    >
       {/* President and Founder Section */}
-      <section className="bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black py-16">
+      <section>
         <h2 className="text-4xl font-bold mb-12 text-white text-center">Meet President and Founder</h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 px-4">
           {teamData.presidentFounder.map((member) => (
@@ -220,7 +249,7 @@ function TeamPage() {
       </section>
 
       {/* Heads Section */}
-      <section className="bg-gradient-to-t from-black via-[rgba(142,44,192,0.9)] to-black py-16">
+      <section >
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-white text-center">Meet Our Heads</h2>
         <div className="px-12">
           <Slider {...carouselSettings} className="py-8">
@@ -251,7 +280,9 @@ function TeamPage() {
       <DesignTeamSection team={teamData.design} />
       <ContentTeamSection team={teamData.content} />
       <AutonomyTeamSection team={teamData.autonomy} />
+    
       <style jsx>{customStyles}</style>
+      </div>
       {/* Footer */}
       
     </div>
@@ -260,7 +291,7 @@ function TeamPage() {
 
 function WebTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-t from-black via-[rgba(142,44,192,0.9)] to-black py-16">
+    <section>
       <h2 className="text-4xl font-bold mb-12 text-white text-center">
         Meet Our Web Team
       </h2>
@@ -292,7 +323,7 @@ function WebTeamSection({ team }) {
 
 function DesignTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black py-16">
+    <section >
       <h2 className="text-4xl font-bold mb-12 text-white text-center">
         Meet Our Design Team
       </h2>
@@ -324,7 +355,7 @@ function DesignTeamSection({ team }) {
 
 function ContentTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-t from-black via-[rgba(142,44,192,0.9)] to-black py-16">
+    <section >
       <h2 className="text-4xl font-bold mb-12 text-white text-center">
         Meet Our Content Team
       </h2>
@@ -356,7 +387,7 @@ function ContentTeamSection({ team }) {
 
 function AutonomyTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black py-16">
+    <section >
       <h2 className="text-4xl font-bold mb-12 text-white text-center">
         Meet Our Autonomy Team
       </h2>
