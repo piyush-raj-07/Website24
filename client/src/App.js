@@ -7,6 +7,7 @@ import BlogDetails from "./components/BlogDetails";
 import TeamPage from './components/Teampage';
 import Activities from "./components/Activities";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
 
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
@@ -26,7 +27,13 @@ function App() {
   }, [CheckAuth]);
 
   if (isCheckingAuth) {
-    return <div className="flex justify-center items-center min-h-screen">Checking authentication...</div>; //add loading animation
+   
+          return(
+            <div className="h-screen bg-black flex justify-center items-center ">
+              <Loader/>
+              </div>
+          );
+      
   }
 
   return (
