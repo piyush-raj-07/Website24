@@ -2,7 +2,18 @@ const mongoose = require('mongoose');
 
 const GallerySchema = new mongoose.Schema({
 
-  Image_URL : {type : String , required: true }
+  url: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    
+  },
+  subtitle: {
+    type: String,
+   
+  },
 });
 
 

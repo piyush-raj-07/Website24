@@ -16,6 +16,7 @@ const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
 const QnAModel = require('./models/Questions');
 
+
 const PORT = 5000;
 
 require('dotenv').config();
@@ -86,30 +87,9 @@ app.get('/GetAllUsers', async (req, res) => {
 
 })
 
-// Save Image for gallery
-app.post('/SaveImage', async(req,res) =>{
-   
-    const{
-        Image_URL
-     } = req.body;
 
-    try {
-      const newImg = new GalleryModel({Image_URL});
-      const saveImg = await newImg.save();
-      res.status(201).json(saveImg);
-    } catch (error) {
-        res.status(500).json({error : 'Failed to save image'});
-    }
-})
 
-app.get('/GetImage' , async(req,res)=>{
-    try {
-        const Img = await GalleryModel.find();
-        res.send(Img);
-    } catch (error) {
-        console.error('Error getting image' , error);
-    }
-})
+
 
 //News Data
 app.post('/NewsData', async(req,res) =>{
@@ -137,6 +117,40 @@ app.get('/GetData' , async(req,res)=>{
         console.error('Error getting image' , error);
     }
 })
+
+//Gallery
+app.get('/GetGallery',async (req,res)=>{
+    try {
+        const images = await GalleryModel.find();
+        res.status(200).json(images); 
+    } catch (error) {
+        console.log('err getting gallery',error);
+    }
+})
+
+// Save Image for gallery
+app.post('/SaveGallery', async(req,res) =>{
+   
+    const{
+        url, title, subtitle 
+     } = req.body;
+
+    try {
+        const newImage = new GalleryModel({
+            url,     
+            title,
+            subtitle,
+          });
+       await newImage.save();
+      res.status(201).json("img saved");
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({error : 'Failed to save image'});
+    }
+})
+
+
+
 
 
 // Quiz data
