@@ -158,13 +158,13 @@ const Bg = () => {
       
       <div >
         
-        <section className="min-h-screen bg-gray-900 flex flex-col justify-center items-center text-center " data-aos="fade-up">
+        {/* <section className="min-h-screen bg-gray-900 flex flex-col justify-center items-center text-center " data-aos="fade-up">
           <h2 className="text-5xl font-bold text-white mb-6">Welcome</h2>
           <p className="text-lg text-gray-300 max-w-3xl">
             Discover our community, events, and opportunities to grow your skills in electronics and electrical systems.
-          </p>
-        </section>
-        <section className="bg-gray-800 py-20 text-center">
+          </p> */}
+        {/* </section> */}
+        {/* <section className="bg-gray-800 py-20 text-center">
           <h2 className="text-5xl font-bold text-white mb-6">About EESA</h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             We foster innovation, collaboration, and knowledge-sharing among tech enthusiasts and future engineers.
@@ -175,7 +175,7 @@ const Bg = () => {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Be part of a thriving community that values creativity, learning, and hands-on experience.
           </p>
-        </section>
+        </section> */}
       </div>
     </div>
   );
