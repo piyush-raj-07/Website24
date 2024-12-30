@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-
+import Sidebar from "./Sidebar";
 const Bg = () => {
   const canvasRef = useRef(null);
   const largeHeaderRef = useRef(null);
@@ -147,6 +147,7 @@ const Bg = () => {
   return (
     <div>
       <div ref={largeHeaderRef} className="w-full bg-black overflow-x-hidden">
+        <Sidebar/>
         <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl md:text-7xl font-extrabold tracking-wide z-10">
           EESA <span className="font-light text-purple-400">Website</span>
         </h1>
