@@ -36,8 +36,6 @@ if(isLoading)
     <Footer>
     </Footer>    
     </div>
-
-    </div>
    
     </>
     
