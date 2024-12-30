@@ -1,10 +1,19 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-  }
-  
-  canvas {
-    display: block;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

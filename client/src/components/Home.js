@@ -23,8 +23,10 @@ if(isLoading)
         <Loader/>
     </div> */}
 
-    <div className="w-full">
+    <div className="">
     <Bg />
+    </div>
+   
     
     <div class = 'bg-black  pt-10 pb-10'>
     <Carousel >
@@ -34,6 +36,7 @@ if(isLoading)
     <Footer>
     </Footer>    
     </div>
+
     </div>
    
     </>

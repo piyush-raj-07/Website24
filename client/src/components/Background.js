@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-
 const Bg = () => {
   const canvasRef = useRef(null);
   const largeHeaderRef = useRef(null);
@@ -23,16 +22,17 @@ const Bg = () => {
       canvas.height = height;
       ctx = canvas.getContext("2d");
 
+      const particleDensity = width <= 768 ? 10 : 20;  
+
       points = [];
-      for (let x = 0; x < width; x += width / 20) {
-        for (let y = 0; y < height; y += height / 20) {
-          const px = x + Math.random() * (width / 20);
-          const py = y + Math.random() * (height / 20);
+      for (let x = 0; x < width; x += width / particleDensity) {
+        for (let y = 0; y < height; y += height / particleDensity) {
+          const px = x + Math.random() * (width / particleDensity);
+          const py = y + Math.random() * (height / particleDensity);
           const p = { x: px, originX: px, y: py, originY: py };
           points.push(p);
         }
       }
-
       for (const p1 of points) {
         const closest = [];
         for (const p2 of points) {
@@ -146,13 +146,14 @@ const Bg = () => {
 
   return (
     <div>
-      
-
-      <div ref={largeHeaderRef} className="w-screen bg-black overflow-hidden">
+      <div ref={largeHeaderRef} className="w-full bg-black overflow-x-hidden">
         <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl md:text-7xl font-extrabold tracking-wide z-10">
           EESA <span className="font-light text-purple-400">Website</span>
         </h1>
       </div>
+
+      <canvas ref={canvasRef} className="absolute top-0 left-0 h-full pointer-events-none z-0" />
+
       
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-none z-0" />
       
@@ -177,6 +178,7 @@ const Bg = () => {
           </p>
         </section> */}
       </div>
+
     </div>
   );
 };
