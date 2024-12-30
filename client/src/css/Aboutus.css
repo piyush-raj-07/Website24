@@ -1,0 +1,28 @@
+.animated-path {
+    fill: transparent;
+    stroke: #C084FC;
+    stroke-width: 0.2;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150; /* Initial offset to hide the stroke */
+    transition: stroke-dashoffset 0.5s ease; /* Smooth transition when visibility changes */
+}
+
+.start-animation {
+    animation: textAnimation 4s ease-in-out forwards; /* Apply animation */
+}
+
+@keyframes textAnimation {
+    0% {
+        stroke-dashoffset: 150; /* Start hidden */
+    }
+    100% {
+        stroke-dashoffset: 0; /* Fully drawn */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .text-4xl {
+        font-size: 2rem; /* Adjust font size on smaller screens */
+    }
+}

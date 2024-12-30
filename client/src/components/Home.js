@@ -2,6 +2,10 @@ import React from "react";
 import { useState } from "react";
 import Bg from './Background.js'
 import Loader from "./Loader.js";
+import Carousel from "./Carousel.js";
+import { Footer } from './footer.js';
+import AboutUs from "./Aboutus.js";
+
 const Home = () =>{
 const [isLoading , setload] = useState(false);
 if(isLoading)
@@ -23,9 +27,20 @@ if(isLoading)
     <Bg />
     </div>
    
+    
+    <div class = 'bg-black  pt-10 pb-10'>
+    <Carousel >
+    </Carousel>
+    </div>
+    <AboutUs/>
+    <Footer>
+    </Footer>    
+    </div>
+
     </div>
    
     </>
+    
     )
 }
 
