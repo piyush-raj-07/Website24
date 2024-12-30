@@ -4,7 +4,8 @@ const cookieParser = require('cookie-parser');
 
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoute');
-
+const blogRoutes = require('./routes/blogRoutes');
+const adminRoutes = require('./routes/adminRoute');
 const app = express();
 
 app.use(express.json());
@@ -31,6 +32,8 @@ mongoose.connect(mongoURI, {
 // authentication routes
 app.use("/api/auth", authRoutes);
 
+app.use('/blog',blogRoutes);
+app.use('/api/admin',adminRoutes);
 // storing user info
 app.post("/SaveUser", async (req, res) => {
 

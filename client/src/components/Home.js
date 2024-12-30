@@ -19,9 +19,9 @@ if(isLoading)
         <Loader/>
     </div> */}
 
-    <div className="w-full">
+    <div className="">
     <Bg />
-        </div>
+    </div>
    
     </div>
    

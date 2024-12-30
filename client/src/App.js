@@ -17,6 +17,10 @@ import { Toaster } from 'react-hot-toast';
 import { useAuthStore } from './store/authStore';
 import { RedirectAuthenticatedUser, RequireUnverifiedUser } from './utils/routeProtection';
 import ProfilePage from "./components/ProfilePage"
+import AdminPanel from "./components/AdminPanel";
+import WriteBlog from "./components/WriteBlog";
+import MyBlog from "./components/MyBlogs";
+import EditBlog from "./components/EditBlog";
 
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
@@ -41,6 +45,10 @@ function App() {
           <Route path ="/Blogs" element={<Blogs />}/>
           <Route path ="/Blogs/:id" element={<BlogDetails />}/>
           <Route path ="/ProfilePage" element={<ProfilePage />}/>
+          <Route path='/admin' element={<AdminPanel />}/>
+          <Route path='/writeBlog' element={<WriteBlog/>}/>
+          <Route path='/myblog' element={<MyBlog/>}/>
+          <Route path='/edit/:id' element={<EditBlog/>}/>
           <Route path="/signup" element={
             <RedirectAuthenticatedUser>
               <SignupPage />

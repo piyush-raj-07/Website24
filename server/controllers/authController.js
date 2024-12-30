@@ -101,6 +101,9 @@ const login = async (req, res) => {
         if (!user) {
             throw new Error('Invalid email');
         }
+        if(user.isVerified==false) {
+            throw new Error('Please verify your email');
+        }
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             throw new Error('Invalid password');
