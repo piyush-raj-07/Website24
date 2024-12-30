@@ -79,10 +79,14 @@ const Navbar = () => {
               Notices
             </Link>
             <Link
-              to="/contact"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/contact') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              to="/Gallery"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
+                isActive('/Gallery')
+                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
+                  : 'hover:border-b-2 hover:border-b-purple-600'
+              }`}
             >
-              Contact
+              Gallery
             </Link>
             {isAuthenticated ? (
               <Link to="/profilepage" className="h-10 w-10">

@@ -16,6 +16,9 @@ export default function ProfilePage() {
     const [image, setImage] = useState(null);
     const [intro, setIntro] = useState("");
     const [introSaved, setIntroSaved] = useState(false);
+    const [editMode, setEditMode] = useState(false);
+    const [saveMessage, setSaveMessage] = useState("");
+
 
     const leftSectionRef = useRef(null);
     const rightSectionRef = useRef(null);
@@ -28,37 +31,37 @@ export default function ProfilePage() {
             setImage(storedImage);
         }
         if (storedIntro) {
-            setIntro(storedIntro); // Load saved intro from localStorage
-            setIntroSaved(true); // Mark intro as saved when loaded from localStorage
+            setIntro(storedIntro); 
+            setIntroSaved(true); 
         }
 
-        // Function to handle scroll events for a given section
+        
         const handleScroll = (e, sectionRef) => {
-            e.preventDefault(); // Prevent the default scroll behavior
-            const scrollSpeed = 5; // Factor to slow down the scroll
-            const delta = e.deltaY; // Get vertical scroll delta
-    
-            // Adjust the scroll position for the section
+            e.preventDefault(); 
+            const scrollSpeed = 1; 
+            const delta = e.deltaY; 
+
+            
             if (sectionRef && sectionRef.current) {
-                sectionRef.current.scrollTop += delta / scrollSpeed; // Slow down scroll
+                sectionRef.current.scrollTop += delta / scrollSpeed; 
             }
         };
-    
-        // Attach scroll handlers to each section
+
+        
         const leftSection = leftSectionRef.current;
         const rightSection = rightSectionRef.current;
-    
+
         const handleLeftScroll = (e) => handleScroll(e, leftSectionRef);
         const handleRightScroll = (e) => handleScroll(e, rightSectionRef);
-    
+
         if (leftSection) {
             leftSection.addEventListener('wheel', handleLeftScroll, { passive: false });
         }
         if (rightSection) {
             rightSection.addEventListener('wheel', handleRightScroll, { passive: false });
         }
-    
-        // Clean up event listeners on component unmount
+
+        
         return () => {
             if (leftSection) {
                 leftSection.removeEventListener('wheel', handleLeftScroll);
@@ -76,7 +79,7 @@ export default function ProfilePage() {
             reader.onloadend = () => {
                 const imageDataUrl = reader.result;
                 setImage(imageDataUrl);
-                localStorage.setItem('profilePic', imageDataUrl);  // Save to localStorage
+                localStorage.setItem('profilePic', imageDataUrl);  
             };
             reader.readAsDataURL(file);
         }
@@ -91,32 +94,13 @@ export default function ProfilePage() {
         setIntro(e.target.value);
     };
 
-    const handleSaveIntro = () => {
-        if (intro.trim() === "") {
-            alert("Please write something in your intro before saving.");  // Alert if intro is empty
-        } else {
-            localStorage.setItem('intro', intro);  // Save the intro text to localStorage
-            setIntroSaved(true); // Set introSaved to true after saving
-            alert("Intro saved successfully!");  // Alert user that the intro has been saved
-        }
-    };
-
-    const handleEditIntro = () => {
-        setIntroSaved(false);  // Mark as not saved to allow editing
-    };
-
-    const handleDeleteIntro = () => {
-        setIntro("");
-        localStorage.removeItem('intro');  // Remove intro from localStorage
-        setIntroSaved(false);  // Reset saved state
-    };
 
     return (
         <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen min-w-screen ">
 
             <div className="absolute z-10 ">
                 <img
-                    src={background} // Replace with your image URL
+                    src={background} 
                     alt="Background"
                     className="w-full h-full object-cover opacity-20 "
                 />
@@ -129,24 +113,24 @@ export default function ProfilePage() {
 
 
                             <div className="relative flex justify-center items-center group overflow-hidden h-52 w-52 rounded-full">
-                                {/* Profile Picture Display */}
+                                
                                 <img
                                     src={image || profilePic}
                                     alt="Profile"
                                     className="h-full w-full rounded-full object-cover border-2 border-purple-500 shadow-lg"
                                 />
 
-                                {/* Overlay Buttons (Appear on Hover) */}
-                                {image && (
+                                
+                                {image && editMode && (
                                     <div className="absolute inset-0 bg-black bg-opacity-60 rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 h-full w-full">
-                                        {/* Edit Button */}
+                                        
                                         <label
                                             htmlFor="profile-upload"
                                             className="bg-purple-500 text-white font-serif p-2 rounded-lg mb-2 cursor-pointer w-20 text-center shadow-black shadow-lg hover:border-purple-400 hover:border-2"
                                         >
                                             Edit
                                         </label>
-                                        {/* Delete Button */}
+
                                         <button
                                             onClick={handleDelete}
                                             className="bg-red-500 text-white font-serif p-2 w-20 rounded-lg text-center shadow-black shadow-lg hover:border-2 border-red-400"
@@ -155,8 +139,8 @@ export default function ProfilePage() {
                                         </button>
                                     </div>
                                 )}
-                                {/* Upload Button (Always visible) */}
-                                {!image && (
+                                
+                                {!image && editMode && (
                                     <div className="absolute inset-0 bg-black bg-opacity-60 rounded-full flex flex-col items-center justify-center opacity-100  z-10 h-full w-full">
                                         <label
                                             htmlFor="profile-upload"
@@ -167,7 +151,7 @@ export default function ProfilePage() {
                                     </div>
                                 )}
 
-                                {/* Hidden File Input */}
+                                
                                 <input
                                     id="profile-upload"
                                     type="file"
@@ -177,7 +161,8 @@ export default function ProfilePage() {
                                 />
                             </div>
 
-                            <h1 className='p-2 text-2xl font-serif'>Username</h1>
+                            <h1 className='px-2 py-1 text-3xl font-serif'>Username</h1>
+                            <h4 className='p-1 text-base font-serif'>B. Tech | 2026'</h4>
 
 
                         </div>
@@ -189,44 +174,33 @@ export default function ProfilePage() {
                                 onChange={handleIntroChange}
                                 className="w-full h-24 bg-black bg-opacity-70 text-white border-2 border-white p-2 rounded-lg"
                                 placeholder="Enter your introduction here..."
-                                disabled={introSaved}
+                                disabled={!editMode}
                             />
                         </div>
-                        {/* Display Save/Edit/Delete buttons based on intro state */}
-                        <div className=" w-full">
-                            {!introSaved ? (
-                                <div className='flex justify-center'>
-                                    <button
-                                        onClick={handleSaveIntro}
-                                        className=" my-2 bg-purple-950 text-white px-2 py-2 rounded-lg cursor-pointer border-2 border-white"
-                                    >
-                                        Save Intro
-                                    </button>
-                                </div>
-                            ) : (
-                                <div className="flex justify-stretch items-center">
-                                    {/* Edit Button */}
+                        
 
-
-                                    <button
-                                        onClick={handleEditIntro}
-                                        className=" bg-purple-950 m-2 w-1/2 text-white px-2 py-2 rounded-lg cursor-pointer border-2 border-white"
-                                    >
-                                        Edit Intro
-                                    </button>
-
-                                    {/* Delete Button */}
-
-                                    <button
-                                        onClick={handleDeleteIntro}
-                                        className="  bg-purple-950 m-2 w-1/2 text-white px-2 py-2 rounded-lg cursor-pointer border-2 border-white"
-                                    >
-                                        Delete Intro
-                                    </button>
-
+                        <div className="w-full">
+                            <div className='flex justify-center'>
+                                <button
+                                    onClick={() => {
+                                        setEditMode(!editMode);
+                                        if (editMode) {
+                                            setSaveMessage("Your profile has been saved successfully!");
+                                            setTimeout(() => setSaveMessage(""), 3000);  
+                                        }
+                                    }}
+                                    className="my-2 bg-purple-950 text-white px-2 py-2 rounded-lg cursor-pointer border-2 border-white"
+                                >
+                                    {editMode ? "Save Profile" : "Edit Profile"}
+                                </button>
+                            </div>
+                            {saveMessage && (
+                                <div className="text-center text-green-400 font-bold mt-2">
+                                    {saveMessage}
                                 </div>
                             )}
                         </div>
+
                     </div>
 
 
@@ -241,7 +215,7 @@ export default function ProfilePage() {
                             Badges Earned
                         </div>
                         <div className='flex justify-evenly bg-[#AE7BC3] bg-opacity-85'>
-                            {/* Gold Badge */}
+                            
                             <div className="badge-container">
                                 <img
                                     src={goldBadge}
@@ -253,7 +227,7 @@ export default function ProfilePage() {
                                 </div>
                             </div>
 
-                            {/* Silver Badge */}
+                            
                             <div className="badge-container">
                                 <img
                                     src={silverBadge}
@@ -265,7 +239,7 @@ export default function ProfilePage() {
                                 </div>
                             </div>
 
-                            {/* Bronze Badge */}
+                            
                             <div className="badge-container">
                                 <img
                                     src={bronzeBadge}
@@ -285,7 +259,7 @@ export default function ProfilePage() {
                         </div>
                         <div className="relative  h-28 my-2 shadow-black shadow-md overflow-hidden group">
                             <img
-                                src={blogBg1} // Replace with your image URL
+                                src={blogBg1} 
                                 alt="Background"
                                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                             />
@@ -298,7 +272,7 @@ export default function ProfilePage() {
 
                         <div className="relative  h-28 my-2  shadow-black shadow-md overflow-hidden group">
                             <img
-                                src={blogBg5} // Replace with your image URL
+                                src={blogBg5} 
                                 alt="Background"
                                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                             />
@@ -311,7 +285,7 @@ export default function ProfilePage() {
 
                         <div className="relative  h-28 my-2 shadow-black shadow-md overflow-hidden group">
                             <img
-                                src={blogBg3} // Replace with your image URL
+                                src={blogBg3} 
                                 alt="Background"
                                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                             />
@@ -324,7 +298,7 @@ export default function ProfilePage() {
 
                         <div className="relative  h-28 my-2 shadow-black shadow-md overflow-hidden group">
                             <img
-                                src={blogBg4} // Replace with your image URL
+                                src={blogBg4} 
                                 alt="Background"
                                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                             />
@@ -337,7 +311,7 @@ export default function ProfilePage() {
 
                         <div className="relative  h-28 my-2 shadow-black shadow-md overflow-hidden group">
                             <img
-                                src={blogBg2} // Replace with your image URL
+                                src={blogBg2} 
                                 alt="Background"
                                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                             />
@@ -347,7 +321,7 @@ export default function ProfilePage() {
                             </div>
 
                         </div>
-                        
+
 
                     </div>
 
