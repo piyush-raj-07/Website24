@@ -7,7 +7,8 @@ import BlogDetails from "./components/BlogDetails";
 import TeamPage from './components/Teampage';
 import Activities from "./components/Activities";
 import Navbar from "./components/Navbar";
-import Loader from "./components/Loader";
+import Loader from './components/status_pages/Loader'
+import NotFound from "./components/status_pages/NotFound";
 
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
@@ -47,7 +48,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-
+           <Route path="*" element={<NotFound/>} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path ="/Blogs" element={<Blogs />}/>

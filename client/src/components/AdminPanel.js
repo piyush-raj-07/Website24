@@ -102,10 +102,10 @@ const AdminPanel = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">Admin Panel</h1>
+      <h1 className="text-3xl font-bold text-center mb-6 text-purple-300">Admin Panel</h1>
       {admin ? (
         <div>
-          <h2 className="text-2xl font-semibold mb-4">Pending Blog Approvals</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-yellow-300">Pending Blog Approvals</h2>
           <div className="space-y-4">
             {blogs.length > 0 ? (
               blogs.map((blog) => (
