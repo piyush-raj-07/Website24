@@ -32,13 +32,13 @@ function App() {
   }, [CheckAuth]);
 
   if (isCheckingAuth) {
-   
-          return(
-            <div className="h-screen bg-black flex justify-center items-center ">
-              <Loader/>
-              </div>
-          );
-      
+
+    return (
+      <div className="h-screen bg-black flex justify-center items-center ">
+        <Loader />
+      </div>
+    );
+
   }
 
   return (
@@ -50,15 +50,15 @@ function App() {
 
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
-          <Route path ="/Blogs" element={<Blogs />}/>
-          <Route path ="/Blogs/:id" element={<BlogDetails />}/>
-          <Route path ="/ProfilePage" element={<ProfilePage />}/>
-          <Route path='/admin' element={<AdminPanel />}/>
-          <Route path='/writeBlog' element={<WriteBlog/>}/>
-          <Route path='/myblog' element={<MyBlog/>}/>
-          <Route path='/edit/:id' element={<EditBlog/>}/>
-          <Route path ="/Gallery" element={<Gallery />}/>
-          
+          <Route path="/Blogs" element={<Blogs />} />
+          <Route path="/Blogs/:id" element={<BlogDetails />} />
+          <Route path="/ProfilePage" element={<ProfilePage />} />
+          <Route path='/admin' element={<AdminPanel />} />
+          <Route path='/writeBlog' element={<WriteBlog />} />
+          <Route path='/myblog' element={<MyBlog />} />
+          <Route path='/edit/:id' element={<EditBlog />} />
+          <Route path="/Gallery" element={<Gallery />} />
+
 
 
           <Route path="/signup" element={
@@ -72,7 +72,9 @@ function App() {
             </RedirectAuthenticatedUser>
           } />
           <Route path="/verify-email" element={
-            <EmailVerificationPage />
+            <RequireUnverifiedUser>
+              <EmailVerificationPage />
+            </RequireUnverifiedUser>
           } />
           <Route path="/forgot-password" element={
             <RedirectAuthenticatedUser>
