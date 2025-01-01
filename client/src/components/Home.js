@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Bg from './Background.js'
-import Loader from "./Loader.js";
+import Loader from "./status_pages/Loader.js";
 import Carousel from "./Carousel.js";
 import { Footer } from './footer.js';
 import AboutUs from "./Aboutus.js";
@@ -28,7 +28,7 @@ if(isLoading)
     </div>
    
     
-    <div class = 'bg-black  pt-10 pb-10'>
+    <div class = 'bg-gray-900  pt-10 pb-10'>
     <Carousel >
     </Carousel>
     </div>

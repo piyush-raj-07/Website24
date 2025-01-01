@@ -18,7 +18,7 @@ const Activities = () => {
       <div className="relative z-10 flex flex-col items-center w-full max-w-7xl gap-16">
         {/* Card 1 */}
         <div className="flex flex-col sm:flex-row w-full justify-between items-center sm:items-start gap-6">
-          <div className="relative p-4 rounded-lg shadow-lg w-full sm:w-[60%] overflow-hidden h-[350px] max-w-lg">
+          <div className="relative p-4 rounded-lg shadow-lg w-full sm:w-[60%] overflow-hidden h-[350px] ">
             <div className="absolute top-4 left-4 w-[60%] h-[70%] overflow-hidden group">
               {/* Purple angled border */}
               <div

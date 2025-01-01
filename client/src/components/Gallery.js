@@ -1,6 +1,6 @@
 import React, { useEffect , useState} from "react";
 import axios from "axios";
-import Loader  from './Loader.js';
+import Loader  from './status_pages/Loader';
 
 
 
