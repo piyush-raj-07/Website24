@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
+import styled from "styled-components";
 
-const Sidebar = () =>{
-   return(
+const Sidebar = () => {
+  return (
     <>
 <nav class="float-left relative left-0 top-40 bg-transparent z-10 ">
   <ul class="text-center">
