@@ -18,15 +18,15 @@ const Activities = () => {
       <div className="relative z-10 flex flex-col items-center w-full max-w-7xl gap-16">
         {/* Card 1 */}
         <div className="flex flex-col sm:flex-row w-full justify-between items-center sm:items-start gap-6">
-          <div className="relative p-4 rounded-lg shadow-lg w-full sm:w-[60%] overflow-hidden h-[350px] ">
+          <div className="relative p-4 rounded-lg shadow-lg w-full sm:w-[60%] overflow-hidden h-[400px]">
             <div className="absolute top-4 left-4 w-[60%] h-[70%] overflow-hidden group">
               {/* Purple angled border */}
               <div
                 className="w-full h-full relative"
                 style={{
                   position: 'relative',
-                  paddingLeft: '10px',
-                  paddingTop: '2px',
+                  paddingLeft: '20px',
+                  paddingTop: '20px',
                 }}
               >
                 {/* Angled Purple Border using pseudo-element */}
@@ -48,7 +48,7 @@ const Activities = () => {
                 <div
                   className="w-full h-full"
                   style={{
-                    maskImage: "linear-gradient(135deg, transparent 10%, black 10%)",
+                    maskImage: "linear-gradient(135deg, transparent 11%, black 10%)",
                     WebkitMaskImage: "linear-gradient(135deg, transparent 10%, black 10%)",
                     borderTop: '2px solid #9F7AEA'
                   }}

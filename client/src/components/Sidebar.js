@@ -5,6 +5,9 @@ const Sidebar = () =>{
     <>
 <nav class="float-left relative left-0 top-40 bg-transparent z-10 ">
   <ul class="text-center">
+    <a href="/">
+
+   
     <li class="relative w-[70px] cursor-pointer uppercase transition-all duration-[0.4s] ease-[ease-out] bg-purple-500 after:absolute after:text-purple-400 after:w-[70px] after:h-full after:opacity-0 after:origin-bottom-left after:transition-all after:duration-[0.4s] after:ease-[ease-out] after:left-[70px] after:top-0 hover:translate-x-[-70px] hover:after:opacity-100 after:content-['Home'] after:leading-[88px] after:bg-[white] after:transform perspective-[400px] rotate-y-[90deg] hover:after:transform perspective-[400px] rotate-y-[0deg] scale-100 after:font-bold" >
      <div class="relative inline-block py-6 bg-transparent">
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="size-8">
@@ -14,6 +17,10 @@ const Sidebar = () =>{
 
       </div>
     </li>
+    </a>
+    <a href="/game">
+    
+
     <li class="relative w-[70px] cursor-pointer uppercase transition-all duration-[0.4s] ease-[ease-out] bg-purple-500 after:absolute after:text-purple-400 after:w-[70px] after:h-full after:opacity-0 after:origin-bottom-left after:transition-all after:duration-[0.4s] after:ease-[ease-out] after:left-[70px] after:top-0 hover:translate-x-[-70px] hover:after:opacity-100 after:content-['Play'] after:leading-[88px] after:bg-[white] after:transform perspective-[400px] rotate-y-[90deg] hover:after:transform perspective-[400px] rotate-y-[0deg] scale-100 after:font-bold">
       <div class="relative inline-block py-6 bg-transparent">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-8">
@@ -22,6 +29,8 @@ const Sidebar = () =>{
 
       </div>
     </li>
+    </a>
+    <a href="/Gallery">
     <li class="relative w-[70px] cursor-pointer uppercase transition-all duration-[0.4s] ease-[ease-out] bg-purple-500 after:absolute after:text-purple-400 after:w-[70px] after:h-full after:opacity-0 after:origin-bottom-left after:transition-all after:duration-[0.4s] after:ease-[ease-out] after:left-[70px] after:top-0 hover:translate-x-[-70px] hover:after:opacity-100 after:content-['Gallery'] after:leading-[88px] after:bg-[white] after:transform perspective-[400px] rotate-y-[90deg] hover:after:transform perspective-[400px] rotate-y-[0deg] scale-100 after:font-bold">
       <div class="relative inline-block py-6 bg-transparent">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-8">
@@ -30,6 +39,8 @@ const Sidebar = () =>{
 
     </div>
     </li>
+    </a>
+    <a >
     <li word ="say hi!" class="relative w-[70px] cursor-pointer uppercase transition-all duration-[0.4s] ease-[ease-out] bg-purple-500 after:absolute after:text-purple-400 after:w-[70px] after:h-full after:opacity-0 after:origin-bottom-left after:transition-all after:duration-[0.4s] after:ease-[ease-out] after:left-[70px] after:top-0 hover:translate-x-[-70px] hover:after:opacity-100 after:content-[attr(word)] after:leading-[88px] after:bg-[white] after:transform perspective-[400px] rotate-y-[90deg] hover:after:transform perspective-[400px] rotate-y-[0deg] scale-100 after:font-bold">
       <div class="relative inline-block py-6 bg-transparent">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-8">
@@ -39,6 +50,8 @@ const Sidebar = () =>{
 
       </div>
     </li>
+    </a>
+    
   </ul>
 </nav>
     </>
