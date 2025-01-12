@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaCheck, FaTimes } from 'react-icons/fa';
+import { FaCheck, FaTimes, FaPlus } from 'react-icons/fa';
 
 const AdminPanel = () => {
   const [admin, setAdmin] = useState(false);
   const [blogs, setBlogs] = useState([]);
+  const [activeTab, setActiveTab] = useState('blogs');
+  const [activityForm, setActivityForm] = useState({
+    url: '',
+    title: '',
+    description: ''
+  });
+  const [formMessage, setFormMessage] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,7 +42,7 @@ const AdminPanel = () => {
 
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/all',{
+        const response = await fetch('http://localhost:5000/api/admin/all', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +61,7 @@ const AdminPanel = () => {
     };
 
     fetchAdminStatus();
-  }, [navigate,blogs]);
+  }, [navigate]);
 
   const handleApprove = async (blogId) => {
     try {
@@ -100,10 +107,64 @@ const AdminPanel = () => {
     }
   };
 
+  const handleActivitySubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/SaveActivity', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(activityForm),
+      });
+
+      if (response.ok) {
+        setFormMessage('Activity added successfully!');
+        setActivityForm({ url: '', title: '', description: '' });
+      } else {
+        setFormMessage('Error adding activity. Please try again.');
+      }
+    } catch (error) {
+      setFormMessage('Error: ' + error.message);
+    }
+  };
+
+  const handleActivityFormChange = (e) => {
+    setActivityForm({
+      ...activityForm,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  if (!admin) {
+    return <p className="text-center text-red-500">You are not authorized to view this page.</p>;
+  }
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-6 text-purple-300">Admin Panel</h1>
-      {admin ? (
+      
+      {/* Tab Navigation */}
+      <div className="flex gap-4 mb-6">
+        <button 
+          onClick={() => setActiveTab('blogs')}
+          className={`px-4 py-2 rounded-lg ${activeTab === 'blogs' 
+            ? 'bg-purple-500 text-white' 
+            : 'bg-gray-200 text-gray-700'}`}
+        >
+          Manage Blogs
+        </button>
+        <button 
+          onClick={() => setActiveTab('activities')}
+          className={`px-4 py-2 rounded-lg ${activeTab === 'activities' 
+            ? 'bg-purple-500 text-white' 
+            : 'bg-gray-200 text-gray-700'}`}
+        >
+          Manage Activities
+        </button>
+      </div>
+
+      {activeTab === 'blogs' ? (
         <div>
           <h2 className="text-2xl font-semibold mb-4 text-yellow-300">Pending Blog Approvals</h2>
           <div className="space-y-4">
@@ -140,7 +201,68 @@ const AdminPanel = () => {
           </div>
         </div>
       ) : (
-        <p className="text-center text-red-500">You are not authorized to view this page.</p>
+        <div className="bg-white rounded-lg p-6 shadow-lg">
+          <h2 className="text-2xl font-semibold mb-4 text-purple-600">Add New Activity</h2>
+          
+          {formMessage && (
+            <div className={`p-4 mb-4 rounded ${formMessage.includes('Error') 
+              ? 'bg-red-100 text-red-600' 
+              : 'bg-green-100 text-green-600'}`}>
+              {formMessage}
+            </div>
+          )}
+
+          <form onSubmit={handleActivitySubmit} className="space-y-4">
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Image URL
+              </label>
+              <input
+                type="text"
+                name="url"
+                value={activityForm.url}
+                onChange={handleActivityFormChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Title
+              </label>
+              <input
+                type="text"
+                name="title"
+                value={activityForm.title}
+                onChange={handleActivityFormChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Description
+              </label>
+              <textarea
+                name="description"
+                value={activityForm.description}
+                onChange={handleActivityFormChange}
+                rows="4"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 transition duration-200 flex items-center justify-center gap-2"
+            >
+              <FaPlus /> Add Activity
+            </button>
+          </form>
+        </div>
       )}
     </div>
   );

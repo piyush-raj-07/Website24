@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
+const ActivitiesModel = require('./models/Activities');
 const UserModel = require('./models/Users');
 const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
@@ -152,9 +153,37 @@ app.post('/SaveGallery', async(req,res) =>{
     }
 })
 
+app.get('/GetActivity', async (req, res) => {
+    try {
+        console.log('Fetching activities from database...'); // Debug log
+        const activities = await ActivitiesModel.find();
+        console.log('Found activities:', activities); // Debug log
+        res.status(200).json(activities);
+    } catch (error) {
+        console.error('Error fetching activities:', error);
+        res.status(500).json({ message: error.message });
+    }
+});
 
+app.post('/SaveActivity', async(req,res) =>{
+   
+    const{
+        url, title, description 
+     } = req.body;
 
-
+    try {
+        const newImage = new ActivitiesModel({
+            url,     
+            title,
+            description,
+          });
+       await newImage.save();
+      res.status(201).json("img saved");
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({error : 'Failed to save image'});
+    }
+})
 
 // Quiz data
 app.post('/Quizdata' , async(req,res)=>{
