@@ -8,12 +8,13 @@ const AdminPanel = () => {
   const [editingActivity, setEditingActivity] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [editValues, setEditValues] = useState({ title: '', description: '', url: '' });
+  const [editValues, setEditValues] = useState({ title: '', description: '', url1: '', url2: '' });
   const [admin, setAdmin] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [activeTab, setActiveTab] = useState('blogs');
   const [activityForm, setActivityForm] = useState({
-    url: '',
+    url1: '',
+    url2: '',
     title: '',
     description: '',
   });
@@ -96,13 +97,14 @@ const AdminPanel = () => {
     setEditValues({
       title: activity.title,
       description: activity.description,
-      url: activity.url,
+      url1: activity.url1,
+      url2: activity.url2,
     });
   };
 
   const handleCancelEdit = () => {
     setEditingActivity(null);
-    setEditValues({ title: '', description: '', url: '' });
+    setEditValues({ title: '', description: '', url1: '', url2: '' });
   };
 
   const handleSaveEdit = async () => {
@@ -194,7 +196,7 @@ const AdminPanel = () => {
 
       if (response.ok) {
         setFormMessage('Activity added successfully!');
-        setActivityForm({ url: '', title: '', description: '' });
+        setActivityForm({ url1: '', url2: '', title: '', description: '' });
       } else {
         setFormMessage('Error adding activity. Please try again.');
       }
@@ -306,7 +308,21 @@ const AdminPanel = () => {
               <input
                 type="text"
                 name="url"
-                value={activityForm.url}
+                value={activityForm.url1}
+                onChange={handleActivityFormChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Insta URL
+              </label>
+              <input
+                type="text"
+                name="url"
+                value={activityForm.url2}
                 onChange={handleActivityFormChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                 required
@@ -360,6 +376,22 @@ const AdminPanel = () => {
                 <div className="flex flex-col w-full sm:w-[60%] gap-4">
                   <input
                     type="text"
+                    name="url1"
+                    value={editValues.url1}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                    placeholder="Image URL"
+                  />
+                  <input
+                    type="text"
+                    name="url2"
+                    value={editValues.url2}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                    placeholder="Insta URL"
+                  />
+                  <input
+                    type="text"
                     name="title"
                     value={editValues.title}
                     onChange={handleInputChange}
@@ -374,14 +406,7 @@ const AdminPanel = () => {
                     placeholder="Description"
                     rows="3"
                   />
-                  <input
-                    type="text"
-                    name="url"
-                    value={editValues.url}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
-                    placeholder="Image URL"
-                  />
+                  
                   <div className="flex gap-4">
                     <button
                       onClick={handleSaveEdit}
@@ -402,7 +427,7 @@ const AdminPanel = () => {
                   <h3 className="text-xl sm:text-2xl font-bold mb-2">{activity.title}</h3>
                   <p className="text-sm leading-relaxed mb-4">{activity.description}</p>
                   <img
-                    src={activity.url}
+                    src={activity.url1}
                     alt={activity.title}
                     className="w-full h-60 object-cover rounded-lg"
                   />

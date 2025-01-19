@@ -113,7 +113,7 @@ const Activities = () => {
                     }}
                   >
                     <img
-                      src={activity.url}
+                      src={activity.url1}
                       alt={activity.title}
                       className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
                     />
@@ -122,7 +122,7 @@ const Activities = () => {
 
                 <div className="absolute inset-0 flex justify-center items-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <a
-                    href="https://www.instagram.com/eesa_iiti/"
+                    href={activity.url2}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-full font-semibold hover:bg-black transition-colors duration-300"

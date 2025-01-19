@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 
 const ActivitiesSchema = new mongoose.Schema({
 
-  url: {
+  url1: {
+    type: String,
+    required: true,
+  },
+
+  url2: {
     type: String,
     required: true,
   },
