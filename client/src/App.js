@@ -24,7 +24,7 @@ import AdminPanel from "./components/AdminPanel";
 import WriteBlog from "./components/WriteBlog";
 import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
-import ProjectTable from "/Users/aniket/coding/eesa/Website24/client/src/components/Project.js";
+import ProjectTable from "./components/Project.js";
 import Gallery from "./components/Gallery";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();

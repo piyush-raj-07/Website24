@@ -29,7 +29,7 @@ const Activities = () => {
   }, []);
 
   const particlesInit = async (engine) => {
-    await loadFull(engine); // Load tsParticles engine
+    await loadFull(engine); 
   };
 
   if (loading) {
@@ -50,7 +50,7 @@ const Activities = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-6 sm:p-12 relative overflow-hidden">
-      {/* Particles Background */}
+
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -62,7 +62,7 @@ const Activities = () => {
             shape: { type: ["star", "circle"]},
             opacity: { value: 0.8 },
             size: { value: { min: 2, max: 5 } },
-            move: { enable: true, speed: 2, direction: "bottom", outModes: { default: "out" } },
+            move: { enable: true, speed: 0.5, direction: "bottom", outModes: { default: "out" } },
           },
           interactivity: {
             events: { onHover: { enable: true, mode: "repulse" } },

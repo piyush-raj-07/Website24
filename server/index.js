@@ -155,9 +155,9 @@ app.post('/SaveGallery', async(req,res) =>{
 
 app.get('/GetActivity', async (req, res) => {
     try {
-        console.log('Fetching activities from database...'); // Debug log
+        console.log('Fetching activities from database...'); 
         const activities = await ActivitiesModel.find();
-        console.log('Found activities:', activities); // Debug log
+        console.log('Found activities:', activities); 
         res.status(200).json(activities);
     } catch (error) {
         console.error('Error fetching activities:', error);
@@ -177,7 +177,7 @@ app.put('/EditActivity/:id', async (req, res) => {
         const updatedActivity = await ActivitiesModel.findByIdAndUpdate(
             id,
             { url, title, description },
-            { new: true } // Return the updated document
+            { new: true } 
         );
 
         if (!updatedActivity) {
