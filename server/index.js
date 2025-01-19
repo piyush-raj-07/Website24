@@ -165,6 +165,34 @@ app.get('/GetActivity', async (req, res) => {
     }
 });
 
+app.put('/EditActivity/:id', async (req, res) => {
+    const { id } = req.params;
+    const { url, title, description } = req.body;
+
+    if (!id) {
+        return res.status(400).json({ error: 'Activity ID is required' });
+    }
+
+    try {
+        const updatedActivity = await ActivitiesModel.findByIdAndUpdate(
+            id,
+            { url, title, description },
+            { new: true } // Return the updated document
+        );
+
+        if (!updatedActivity) {
+            return res.status(404).json({ error: 'Activity not found' });
+        }
+
+        console.log('Activity updated:', updatedActivity);
+        res.status(200).json(updatedActivity);
+    } catch (error) {
+        console.error('Error updating activity:', error);
+        res.status(500).json({ error: 'Failed to update activity' });
+    }
+});
+
+
 app.post('/SaveActivity', async(req,res) =>{
    
     const{
@@ -184,6 +212,25 @@ app.post('/SaveActivity', async(req,res) =>{
         res.status(500).json({error : 'Failed to save image'});
     }
 })
+
+
+app.delete('/DeleteActivity/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const deletedActivity = await ActivitiesModel.findByIdAndDelete(id);
+
+        if (!deletedActivity) {
+            return res.status(404).json({ error: 'Activity not found' });
+        }
+
+        console.log('Activity deleted:', deletedActivity);
+        res.status(200).json({ message: 'Activity deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting activity:', error);
+        res.status(500).json({ error: 'Failed to delete activity' });
+    }
+});
 
 // Quiz data
 app.post('/Quizdata' , async(req,res)=>{
