@@ -167,7 +167,7 @@ app.get('/GetActivity', async (req, res) => {
 
 app.put('/EditActivity/:id', async (req, res) => {
     const { id } = req.params;
-    const { url, title, description } = req.body;
+    const { url1, url2, title, description } = req.body;
 
     if (!id) {
         return res.status(400).json({ error: 'Activity ID is required' });
@@ -176,7 +176,7 @@ app.put('/EditActivity/:id', async (req, res) => {
     try {
         const updatedActivity = await ActivitiesModel.findByIdAndUpdate(
             id,
-            { url, title, description },
+            { url1, url2, title, description },
             { new: true } 
         );
 
@@ -196,12 +196,13 @@ app.put('/EditActivity/:id', async (req, res) => {
 app.post('/SaveActivity', async(req,res) =>{
    
     const{
-        url, title, description 
+        url1, url2, title, description 
      } = req.body;
 
     try {
         const newImage = new ActivitiesModel({
-            url,     
+            url1, 
+            url2,    
             title,
             description,
           });
