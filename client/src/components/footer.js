@@ -78,7 +78,6 @@ export const Footer = () => {
                         </form>
                     </div>
                 </div>
-                <h6 className="text-center">&copy; right Coderflix {Year}</h6>
             </div>
         </footer>
     );

@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Loader from './components/status_pages/Loader'
 import NotFound from "./components/status_pages/NotFound";
 
+
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import EmailVerificationPage from "./components/EmailVerificationPage";
@@ -23,7 +24,7 @@ import AdminPanel from "./components/AdminPanel";
 import WriteBlog from "./components/WriteBlog";
 import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
-
+import ProjectTable from "/Users/aniket/coding/eesa/Website24/client/src/components/Project.js";
 import Gallery from "./components/Gallery";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
@@ -59,6 +60,8 @@ function App() {
           <Route path='/myblog' element={<MyBlog />} />
           <Route path='/edit/:id' element={<EditBlog />} />
           <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Projects" element={<ProjectTable />} />
+
 
 
 
