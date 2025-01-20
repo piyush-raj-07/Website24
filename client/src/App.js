@@ -26,6 +26,7 @@ import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
 import ProjectTable from "./components/Project.js";
 import Gallery from "./components/Gallery";
+import QuizPage from "./components/quiz/QuizPage";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -49,7 +50,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-           <Route path="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />
@@ -61,7 +62,7 @@ function App() {
           <Route path='/edit/:id' element={<EditBlog />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Projects" element={<ProjectTable />} />
-
+          <Route path="/quiz" element={<QuizPage />} />
 
 
 
