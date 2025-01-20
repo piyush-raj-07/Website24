@@ -53,7 +53,7 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />
-          <Route path="/Blogs/:id" element={<BlogDetails />} />
+          <Route path='/Blogs/:cat' element={<BlogDetails />} />
           <Route path="/ProfilePage" element={<ProfilePage />} />
           <Route path='/admin' element={<AdminPanel />} />
           <Route path='/writeBlog' element={<WriteBlog />} />
