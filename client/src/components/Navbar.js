@@ -61,7 +61,7 @@ const Navbar = () => {
               Activities
             </Link>
             <Link
-              to="/projects"
+              to="/Projects"
               className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/projects') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Projects

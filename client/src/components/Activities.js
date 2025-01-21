@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { loadFull } from "tsparticles";
+import Particles from "react-tsparticles";
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
@@ -26,6 +28,10 @@ const Activities = () => {
     fetchActivities();
   }, []);
 
+  const particlesInit = async (engine) => {
+    await loadFull(engine); 
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -44,18 +50,29 @@ const Activities = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-6 sm:p-12 relative overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0 animate-bgMove"
-        style={{
-          backgroundImage: "url('/black.png')",
+
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: { enable: true, zIndex: -1 },
+          particles: {
+            number: { value: 50, density: { enable: true, area: 500 } },
+            color: { value: ["#7e22ce", "#ffffff"] },
+            shape: { type: ["star", "circle"]},
+            opacity: { value: 0.8 },
+            size: { value: { min: 2, max: 5 } },
+            move: { enable: true, speed: 0.5, direction: "bottom", outModes: { default: "out" } },
+          },
+          interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" } },
+            modes: { repulse: { distance: 100 } },
+          },
+          detectRetina: true,
         }}
-      ></div>
+      />
 
-      <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
-      <div className="relative z-10 w-full text-center mb-12">
-      </div>
-
-      <div className="relative z-10 flex flex-col items-center w-full max-w-7xl gap-16">
+      <div className="relative z-10 flex flex-col items-center w-full max-w-7xl gap-2">
         {activities.map((activity, index) => (
           <div 
             key={activity._id} 
@@ -63,14 +80,14 @@ const Activities = () => {
               index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
             } w-full justify-between items-center sm:items-start gap-6`}
           >
-            <div className="relative p-4 rounded-lg shadow-lg w-full sm:w-[60%] overflow-hidden h-[350px] max-w-lg">
+            <div className="relative p-4 rounded-lg shadow-lg w-full sm:w-[50%] overflow-hidden h-[400px] max-w-none">
               <div className="absolute top-4 left-4 w-[80%] h-[80%] overflow-hidden group">
                 <div
                   className="w-full h-full relative"
                   style={{
                     position: 'relative',
-                    paddingLeft: '10px',
-                    paddingTop: '2px',
+                    paddingLeft: '20px',
+                    paddingTop: '8px',
                   }}
                 >
                   <div
@@ -96,7 +113,7 @@ const Activities = () => {
                     }}
                   >
                     <img
-                      src={activity.url}
+                      src={activity.url1}
                       alt={activity.title}
                       className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
                     />
@@ -105,7 +122,7 @@ const Activities = () => {
 
                 <div className="absolute inset-0 flex justify-center items-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <a
-                    href="https://www.instagram.com/eesa_iiti/"
+                    href={activity.url2}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-full font-semibold hover:bg-black transition-colors duration-300"
