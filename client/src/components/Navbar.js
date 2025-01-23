@@ -4,7 +4,7 @@ import { useAuthStore } from '../store/authStore';
 import { CgProfile } from 'react-icons/cg';
 
 const Navbar = () => {
-  const { isAuthenticated } = useAuthStore();
+  const { isAuthenticated , user} = useAuthStore();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -89,9 +89,11 @@ const Navbar = () => {
               Gallery
             </Link>
             {isAuthenticated ? (
-              <Link to="/profilepage" className="h-10 w-10">
-                <CgProfile className="h-full w-full" />
-              </Link>
+              user && (
+                <Link to={`/profile/${user._id}`} className="h-10 w-10">
+                  <CgProfile className="h-full w-full" />
+                </Link>
+              )
             ) : (
               <Link to="/login" >
               <button className="p-3 text-white bg-purple-600 rounded-md transition-all duration-300 transform hover:bg-purple-700 hover:scale-105 hover:shadow-lg">

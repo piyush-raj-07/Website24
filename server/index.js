@@ -94,6 +94,54 @@ app.get('/GetAllUsers', async (req, res) => {
 
 })
 
+//Getuserdata BY Id
+
+app.get('/user/:id' , async(req,res)=>{
+    try {
+        const userId = req.params.id; // Get ID from the URL parameter
+        const userdetail = await UserModel.findById(userId); // Use findById for a single document
+        
+        if (!userdetail) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+
+        res.send(userdetail);
+    } catch (error) {
+        console.error('Error getting user:', error);
+        res.status(500).send({ message: 'Internal server error' });
+    }
+})
+
+//update user details
+app.put('/user/:id', async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const { username, degree, batch, intro, imageUrl, is_Proj} = req.body;
+
+        // Find user and update
+        const updatedUser = await UserModel.findByIdAndUpdate(
+            userId,
+            {
+                Name: username,
+                Degree: degree,
+                Grad_Year: batch,
+                About: intro,
+                Img_URL: imageUrl || null,
+                is_Proj: is_Proj || false,
+            },
+            { new: true } 
+        );
+
+        if (!updatedUser) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+
+        res.send(updatedUser);
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).send({ message: 'Internal server error' });
+    }
+});
 
 
 
@@ -267,3 +315,5 @@ app.get('/GetQuestion', async (req, res) => {
 app.listen(PORT, () => {
     console.log("SERVER STARTED ");
 });
+
+
