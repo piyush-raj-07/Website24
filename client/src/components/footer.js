@@ -18,8 +18,8 @@ document.head.appendChild(styleSheet);
 export const Footer = () => {
     const Year = new Date().getFullYear();
     return (
-        <footer className="relative bg-black text-white">
-            <div className="absolute top-0 left-0 w-[100%] overflow-hidden">
+        <footer className="relative bg-black text-white pt-16 pb-16">
+            <div className="absolute top-0 left-0 w-full overflow-hidden">
                 <svg data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1200 120"
@@ -30,15 +30,10 @@ export const Footer = () => {
                         3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                         className="relative block h-[600px] fill-gray-800"></path>
                 </svg>
-                <div className="grid lg:grid-cols-4 gap-20 sm:grid-cols-1 p-20">
-                    <div className="flex flex-col gap-5">
-                        <h2 className="text-3xl text-purple-400">Footer</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, deleniti dolores
-                            vel ipsa reiciendis corporis similique dolor earum aut itaque.
-                        </p>
-                    </div>
-                    <div>
+                {/* Content container with relative positioning */}
+                <div className="relative z-10 grid lg:grid-cols-3 gap-10 sm:grid-cols-1 px-6 md:px-20 max-w-screen-xl mx-auto justify-items-center mb-10">
+                    {/* First Column */}
+                    <div className="text-center">
                         <li className="text-[22px] list-none font-semibold text-purple-400 py-2 uppercase">
                             Creativity
                         </li>
@@ -46,36 +41,28 @@ export const Footer = () => {
                         <li className="my-4 list-none">Tips & Tricks</li>
                         <li className="my-4 list-none">Photography</li>
                     </div>
-                    <div>
+
+                    {/* Second Column */}
+                    <div className="text-center">
                         <li className="text-[22px] list-none font-semibold text-purple-400 py-2 uppercase">
-                            Creativity
+                            Inspiration
                         </li>
                         <li className="my-4 list-none">Guidelines & Ideas</li>
                         <li className="my-4 list-none">Tips & Tricks</li>
                         <li className="my-4 list-none">Photography</li>
                     </div>
-                    <div className="mb-4 md:mb-0">
+
+                    {/* Third Column */}
+                    <div className="text-center">
                         <h2 className="text-[22px] font-semibold text-purple-400 py-2 uppercase">Contact</h2>
                         <p className="text-[16px] my-4">Email: youremail@gmail.com</p>
                         <p className="text-[16px] my-4">Phone: +1 113-456-7890</p>
-                        <div className="flex space-x-4">
+                        <div className="flex justify-center space-x-4">
                             <a className="text-white hover:text-purple-500 transform hover:scale-150 transition-all duration-150 ease-in-out" href=""><FaGithub /></a>
                             <a className="text-white hover:text-purple-500 transform hover:scale-150 transition-all duration-150 ease-in-out" href=""><FaLinkedinIn /></a>
                             <a className="text-white hover:text-purple-500 transform hover:scale-150 transition-all duration-150 ease-in-out" href=""><FaTwitter /></a>
                             <a className="text-white hover:text-purple-500 transform hover:scale-150 transition-all duration-150 ease-in-out" href=""><FaInstagram /></a>
                         </div>
-                    </div>
-                </div>
-                <div className="mt-20">
-                    <div className="h-full flex items-center justify-center mb-5">
-                        <form className="w-96 relative">
-                            <input type="email" placeholder=""
-                                className="w-full text-gray-800 p-4 h-10 rounded-full focus:outline-none focus:border border-pink-800" />
-                            <button type="Submit"
-                                className="bg-purple-400 px-8 py-2 rounded-full text-white absolute top-0 right-0">
-                                Submit
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
