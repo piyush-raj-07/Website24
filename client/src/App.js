@@ -55,13 +55,8 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />
-<<<<<<< HEAD
           <Route path="/Blogs/:id" element={<BlogDetails />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
-=======
-          <Route path='/Blogs/:cat' element={<BlogDetails />} />
-          <Route path="/ProfilePage" element={<ProfilePage />} />
->>>>>>> b70970d2c133e618b6127a007d016dc0a980a532
           <Route path='/admin' element={<AdminPanel />} />
           <Route path='/writeBlog' element={<WriteBlog />} />
           <Route path='/myblog' element={<MyBlog />} />
