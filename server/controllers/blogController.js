@@ -62,7 +62,7 @@ const deleteBlog = async (req, res) => {
 
 const getAllBlogs = async (req, res) => {
     try {
-        const blogs = await Blog.find({approval:"Verified"}).sort({ date: -1 });
+        const blogs = await Blog.find({approval:"Approved"}).sort({ date: -1 });
         res.status(200).json(blogs);
     } catch (err) {
         console.error(err);
@@ -71,7 +71,7 @@ const getAllBlogs = async (req, res) => {
 }
 
 const getAllBlogsByCategory = async (req, res) => {
-    
+    // const { cat } = req.params.cat;
     try {
         const blogs = await Blog.find({ cat: req.params.cat ,approval:"Approved"}).sort({ date: -1 });
         res.status(200).json(blogs);

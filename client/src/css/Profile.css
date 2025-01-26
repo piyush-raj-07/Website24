@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%; /* Ensure full height for the page */
+  margin: 0;    /* Remove default margins */
+  padding: 0;   /* Remove default padding */
+}
+
+body {
+  display: flex;       /* Ensure body grows with its children */
+  flex-direction: column;
+}
+
+#root {
+  flex-grow: 1;        /* Ensure the root div spans full height */
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,6 +32,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 .scrollbar-hidden::-webkit-scrollbar {
     display: none;
@@ -63,5 +81,3 @@ code {
   .badge-container:hover .badge-overlay {
     opacity: 1;
   }
-  
-  
