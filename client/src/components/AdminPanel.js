@@ -12,6 +12,9 @@ const AdminPanel = () => {
     description: ''
   });
   const [formMessage, setFormMessage] = useState('');
+  const [showRejectModal, setShowRejectModal] = useState(false);
+  const [rejectionComment, setRejectionComment] = useState('');
+  const [blogToReject, setBlogToReject] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -85,27 +88,36 @@ const AdminPanel = () => {
     }
   };
 
-  const handleReject = async (blogId) => {
+  const handleReject = async () => {
+    if (!rejectionComment) {
+      setFormMessage('Please provide a comment for rejection.');
+      return;
+    }
+  
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/blog/reject/${blogId}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/blog/reject/${blogToReject}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({ comment: rejectionComment }),
         credentials: 'include',
       });
-
+  
       if (response.ok) {
-        setBlogs((prevBlogs) =>
-          prevBlogs.map((blog) =>
-            blog._id === blogId ? { ...blog, approval: 'Rejected' } : blog
-          )
-        );
+        // Immediately remove the rejected blog from the state
+        setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== blogToReject));
+        setShowRejectModal(false);
+        setRejectionComment('');
+      } else {
+        setFormMessage('Error rejecting the blog. Please try again.');
       }
     } catch (err) {
       console.error("Error rejecting blog:", err);
+      setFormMessage('Error rejecting the blog. Please try again.');
     }
   };
+  
 
   const handleActivitySubmit = async (e) => {
     e.preventDefault();
@@ -188,7 +200,10 @@ const AdminPanel = () => {
                     </button>
                     <button
                       className="bg-red-500 text-white p-2 rounded-full"
-                      onClick={() => handleReject(blog._id)}
+                      onClick={() => {
+                        setBlogToReject(blog._id);
+                        setShowRejectModal(true);
+                      }}
                     >
                       <FaTimes />
                     </button>
@@ -262,6 +277,36 @@ const AdminPanel = () => {
               <FaPlus /> Add Activity
             </button>
           </form>
+        </div>
+      )}
+
+      {/* Reject Modal */}
+      {showRejectModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg w-96">
+            <h2 className="text-xl font-semibold mb-4">Why are you rejecting this blog?</h2>
+            <textarea
+              value={rejectionComment}
+              onChange={(e) => setRejectionComment(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              rows="4"
+              placeholder="Write your comment here"
+            />
+            <div className="mt-4 flex justify-end gap-4">
+              <button
+                onClick={handleReject}
+                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg"
+              >
+                Reject
+              </button>
+              <button
+                onClick={() => setShowRejectModal(false)}
+                className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-black rounded-lg"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

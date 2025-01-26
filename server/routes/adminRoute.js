@@ -31,16 +31,28 @@ router.put('/blog/approve/:id',verifyToken,isAdmin,async(req,res)=>{
     }
 })
 
-router.put('/blog/reject/:id',verifyToken,isAdmin,async(req,res)=>{
-    try{
-        const blogId=req.params.id;
-        const blog=await Blog.findByIdAndUpdate(blogId,{status:"Verified",approval:"Denied"});
-        blog.save();
-        res.status(200).json({message:"Success"});
-    }
-    catch(err){
+router.put('/blog/reject/:id', verifyToken, isAdmin, async (req, res) => {
+    try {
+        const blogId = req.params.id;
+        const { comment } = req.body;
+
+        const blog = await Blog.findById(blogId);
+        
+        if (!blog) {
+            return res.status(404).json({ message: 'Blog not found' });
+        }
+
+        blog.status = "Verified";
+        blog.approval = "Denied";
+        blog.comment = comment;
+
+        await blog.save();
+
+        res.status(200).json({ message: "Success", rejectionComment: comment });
+    } catch (err) {
+        console.error(err);
         res.status(500).send('Server Error');
     }
-})
+});
 
 module.exports=router;

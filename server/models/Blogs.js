@@ -34,7 +34,11 @@ const BlogsSchema = new mongoose.Schema({
         enum: ["Pending", "Approved", "Denied"],
         default: "Pending",
         required: true
-    }
+    },
+    comment: [{
+        type: String,
+        default: null,
+    }]
 });
 
 const Blog = mongoose.model('Blog', BlogsSchema);
