@@ -25,6 +25,7 @@ import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
 
 import Gallery from "./components/Gallery";
+import Intern from "./components/blogs/intern_blogs";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -59,6 +60,8 @@ function App() {
           <Route path='/myblog' element={<MyBlog />} />
           <Route path='/edit/:id' element={<EditBlog />} />
           <Route path="/Gallery" element={<Gallery />} />
+
+          <Route path="/Blogs/Intern" element={<Intern />} />
 
 
 
