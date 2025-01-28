@@ -5,6 +5,7 @@ import Loader from "./status_pages/Loader.js";
 import Carousel from "./Carousel.js";
 import { Footer } from './footer.js';
 import AboutUs from "./Aboutus.js";
+import ProjectTable from "./Project.js";
 
 const Home = () =>{
 const [isLoading , setload] = useState(false);

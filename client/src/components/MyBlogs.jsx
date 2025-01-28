@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function MyBlog() {
-    const navigate=useNavigate();
+  const navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
@@ -19,7 +19,7 @@ function MyBlog() {
 
         if (response.ok) {
           const data = await response.json();
-          setBlogs(data);
+          setBlogs(data); 
         } else {
           setMessage('Failed to fetch blogs');
         }
@@ -34,7 +34,7 @@ function MyBlog() {
   }, [blogs]);
 
   const handleEdit = (blogId) => {
-        navigate(`/edit/${blogId}`);
+    navigate(`/edit/${blogId}`);
   };
 
   const handleDeleteClick = (blogId) => {
@@ -50,7 +50,7 @@ function MyBlog() {
           credentials: 'include',
         });
 
-        const data=await response.json();
+        const data = await response.json();
         console.log(data);
         setIsModalOpen(false);
       } catch (error) {
@@ -110,6 +110,21 @@ function MyBlog() {
                   >
                     Delete
                   </button>
+                </div>
+
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-gray-800">Comments</h3>
+                  {blog.comment && blog.comment.length > 0 ? (
+                    <div className="mt-2 space-y-2">
+                      {blog.comment.map((comment, index) => (
+                        <div key={index} className="bg-gray-100 p-2 rounded-md">
+                          <p className="text-gray-700">{comment}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">No comments yet.</p>
+                  )}
                 </div>
               </div>
             ))

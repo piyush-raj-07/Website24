@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Loader from './components/status_pages/Loader'
 import NotFound from "./components/status_pages/NotFound";
 
+
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import EmailVerificationPage from "./components/EmailVerificationPage";
@@ -23,9 +24,10 @@ import AdminPanel from "./components/AdminPanel";
 import WriteBlog from "./components/WriteBlog";
 import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
-
+import ProjectTable from "./components/Project.js";
 import Gallery from "./components/Gallery";
-import Intern from "./components/blogs/intern_blogs";
+import QuizPage from "./components/quiz/QuizPage";
+import People from "./components/People";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -49,19 +51,20 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-           <Route path="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />
           <Route path="/Blogs/:id" element={<BlogDetails />} />
-          <Route path="/ProfilePage" element={<ProfilePage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path='/admin' element={<AdminPanel />} />
           <Route path='/writeBlog' element={<WriteBlog />} />
           <Route path='/myblog' element={<MyBlog />} />
           <Route path='/edit/:id' element={<EditBlog />} />
           <Route path="/Gallery" element={<Gallery />} />
-
-          <Route path="/Blogs/Intern" element={<Intern />} />
+          <Route path="/Projects" element={<ProjectTable />} />
+          <Route path="/quiz" element={<QuizPage />} />
+         <Route path ="/People" element={<People/>} />
 
 
 

@@ -8,16 +8,20 @@ const AdminPanel = () => {
   const [editingActivity, setEditingActivity] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [editValues, setEditValues] = useState({ title: '', description: '', url: '' });
+  const [editValues, setEditValues] = useState({ title: '', description: '', url1: '', url2: '' });
   const [admin, setAdmin] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [activeTab, setActiveTab] = useState('blogs');
   const [activityForm, setActivityForm] = useState({
-    url: '',
+    url1: '',
+    url2: '',
     title: '',
     description: '',
   });
   const [formMessage, setFormMessage] = useState('');
+  const [showRejectModal, setShowRejectModal] = useState(false);
+  const [rejectionComment, setRejectionComment] = useState('');
+  const [blogToReject, setBlogToReject] = useState(null);
   const navigate = useNavigate();
 
   // Fetch Admin Status
@@ -96,13 +100,14 @@ const AdminPanel = () => {
     setEditValues({
       title: activity.title,
       description: activity.description,
-      url: activity.url,
+      url1: activity.url1,
+      url2: activity.url2,
     });
   };
 
   const handleCancelEdit = () => {
     setEditingActivity(null);
-    setEditValues({ title: '', description: '', url: '' });
+    setEditValues({ title: '', description: '', url1: '', url2: '' });
   };
 
   const handleSaveEdit = async () => {
@@ -144,22 +149,32 @@ const AdminPanel = () => {
     }
   };
 
-  const handleReject = async (blogId) => {
+  const handleReject = async () => {
+    if (!rejectionComment) {
+      setFormMessage('Please provide a comment for rejection.');
+      return;
+    }
+  
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/blog/reject/${blogId}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/blog/reject/${blogToReject}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ comment: rejectionComment }),
+        
         credentials: 'include',
       });
-
+  
       if (response.ok) {
-        setBlogs((prevBlogs) =>
-          prevBlogs.map((blog) =>
-            blog._id === blogId ? { ...blog, approval: 'Rejected' } : blog
-          )
-        );
+        // Immediately remove the rejected blog from the state
+        setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== blogToReject));
+        setShowRejectModal(false);
+        setRejectionComment('');
+      } else {
+        setFormMessage('Error rejecting the blog. Please try again.');
       }
     } catch (err) {
+      console.error("Error rejecting blog:", err);
+      setFormMessage('Error rejecting the blog. Please try again.');
       console.error('Error rejecting blog:', err);
     }
   };
@@ -182,6 +197,7 @@ const AdminPanel = () => {
       }
     }
   };
+  
 
   const handleActivitySubmit = async (e) => {
     e.preventDefault();
@@ -194,7 +210,7 @@ const AdminPanel = () => {
 
       if (response.ok) {
         setFormMessage('Activity added successfully!');
-        setActivityForm({ url: '', title: '', description: '' });
+        setActivityForm({ url1: '', url2: '', title: '', description: '' });
       } else {
         setFormMessage('Error adding activity. Please try again.');
       }
@@ -274,7 +290,10 @@ const AdminPanel = () => {
                     </button>
                     <button
                       className="bg-red-500 text-white p-2 rounded-full"
-                      onClick={() => handleReject(blog._id)}
+                      onClick={() => {
+                        setBlogToReject(blog._id);
+                        setShowRejectModal(true);
+                      }}
                     >
                       <FaTimes />
                     </button>
@@ -306,7 +325,21 @@ const AdminPanel = () => {
               <input
                 type="text"
                 name="url"
-                value={activityForm.url}
+                value={activityForm.url1}
+                onChange={handleActivityFormChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Insta URL
+              </label>
+              <input
+                type="text"
+                name="url"
+                value={activityForm.url2}
                 onChange={handleActivityFormChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                 required
@@ -360,6 +393,22 @@ const AdminPanel = () => {
                 <div className="flex flex-col w-full sm:w-[60%] gap-4">
                   <input
                     type="text"
+                    name="url1"
+                    value={editValues.url1}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                    placeholder="Image URL"
+                  />
+                  <input
+                    type="text"
+                    name="url2"
+                    value={editValues.url2}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                    placeholder="Insta URL"
+                  />
+                  <input
+                    type="text"
                     name="title"
                     value={editValues.title}
                     onChange={handleInputChange}
@@ -374,14 +423,7 @@ const AdminPanel = () => {
                     placeholder="Description"
                     rows="3"
                   />
-                  <input
-                    type="text"
-                    name="url"
-                    value={editValues.url}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
-                    placeholder="Image URL"
-                  />
+                  
                   <div className="flex gap-4">
                     <button
                       onClick={handleSaveEdit}
@@ -402,7 +444,7 @@ const AdminPanel = () => {
                   <h3 className="text-xl sm:text-2xl font-bold mb-2">{activity.title}</h3>
                   <p className="text-sm leading-relaxed mb-4">{activity.description}</p>
                   <img
-                    src={activity.url}
+                    src={activity.url1}
                     alt={activity.title}
                     className="w-full h-60 object-cover rounded-lg"
                   />
@@ -423,6 +465,36 @@ const AdminPanel = () => {
             </div>
           ))}
         </div>
+        </div>
+      )}
+
+      {/* Reject Modal */}
+      {showRejectModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg w-96">
+            <h2 className="text-xl font-semibold mb-4">Why are you rejecting this blog?</h2>
+            <textarea
+              value={rejectionComment}
+              onChange={(e) => setRejectionComment(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              rows="4"
+              placeholder="Write your comment here"
+            />
+            <div className="mt-4 flex justify-end gap-4">
+              <button
+                onClick={handleReject}
+                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg"
+              >
+                Reject
+              </button>
+              <button
+                onClick={() => setShowRejectModal(false)}
+                className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-black rounded-lg"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

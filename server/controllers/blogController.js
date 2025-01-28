@@ -71,13 +71,9 @@ const getAllBlogs = async (req, res) => {
 }
 
 const getAllBlogsByCategory = async (req, res) => {
-    const catg = req.params.cat;
- 
-  
+    // const { cat } = req.params.cat;
     try {
-      
-        const blogs = await Blog.find({ cat: catg ,approval:"Approved"}).sort({ date: -1 });
-       
+        const blogs = await Blog.find({ cat: req.params.cat ,approval:"Approved"}).sort({ date: -1 });
         res.status(200).json(blogs);
       
        
