@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Fuse from "fuse.js";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, User, Calendar, BookOpen } from "lucide-react";
+import Loader from "./status_pages/Loader";
 
 export default function People() {
   const [userdata, setUserdata] = useState([]);
@@ -29,12 +31,42 @@ export default function People() {
     fetchUserdata();
   }, []);
 
-  const filteredData = userdata.filter(
-    (item) =>
-      (item.Name?.toLowerCase() || "").includes(nameFilter.toLowerCase()) &&
-      (item.Grad_Year?.toString() || "").includes(yearFilter)
-  );
+  const fuse = new Fuse(userdata, {
+    keys: ["Name"], 
+    threshold: 0.3,  
+    findAllMatches: true,
+  });
+
+  let filteredData = userdata;
   
+  if (nameFilter) {
+    const result = fuse.search(nameFilter);
+    filteredData = result.map((r) => r.item);
+  }
+
+  if (yearFilter) {
+    filteredData = filteredData.filter((item) =>
+      (item.Grad_Year?.toString() || "").includes(yearFilter)
+    );
+  }
+
+  
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-red-600 text-xl">{error}</div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col dark">
       <div className="flex-grow flex flex-col bg-gradient-to-br from-purple-900 to-black text-purple-100">
