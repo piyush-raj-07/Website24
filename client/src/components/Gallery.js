@@ -8,13 +8,16 @@ const Gallery = () => {
     const [Images,setImages] = useState([]);
     const [isLoading,setLoad] = useState(false);
     const fetchImages = async () =>{
+      setLoad(true)
            try {
+           
             const res = await axios.get('http://localhost:5000/GetGallery');
             setImages(res.data);
             
            } catch (error) {
             console.log(error);
            }
+           setLoad(false)
            
     }
 
