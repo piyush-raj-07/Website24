@@ -1,33 +1,71 @@
-import React, { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { GraduationCap, User, Calendar, BookOpen } from "lucide-react"
-
-const initialData = [
-  { id: 1, name: "John Doe", year: 2020, degree: "Computer Science" },
-  { id: 2, name: "Jane Smith", year: 2021, degree: "Electrical Engineering" },
-  { id: 3, name: "Bob Johnson", year: 2019, degree: "Mechanical Engineering" },
-  { id: 4, name: "Alice Brown", year: 2022, degree: "Physics" },
-  { id: 5, name: "Charlie Davis", year: 2020, degree: "Mathematics" },
-  { id: 6, name: "Eva Wilson", year: 2021, degree: "Chemistry" },
-  { id: 7, name: "Frank Miller", year: 2019, degree: "Biology" },
-  { id: 8, name: "Grace Lee", year: 2022, degree: "Psychology" },
-  { id: 9, name: "Henry Taylor", year: 2020, degree: "Economics" },
-  { id: 10, name: "Ivy Chen", year: 2021, degree: "Sociology" },
-]
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Fuse from "fuse.js";
+import { motion, AnimatePresence } from "framer-motion";
+import { GraduationCap, User, Calendar, BookOpen } from "lucide-react";
+import Loader from "./status_pages/Loader";
 
 export default function People() {
-  const [nameFilter, setNameFilter] = useState("")
-  const [yearFilter, setYearFilter] = useState("")
-  const [filteredData, setFilteredData] = useState(initialData)
+  const [userdata, setUserdata] = useState([]);
+  const [nameFilter, setNameFilter] = useState("");
+  const [yearFilter, setYearFilter] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchUserdata = async () => {
+    try {
+      setLoading(true);
+      console.log("Fetching Userdata...");
+      const res = await axios.get("http://localhost:5000/GetAllUsers");
+      console.log("Response:", res.data);
+      setUserdata(res.data);
+    } catch (error) {
+      console.error("Error fetching Userdata:", error);
+      setError("Error fetching user data.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    setFilteredData(
-      initialData.filter(
-        (item) =>
-          item.name.toLowerCase().includes(nameFilter.toLowerCase()) && item.year.toString().includes(yearFilter),
-      ),
-    )
-  }, [nameFilter, yearFilter])
+    fetchUserdata();
+  }, []);
+
+  const fuse = new Fuse(userdata, {
+    keys: ["Name"], 
+    threshold: 0.3,  
+    findAllMatches: true,
+  });
+
+  let filteredData = userdata;
+  
+  if (nameFilter) {
+    const result = fuse.search(nameFilter);
+    filteredData = result.map((r) => r.item);
+  }
+
+  if (yearFilter) {
+    filteredData = filteredData.filter((item) =>
+      (item.Grad_Year?.toString() || "").includes(yearFilter)
+    );
+  }
+
+  
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-red-600 text-xl">{error}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col dark">
@@ -63,50 +101,56 @@ export default function People() {
               <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={18} />
             </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="flex-grow bg-purple-950 rounded-lg sm:rounded-xl overflow-hidden shadow-xl max-w-7xl w-full mx-auto"
-          >
-            <div className="overflow-x-auto h-full">
-              <table className="w-full h-full">
-                <thead className="bg-purple-900 sticky top-0">
-                  <tr>
-                    <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">S.No</th>
-                    <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">Name</th>
-                    <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">Year</th>
-                    <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">Degree</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <AnimatePresence>
-                    {filteredData.map((item, index) => (
-                      <motion.tr
-                        key={item.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className={index % 2 === 0 ? "bg-purple-900/50" : "bg-purple-950"}
-                      >
-                        <td className="p-4 sm:p-5 font-medium text-purple-300">{item.id}</td>
-                        <td className="p-4 sm:p-5 text-purple-100">{item.name}</td>
-                        <td className="p-4 sm:p-5 text-purple-300">{item.year}</td>
-                        <td className="p-4 sm:p-5 text-purple-300 flex items-center">
-                          <BookOpen className="mr-2 text-gray-400 flex-shrink-0" size={16} />
-                          <span className="truncate">{item.degree}</span>
-                        </td>
-                      </motion.tr>
-                    ))}
-                  </AnimatePresence>
-                </tbody>
-              </table>
-            </div>
-          </motion.div>
+
+          {loading ? (
+            <p className="text-center text-purple-300">Loading...</p>
+          ) : error ? (
+            <p className="text-center text-red-500">{error}</p>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex-grow bg-purple-950 rounded-lg sm:rounded-xl overflow-hidden shadow-xl max-w-7xl w-full mx-auto"
+            >
+              <div className="overflow-x-auto h-full">
+                <table className="w-full h-full">
+                  <thead className="bg-purple-900 sticky top-0">
+                    <tr>
+                      <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">S.No</th>
+                      <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">Name</th>
+                      <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">Year</th>
+                      <th className="text-purple-300 font-bold p-3 sm:p-4 text-left">Degree</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <AnimatePresence>
+                      {filteredData.map((item, index) => (
+                        <motion.tr
+                          key={item.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -20 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
+                          className={index % 2 === 0 ? "bg-purple-900/50" : "bg-purple-950"}
+                        >
+                          <td className="p-4 sm:p-5 font-medium text-purple-300">{index + 1}</td>
+                          <td className="p-4 sm:p-5 text-purple-100">{item.Name}</td>
+                          <td className="p-4 sm:p-5 text-purple-300">{item.Grad_Year}</td>
+                          <td className="p-4 sm:p-5 text-purple-300 flex items-center">
+                            <BookOpen className="mr-2 text-gray-400 flex-shrink-0" size={16} />
+                            <span className="truncate">{item.Degree}</span>
+                          </td>
+                        </motion.tr>
+                      ))}
+                    </AnimatePresence>
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          )}
         </main>
       </div>
     </div>
-  )
+  );
 }
-
