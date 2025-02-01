@@ -28,6 +28,7 @@ import ProjectTable from "./components/Project.js";
 import Gallery from "./components/Gallery";
 import QuizPage from "./components/quiz/QuizPage";
 import People from "./components/People";
+import Intern from "./components/blogs/intern_blogs.js";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -66,7 +67,7 @@ function App() {
           <Route path="/quiz" element={<QuizPage />} />
          <Route path ="/People" element={<People/>} />
 
-
+         <Route path="/Blogs/Intern" element={<Intern />} />
 
           <Route path="/signup" element={
             <RedirectAuthenticatedUser>
