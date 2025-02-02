@@ -7,6 +7,7 @@ const authRoutes = require('./routes/authRoute');
 const blogRoutes = require('./routes/blogRoutes');
 const adminRoutes = require('./routes/adminRoute');
 const quizRoutes = require('./routes/quizRoute');
+const userRoutes = require('./routes/userRoute');
 const app = express();
 
 app.use(express.json());
@@ -37,6 +38,7 @@ app.use("/api/auth", authRoutes);
 app.use('/blog', blogRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/quiz', quizRoutes);
+app.use('/api/user', userRoutes);
 
 
 // storing user info
@@ -93,58 +95,6 @@ app.get('/GetAllUsers', async (req, res) => {
 
 
 })
-
-//Getuserdata BY Id
-
-app.get('/user/:id' , async(req,res)=>{
-    try {
-        const userId = req.params.id; // Get ID from the URL parameter
-        const userdetail = await UserModel.findById(userId); // Use findById for a single document
-        
-        if (!userdetail) {
-            return res.status(404).send({ message: 'User not found' });
-        }
-
-        res.send(userdetail);
-    } catch (error) {
-        console.error('Error getting user:', error);
-        res.status(500).send({ message: 'Internal server error' });
-    }
-})
-
-//update user details
-app.put('/user/:id', async (req, res) => {
-    try {
-        const userId = req.params.id;
-        const { username, degree, batch, intro, imageUrl, is_Proj} = req.body;
-
-        // Find user and update
-        const updatedUser = await UserModel.findByIdAndUpdate(
-            userId,
-            {
-                Name: username,
-                Degree: degree,
-                Grad_Year: batch,
-                About: intro,
-                Img_URL: imageUrl || null,
-                is_Proj: is_Proj || false,
-            },
-            { new: true } 
-        );
-
-        if (!updatedUser) {
-            return res.status(404).send({ message: 'User not found' });
-        }
-
-        res.send(updatedUser);
-    } catch (error) {
-        console.error('Error updating user:', error);
-        res.status(500).send({ message: 'Internal server error' });
-    }
-});
-
-
-
 
 //News Data
 app.post('/NewsData', async (req, res) => {

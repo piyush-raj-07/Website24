@@ -40,7 +40,7 @@ const signup = async (req, res) => {
             password: hashedPassword,
             Name,
             verificationToken,
-            verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000,   // 24 hours
+            verificationTokenExpiresAt: Date.now() + 1 * 60 * 60 * 1000,   // 1 hour
             Degree,
             Grad_Year
         });
@@ -212,7 +212,7 @@ const checkAuth = async (req, res) => {
 const resendVerificationEmail = async (req, res) => {
     const { UserEmail } = req.body;
     const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
-    const verificationTokenExpiresAt = Date.now() + 24 * 60 * 60 * 1000;
+    const verificationTokenExpiresAt = Date.now() + 1 * 60 * 60 * 1000;
 
     try {
         const user = await UserModel.findOne({ UserEmail });

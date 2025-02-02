@@ -8,7 +8,7 @@ import blogBg3 from "./ProfileImg/blog_bg3.jpg"
 import blogBg4 from "./ProfileImg/blog_bg4.jpg"
 import blogBg5 from "./ProfileImg/blog_bg5.jpg"
 import profileCSS from "../css/Profile.css"
-
+import axios from 'axios';
 
 export default function ProfilePage() {
     const { id } = useParams();
@@ -59,41 +59,32 @@ export default function ProfilePage() {
         }
     };
 
-    
+
     const handleSaveChanges = async () => {
         console.log({ tempUsername, tempDegree, tempBatch, tempIntro, tempImage });
         try {
-            const response = await fetch(`http://localhost:5000/user/${id}`, {
-                method: 'PUT',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: tempUsername,
-                    degree: tempDegree,
-                    batch: tempBatch,
-                    intro: tempIntro,
-                    imageUrl: tempImage,
-                }),
+            const response = await axios.put(`http://localhost:5000/api/user/`, {
+                username: tempUsername,
+                degree: tempDegree,
+                batch: tempBatch,
+                intro: tempIntro,
+                imageUrl: tempImage,
+            }, {
+                withCredentials: true
             });
 
-            if (response.ok) {
-                const data = await response.json();
+            const data = response.data;
 
-                // Update Main State
-                setUsername(data.Name);
-                setDegree(data.Degree);
-                setBatch(data.Grad_Year);
-                setIntro(data.About);
-                setImage(data.Img_URL);
+            // Update Main State
+            setUsername(data.Name);
+            setDegree(data.Degree);
+            setBatch(data.Grad_Year);
+            setIntro(data.About);
+            setImage(data.Img_URL);
 
-                setShowModal(false);
-                console.log('Profile updated successfully');
-                //alert('Profile updated successfully');
-            } else {
-                // alert('Failed to update profile');
-            }
+            setShowModal(false);
+            console.log('Profile updated successfully');
+            //alert('Profile updated successfully');
         } catch (err) {
             console.error('Error updating profile:', err);
             //alert('Error updating profile');
@@ -102,31 +93,23 @@ export default function ProfilePage() {
 
 
     useEffect(() => {
-        
 
-        
+
+
         const fetchUserInfo = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/user/${id}`, {
-                    method: 'GET',
-                    credentials: 'include', 
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                const response = await axios.get(`http://localhost:5000/api/user/`, {
+                    withCredentials: true
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    setUsername(data.Name || "Username"); 
-                    setIntro(data.About || "Add your introduction here."); 
-                    setDegree(data.Degree || "B.Tech"); 
-                    setBatch(data.Grad_Year || "2026"); 
-                    setImage(data.Img_URL || profilePic); 
-                    setBlogIds(data.Blogs.map(blog => blog.B_Id));
-                    console.log(data);
-                } else {
-                    console.error('Failed to fetch user info');
-                }
+                const data = response.data;
+                setUsername(data.Name || "Username");
+                setIntro(data.About || "Add your introduction here.");
+                setDegree(data.Degree || "B.Tech");
+                setBatch(data.Grad_Year || "2026");
+                setImage(data.Img_URL || profilePic);
+                setBlogIds(data.Blogs.map(blog => blog.B_Id));
+                console.log(data);
             } catch (err) {
                 console.error('Error fetching user info:', err);
             }
@@ -175,9 +158,9 @@ export default function ProfilePage() {
             const reader = new FileReader();
             reader.onloadend = () => {
                 const imageDataUrl = reader.result;
-                setImage(imageDataUrl); 
+                setImage(imageDataUrl);
             };
-            reader.readAsDataURL(file); 
+            reader.readAsDataURL(file);
         }
     };
 
