@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios"; // Import axios
 
 const Admin_Gallery = () => {
   const [title, setTitle] = useState("");
@@ -19,13 +20,10 @@ const Admin_Gallery = () => {
 
     setIsUploading(true); 
 
-    fetch("http://localhost:5000/UploadImage", {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Upload successful:", data);
+    axios
+      .post("http://localhost:5000/UploadImage", formData)
+      .then((response) => {
+        console.log("Upload successful:", response.data);
         alert("Image uploaded successfully!");
       })
       .catch((err) => {

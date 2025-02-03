@@ -8,6 +8,11 @@ const blogRoutes = require('./routes/blogRoutes');
 const adminRoutes = require('./routes/adminRoute');
 const quizRoutes = require('./routes/quizRoute');
 const userRoutes = require('./routes/userRoute');
+const cloudinary = require('cloudinary').v2;
+
+
+const multer = require('multer');
+const fs = require('fs');
 const app = express();
 
 app.use(express.json());
@@ -19,7 +24,10 @@ const UserModel = require('./models/Users');
 const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
 
+//paste cloudianry Config file here  , foe reference see line no: 150 
 
+
+  
 const PORT = 5000;
 
 require('dotenv').config();
@@ -134,23 +142,26 @@ app.get('/GetGallery', async (req, res) => {
 })
 
 // Save Image in gallery
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: ' Gallery/' });
 
 app.post('/UploadImage', upload.single('Image'), async (req, res) => {
+
+
     try {
+        
       const { title, subtitle } = req.body;
   
       if (!req.file) {
         return res.status(400).json({ error: 'Image file is required.' });
       }
-  
+      
       const filePath = req.file.path;
-  
+
       // Upload file to Cloudinary
       const result = await cloudinary.uploader.upload(filePath, {
         folder: 'Gallery',
       });
-  
+     
  
       console.log(result.secure_url);
       // Save the image, title, and subtitle in MongoDB
@@ -159,11 +170,9 @@ app.post('/UploadImage', upload.single('Image'), async (req, res) => {
         title:title,
         subtitle:subtitle,
       });
-
+   
       await newImage.save();
-      
-       // Delete file from local uploads folder
-       fs.unlinkSync(filePath);
+
 
       res.json({
         message: 'Image, title, and subtitle uploaded successfully!',
