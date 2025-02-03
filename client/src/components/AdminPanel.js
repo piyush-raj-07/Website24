@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck, FaTimes, FaPlus } from 'react-icons/fa';
 import axios from 'axios';
+import Admin_Gallery from './Gallery/Admin_Gallery';
 
 const AdminPanel = () => {
   const [activities, setActivities] = useState([]);
@@ -264,6 +265,14 @@ const AdminPanel = () => {
         >
           Manage Activities
         </button>
+        <button 
+          onClick={() => setActiveTab('Gallery')}
+          className={`px-4 py-2 rounded-lg ${activeTab === 'Gallery' 
+            ? 'bg-purple-500 text-white' 
+            : 'bg-gray-200 text-gray-700'}`}
+        >
+          Manage Gallery
+        </button>
       </div>
 
       {activeTab === 'blogs' ? (
@@ -305,8 +314,9 @@ const AdminPanel = () => {
             )}
           </div>
         </div>
-      ) : (
-        <div className="bg-white rounded-lg p-6 shadow-lg">
+      ) : (<></>)}
+        
+      {activeTab === 'activities' ? (<div className="bg-white rounded-lg p-6 shadow-lg">
           <h2 className="text-2xl font-semibold mb-4 text-purple-600">Add New Activity</h2>
           
           {formMessage && (
@@ -466,7 +476,7 @@ const AdminPanel = () => {
           ))}
         </div>
         </div>
-      )}
+      ) : (<></>)}
 
       {/* Reject Modal */}
       {showRejectModal && (
@@ -497,7 +507,13 @@ const AdminPanel = () => {
           </div>
         </div>
       )}
+
+{activeTab === 'Gallery' ? (
+  <Admin_Gallery />
+):(<></>)}
     </div>
+
+   
   );
 };
 

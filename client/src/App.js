@@ -25,7 +25,7 @@ import WriteBlog from "./components/WriteBlog";
 import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
 import ProjectTable from "./components/Project.js";
-import Gallery from "./components/Gallery";
+import Gallery from "./components/Gallery/Gallery.js";
 import QuizPage from "./components/quiz/QuizPage";
 import People from "./components/People";
 import Intern from "./components/blogs/intern_blogs.js";

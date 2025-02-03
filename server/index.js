@@ -7,6 +7,8 @@ const authRoutes = require('./routes/authRoute');
 const blogRoutes = require('./routes/blogRoutes');
 const adminRoutes = require('./routes/adminRoute');
 const quizRoutes = require('./routes/quizRoute');
+const cloudinary = require('./Cloudinary');
+const multer = require('multer');
 const app = express();
 
 app.use(express.json());
@@ -183,32 +185,53 @@ app.get('/GetGallery', async (req, res) => {
     }
 })
 
-// Save Image for gallery
-app.post('/SaveGallery', async (req, res) => {
+// Save Image in gallery
+const upload = multer({ dest: 'uploads/' });
 
-    const {
-        url, title, subtitle
-    } = req.body;
-
+app.post('/UploadImage', upload.single('Image'), async (req, res) => {
     try {
-        const newImage = new GalleryModel({
-            url,
-            title,
-            subtitle,
-        });
-        await newImage.save();
-        res.status(201).json("img saved");
-    } catch (error) {
-        console.log(error)
-        res.status(500).json({ error: 'Failed to save image' });
-    }
-})
+      const { title, subtitle } = req.body;
+  
+      if (!req.file) {
+        return res.status(400).json({ error: 'Image file is required.' });
+      }
+  
+      const filePath = req.file.path;
+  
+      // Upload file to Cloudinary
+      const result = await cloudinary.uploader.upload(filePath, {
+        folder: 'Gallery',
+      });
+  
+ 
+      console.log(result.secure_url);
+      // Save the image, title, and subtitle in MongoDB
+      const newImage = new GalleryModel({
+        url: result.secure_url,
+        title:title,
+        subtitle:subtitle,
+      });
 
+      await newImage.save();
+      
+       // Delete file from local uploads folder
+       fs.unlinkSync(filePath);
+
+      res.json({
+        message: 'Image, title, and subtitle uploaded successfully!',
+        imageUrl: result.secure_url,
+      });
+    } catch (error) {
+      res.status(500).json({ error: 'Upload failed', details: error.message });
+    }
+  });
+
+  
 app.get('/GetActivity', async (req, res) => {
     try {
-        console.log('Fetching activities from database...');
+     
         const activities = await ActivitiesModel.find();
-        console.log('Found activities:', activities);
+      
         res.status(200).json(activities);
     } catch (error) {
         console.error('Error fetching activities:', error);
@@ -235,7 +258,7 @@ app.put('/EditActivity/:id', async (req, res) => {
             return res.status(404).json({ error: 'Activity not found' });
         }
 
-        console.log('Activity updated:', updatedActivity);
+   
         res.status(200).json(updatedActivity);
     } catch (error) {
         console.error('Error updating activity:', error);
