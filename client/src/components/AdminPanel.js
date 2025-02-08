@@ -334,7 +334,7 @@ const AdminPanel = () => {
               </label>
               <input
                 type="text"
-                name="url"
+                name="url1"
                 value={activityForm.url1}
                 onChange={handleActivityFormChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -349,7 +349,7 @@ const AdminPanel = () => {
               </label>
               <input
                 type="text"
-                name="url"
+                name="url2"
                 value={activityForm.url2}
                 onChange={handleActivityFormChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
