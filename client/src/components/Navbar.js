@@ -4,10 +4,11 @@ import { useAuthStore } from '../store/authStore';
 import { CgProfile } from 'react-icons/cg';
 
 const Navbar = () => {
-  const { isAuthenticated , user} = useAuthStore();
+  const { isAuthenticated, user } = useAuthStore();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+
 
   const isActive = (path) => location.pathname === path;
 
@@ -73,6 +74,12 @@ const Navbar = () => {
               Team
             </Link>
             <Link
+              to="/people"
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/people') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+            >
+              People
+            </Link>
+            <Link
               to="/notices"
               className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/notices') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
@@ -80,25 +87,24 @@ const Navbar = () => {
             </Link>
             <Link
               to="/Gallery"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${
-                isActive('/Gallery')
+              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/Gallery')
                   ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
                   : 'hover:border-b-2 hover:border-b-purple-600'
-              }`}
+                }`}
             >
               Gallery
             </Link>
             {isAuthenticated ? (
               user && (
-                <Link to={`/profile/${user._id}`} className="h-10 w-10">
+                <Link to={`/profile`} className="h-10 w-10">
                   <CgProfile className="h-full w-full" />
                 </Link>
               )
             ) : (
               <Link to="/login" >
-              <button className="p-3 text-white bg-purple-600 rounded-md transition-all duration-300 transform hover:bg-purple-700 hover:scale-105 hover:shadow-lg">
-                Login
-              </button>
+                <button className="p-3 text-white bg-purple-600 rounded-md transition-all duration-300 transform hover:bg-purple-700 hover:scale-105 hover:shadow-lg">
+                  Login
+                </button>
               </Link>
             )}
           </div>

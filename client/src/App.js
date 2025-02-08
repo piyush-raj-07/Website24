@@ -18,16 +18,17 @@ import ForgotPasswordPage from "./components/ForgotPasswordPage";
 import ResetPasswordPage from "./components/ResetPasswordPage";
 import { Toaster } from 'react-hot-toast';
 import { useAuthStore } from './store/authStore';
-import { RedirectAuthenticatedUser, RequireUnverifiedUser } from './utils/routeProtection';
+import { RedirectAuthenticatedUser, RequireUnverifiedUser, ProtectedRoute } from './utils/routeProtection';
 import ProfilePage from "./components/ProfilePage"
 import AdminPanel from "./components/AdminPanel";
 import WriteBlog from "./components/WriteBlog";
 import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
 import ProjectTable from "./components/Project.js";
-import Gallery from "./components/Gallery";
+import Gallery from "./components/Gallery/Gallery.js";
 import QuizPage from "./components/quiz/QuizPage";
 import People from "./components/People";
+import Intern from "./components/blogs/intern_blogs.js";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -56,17 +57,25 @@ function App() {
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />
           <Route path="/Blogs/:id" element={<BlogDetails />} />
-          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          } />
           <Route path='/admin' element={<AdminPanel />} />
           <Route path='/writeBlog' element={<WriteBlog />} />
           <Route path='/myblog' element={<MyBlog />} />
           <Route path='/edit/:id' element={<EditBlog />} />
           <Route path="/Gallery" element={<Gallery />} />
-          <Route path="/Projects" element={<ProjectTable />} />
+          <Route path="/Projects" element={
+            <ProtectedRoute>
+              <ProjectTable />
+            </ProtectedRoute>
+          } />
           <Route path="/quiz" element={<QuizPage />} />
-         <Route path ="/People" element={<People/>} />
+          <Route path="/People" element={<People />} />
 
-
+          <Route path="/Blogs/Intern" element={<Intern />} />
 
           <Route path="/signup" element={
             <RedirectAuthenticatedUser>
