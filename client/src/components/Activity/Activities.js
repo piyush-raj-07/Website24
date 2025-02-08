@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
-import Loader from "./status_pages/Loader";
+import Loader from "../../components/status_pages/Loader";
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);

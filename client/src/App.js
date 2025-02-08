@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Blogs from "./components/Blogs";
 import BlogDetails from "./components/BlogDetails";
 import TeamPage from './components/Teampage';
-import Activities from "./components/Activities";
+import Activities from "./components/Activity/Activities";
 import Navbar from "./components/Navbar";
 import Loader from './components/status_pages/Loader'
 import NotFound from "./components/status_pages/NotFound";
@@ -27,7 +27,8 @@ import EditBlog from "./components/EditBlog";
 import ProjectTable from "./components/Project.js";
 import Gallery from "./components/Gallery/Gallery.js";
 import QuizPage from "./components/quiz/QuizPage";
-import People from "./components/People";
+import People from "./components/Peoples/People";
+import ProfilePage2 from "./components/Peoples/PeopleProf.js";
 import Intern from "./components/blogs/intern_blogs.js";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
@@ -66,6 +67,7 @@ function App() {
           <Route path='/writeBlog' element={<WriteBlog />} />
           <Route path='/myblog' element={<MyBlog />} />
           <Route path='/edit/:id' element={<EditBlog />} />
+          <Route path="/profile/:userId" element={<ProfilePage2 />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Projects" element={
             <ProtectedRoute>
@@ -74,7 +76,6 @@ function App() {
           } />
           <Route path="/quiz" element={<QuizPage />} />
           <Route path="/People" element={<People />} />
-
           <Route path="/Blogs/Intern" element={<Intern />} />
 
           <Route path="/signup" element={

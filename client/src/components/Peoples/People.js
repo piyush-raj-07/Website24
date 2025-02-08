@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fuse from "fuse.js";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, User, Calendar, BookOpen } from "lucide-react";
-import Loader from "./status_pages/Loader";
+import Loader from "../status_pages/Loader";
 
 export default function People() {
   const [userdata, setUserdata] = useState([]);
@@ -135,7 +136,11 @@ export default function People() {
                           className={index % 2 === 0 ? "bg-purple-900/50" : "bg-purple-950"}
                         >
                           <td className="p-4 sm:p-5 font-medium text-purple-300">{index + 1}</td>
-                          <td className="p-4 sm:p-5 text-purple-100">{item.Name}</td>
+                          <td className="p-4 sm:p-5 text-purple-100">
+                          <Link to={`/profile/${item.id}`} className="hover:underline text-purple-400">
+                            {item.Name}
+                          </Link>
+                            </td>
                           <td className="p-4 sm:p-5 text-purple-300">{item.Grad_Year}</td>
                           <td className="p-4 sm:p-5 text-purple-300 flex items-center">
                             <BookOpen className="mr-2 text-gray-400 flex-shrink-0" size={16} />
