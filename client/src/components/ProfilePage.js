@@ -7,8 +7,9 @@ import blogBg2 from "./ProfileImg/blog_bg2.jpg"
 import blogBg3 from "./ProfileImg/blog_bg3.jpg"
 import blogBg4 from "./ProfileImg/blog_bg4.jpg"
 import blogBg5 from "./ProfileImg/blog_bg5.jpg"
+import { Trash2 } from 'lucide-react';
 import profileCSS from "../css/Profile.css"
-import axios from 'axios';
+
 
 export default function ProfilePage() {
     const { id } = useParams();
@@ -19,6 +20,8 @@ export default function ProfilePage() {
     const [degree, setDegree] = useState(null);
     const [batch, setBatch] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
+    const [blogToDelete, setBlogToDelete] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const navigate = useNavigate();
     const backgroundImages = [
@@ -29,7 +32,9 @@ export default function ProfilePage() {
         blogBg5,
     ];
     const [progressData, setProgressData] = useState({ blogsCount: 0 });
-    const [blogIds, setBlogIds] = useState([]);
+    const [selectedBlog, setSelectedBlog] = useState(null);
+    const [showBlogModal, setShowBlogModal] = useState(false);
+
     const [isProj, setIsProj] = useState(false);
     const [tempUsername, setTempUsername] = useState(username);
     const [tempDegree, setTempDegree] = useState(degree);
@@ -37,7 +42,7 @@ export default function ProfilePage() {
     const [tempIntro, setTempIntro] = useState(intro);
     const [tempImage, setTempImage] = useState(image);
 
-    // Open Modal with Current Profile Data
+
     const openModal = () => {
         setTempUsername(username);
         setTempDegree(degree);
@@ -47,7 +52,7 @@ export default function ProfilePage() {
         setShowModal(true);
     };
 
-    // Handle Temporary Image Change in Modal
+
     const handleTempImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -63,31 +68,40 @@ export default function ProfilePage() {
     const handleSaveChanges = async () => {
         console.log({ tempUsername, tempDegree, tempBatch, tempIntro, tempImage });
         try {
-            const response = await axios.put(`http://localhost:5000/api/user/`, {
-                username: tempUsername,
-                degree: tempDegree,
-                batch: tempBatch,
-                intro: tempIntro,
-                imageUrl: tempImage,
-            }, {
-                withCredentials: true
+            const response = await fetch(`http://localhost:5000/user/${id}`, {
+                method: 'PUT',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: tempUsername,
+                    degree: tempDegree,
+                    batch: tempBatch,
+                    intro: tempIntro,
+                    imageUrl: tempImage,
+                }),
             });
 
-            const data = response.data;
+            if (response.ok) {
+                const data = await response.json();
 
-            // Update Main State
-            setUsername(data.Name);
-            setDegree(data.Degree);
-            setBatch(data.Grad_Year);
-            setIntro(data.About);
-            setImage(data.Img_URL);
 
-            setShowModal(false);
-            console.log('Profile updated successfully');
-            //alert('Profile updated successfully');
+                setUsername(data.Name);
+                setDegree(data.Degree);
+                setBatch(data.Grad_Year);
+                setIntro(data.About);
+                setImage(data.Img_URL);
+
+                setShowModal(false);
+                console.log('Profile updated successfully');
+
+            } else {
+
+            }
         } catch (err) {
             console.error('Error updating profile:', err);
-            //alert('Error updating profile');
+
         }
     };
 
@@ -98,58 +112,93 @@ export default function ProfilePage() {
 
         const fetchUserInfo = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/user/`, {
-                    withCredentials: true
+                const response = await fetch(`http://localhost:5000/user/${id}`, {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                 });
 
-                const data = response.data;
-                setUsername(data.Name || "Username");
-                setIntro(data.About || "Add your introduction here.");
-                setDegree(data.Degree || "B.Tech");
-                setBatch(data.Grad_Year || "2026");
-                setImage(data.Img_URL || profilePic);
-                setBlogIds(data.Blogs.map(blog => blog.B_Id));
-                console.log(data);
+                if (response.ok) {
+                    const data = await response.json();
+                    setUsername(data.Name || "Username");
+                    setIntro(data.About || "Add your introduction here.");
+                    setDegree(data.Degree || "B.Tech");
+                    setBatch(data.Grad_Year || "2026");
+                    setImage(data.Img_URL || profilePic);
+
+                    console.log(data);
+                } else {
+                    console.error('Failed to fetch user info');
+                }
             } catch (err) {
                 console.error('Error fetching user info:', err);
             }
         };
 
 
-        // Fetch blogs for each blog_id
-        //  const fetchBlogs = async (blog_id) => {
-        //     try {
-        //         const response = await fetch(`http://localhost:5000/blog/single/${blog_id}`, {
-        //             method: 'GET',
-        //             credentials: 'include',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //             },
-        //         });
+        const fetchBlogs = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/blog/myBlog', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
 
-        //         if (response.ok) {
-        //             const data = await response.json();
-        //             // console.log(data);
-        //             setBlogs(prevBlogs => [...prevBlogs, data]); // Append fetched blog
-        //             setProgressData(prev => ({ blogsCount: prev.blogsCount + 1 })); // Increment blog count
-        //         } else {
-        //             console.error('Failed to fetch blog');
-        //         }
-        //     } catch (err) {
-        //         console.error('Error fetching blog:', err);
-        //     }
-        // };
+                if (response.ok) {
+                    const data = await response.json();
+                    setBlogs(data);
+                    setProgressData({ blogsCount: data.length });
+                } else {
+                    console.error('Failed to fetch blogs');
+                }
+            } catch (err) {
+                console.error('Error fetching blogs:', err);
+            }
+        };
+
+        fetchBlogs();
 
 
         fetchUserInfo();
 
-        // if (blogIds.length > 0) {
-        //     blogIds.forEach(blog_id => {
-        //         fetchBlogs(blog_id); // Fetch blogs for each blog_id
-        //     });
-        // }
-
     }, [id]);
+
+    const handleBlogClick = (blog) => {
+        setSelectedBlog(blog);
+        setShowBlogModal(true);
+    };
+
+
+    const handleDeleteClick = (blogId) => {
+        setBlogToDelete(blogId);
+        setShowConfirm(true);
+    };
+
+    const confirmDeleteBlog = async () => {
+        if (!blogToDelete) return;
+        try {
+            const response = await fetch(`http://localhost:5000/blog/delete/${blogToDelete}`, {
+                method: 'DELETE',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+            });
+            if (response.ok) {
+                setBlogs(blogs.filter(blog => blog._id !== blogToDelete));
+                setProgressData(prev => ({ ...prev, blogsCount: prev.blogsCount - 1 }));
+                setShowConfirm(false);
+                setBlogToDelete(null);
+            } else {
+                console.error('Failed to delete blog');
+            }
+        } catch (err) {
+            console.error('Error deleting blog:', err);
+        }
+    };
+
 
 
     const handleImageChange = (e) => {
@@ -163,13 +212,16 @@ export default function ProfilePage() {
             reader.readAsDataURL(file);
         }
     };
-
     let previousImage = null;
 
-    const getRandomBackground = (previousImage) => {
-        const filteredImages = backgroundImages.filter(image => image !== previousImage);
-        const randomIndex = Math.floor(Math.random() * filteredImages.length);
-        return filteredImages[randomIndex];
+    const getRandomBackground = () => {
+        let newImage;
+        do {
+            newImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+        } while (newImage === previousImage);
+
+        previousImage = newImage;
+        return newImage;
     };
 
     const ProgressBar = ({ label, value, maxValue }) => {
@@ -191,31 +243,6 @@ export default function ProfilePage() {
         );
     };
 
-    // const handleDeleteBlog = async (e, blogId) => {
-
-    //     e.stopPropagation();
-
-    //     try {
-    //         const response = await fetch(`http://localhost:5000/blog/delete/${blogId}`, {
-    //             method: 'DELETE',
-    //             credentials: 'include',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //         });
-
-    //         if (response.ok) {
-    //             // Remove the deleted blog from the state
-    //             setBlogs(blogs.filter(blog => blog.id !== blogId));
-    //             alert('Blog deleted successfully');
-    //         } else {
-    //             alert('Failed to delete blog');
-    //         }
-    //     } catch (err) {
-    //         console.error('Error deleting blog:', err);
-    //         alert('Error deleting blog');
-    //     }
-    // };
 
 
     return (
@@ -304,39 +331,92 @@ export default function ProfilePage() {
             <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto max-h-screen scrollbar-hidden">
                 <div className="m-4">
 
-                    <div className='mx-16 my-8 flex flex-col'>
-                        <div className="relative text-white text-center  p-4 overflow-hidden group font-serif text-xl">
+                    <div className='mx-16 flex flex-col'>
+                        <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-xl">
                             My Blogs
                         </div>
 
                         {blogs.map((blog) => (
                             <div
                                 key={blog._id}
-                                className="relative h-28 my-2 shadow-black shadow-md overflow-hidden group cursor-pointer"
-                                onClick={() => navigate(`/blog/${blog._id}`)}
+                                className="relative h-28 my-2 shadow-black shadow-md overflow-hidden group cursor-pointer flex justify-between items-center "
+                                onClick={() => handleBlogClick(blog)}
+
                             >
+
                                 <img
                                     src={blog.image || getRandomBackground()}
                                     alt="Blog Background"
                                     className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                                 />
                                 <div className="absolute top-0 left-0 w-full h-full bg-purple-950 bg-opacity-45 flex items-center justify-center">
-                                    <p className="text-white text-sm font-bold">{blog.title}</p>
+                                    <p className="text-white text-lg font-serif">{blog.title}</p>
                                 </div>
-                                {/* <button
-                                    onClick={(e) => handleDeleteBlog(e, blog._id)}
-                                    className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm cursor-pointer"
-                                >
-                                    Delete
-                                </button> */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        console.log('Deleting Blog ID:', blog._id);
+                                        handleDeleteClick(blog._id);
+                                    }}
+                                    className="absolute right-2 text-center border-white border-2 text-white px-2 py-2 rounded-full opacity-0 group-hover:opacity-100 bg-black transition duration-300 hover:bg-[#AE7BC3]">
+                                    <Trash2 size={20} />
+                                </button>
+
+
+
                             </div>
+
+
                         ))}
+
+                        <div className="flex justify-center mt-6">
+                            <button
+                                onClick={() => navigate('/writeBlog')}
+                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
+                            >
+                                Write a Blog
+                            </button>
+                        </div>
 
 
                     </div>
 
 
                 </div>
+
+                {showBlogModal && selectedBlog && (
+                    <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+                        <div className="bg-[#A888B5] text-black p-8 rounded-lg shadow-lg w-1/2">
+                            <h2 className="text-3xl text-[#441752] font-serif font-bold border-b mb-4 pb-2 text-center">{selectedBlog.title}</h2>
+                            <div className='bg-black bg-opacity-10 rounded-lg '>
+                                <p className="text-black  p-2 text-lg mb-2"><strong>Category:</strong> {selectedBlog.cat}</p>
+                                <div className="p-2">
+                                    <p className="text-black text-lg"><strong>Body: </strong>{selectedBlog.body}</p>
+                                </div>
+                            </div>
+                            <div className="flex justify-end mt-4">
+                                <button
+                                    onClick={() => setShowBlogModal(false)}
+                                    className="bg-[#441752] text-white px-4 py-2 rounded"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {showConfirm && (
+                    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="bg-white text-black p-6 rounded-lg shadow-lg">
+                            <p className="mb-4">Are you sure you want to delete this blog?</p>
+                            <div className="flex justify-end">
+                                <button className="bg-red-600 text-white px-4 py-2 rounded-lg mr-2" onClick={confirmDeleteBlog}>Confirm</button>
+                                <button className="bg-gray-400 text-black px-4 py-2 rounded-lg" onClick={() => setShowConfirm(false)}>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {showModal && (
@@ -405,7 +485,7 @@ export default function ProfilePage() {
                             <button
                                 onClick={() => {
                                     setShowModal(false);
-                                    setEditMode(false); // Reset edit mode after closing the modal
+                                    setEditMode(false);
                                 }}
                                 className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
                             >
