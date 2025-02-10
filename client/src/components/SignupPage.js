@@ -59,15 +59,24 @@ const SignupPage = () => {
                         />
 
                         <div className="flex flex-col sm:flex-row sm:gap-3">
-                            <div className="w-full sm:w-1/2">
-                                <Input
-                                    icon={GraduationCap}
-                                    type='text'
-                                    placeholder='Degree'
-                                    label='Degree'
+                            <div className="w-full sm:w-1/2 relative mb-6">
+                                <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
+                                    <GraduationCap className='size-5 text-purple-500' />
+                                </div>
+                                <select
                                     value={degree}
                                     onChange={(e) => setDegree(e.target.value)}
-                                />
+                                    className='w-full pl-10 pr-8 py-2 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-gray-400 transition duration-200 appearance-none'
+                                >
+                                    <option value="" disabled className="text-gray-400 bg-gray-800">Select Degree</option>
+                                    <option value="B.Tech" className="text-white bg-gray-800 py-2">B.Tech</option>
+                                    <option value="M.Tech" className="text-white bg-gray-800 py-2">M.Tech</option>
+                                </select>
+                                <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                    <svg className="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
                             </div>
                             <div className="w-full sm:w-1/2">
                                 <Input

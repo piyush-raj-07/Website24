@@ -15,6 +15,7 @@ const UserSchema = new mongoose.Schema({
   Grad_Year: { type: Number, required: true },
   Degree: { type: String },
   About: { type: String },
+  quizScore: { type: Number, default: 0 },
 
 
   is_Proj: { type: Boolean, default: false },
