@@ -1,4 +1,5 @@
 const QnAModel = require("../models/Questions");
+const UserModel = require("../models/Users");
 
 const getRandomQuestions = async (req, res) => {
     try {
@@ -30,7 +31,7 @@ const getRandomQuestions = async (req, res) => {
 }
 
 const submitQuiz = async (req, res) => {
-    const { answers } = req.body; // [{ questionId, selectedAnswer }]
+    const { answers, userId } = req.body; // [{ questionId, selectedAnswer }] & optional userId
 
     try {
         if (!answers || !Array.isArray(answers)) {
@@ -62,11 +63,20 @@ const submitQuiz = async (req, res) => {
             };
         });
 
+        // If user is authenticated, update their quiz score 
+        if (userId) {
+            const user = await UserModel.findById(userId);
+            if (user && score > user.quizScore) {
+                user.quizScore = score;
+                await user.save();
+            }
+        }
+
         res.status(200).json({
             success: true,
             score,
             totalQuestions: answers.length,
-            reviewData
+            reviewData,
         });
     } catch (error) {
         console.log("error in submitting quiz", error);
