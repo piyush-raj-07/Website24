@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Loader from "../status_pages/Loader";
 
 const Intern = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
+  const cat = location.pathname.split("/")[2];
+  console.log(cat);
 
   const GetBlogs = async () => {
     setLoading(true);
     try {
-      const cat = "internship";
       const response = await axios.get(`http://localhost:5000/blog/catblog/${cat}`);
       setBlogs(response.data);
       console.log(response.data);
@@ -23,14 +25,6 @@ const Intern = () => {
   useEffect(() => {
     GetBlogs();
   }, []);
-
-  if (loading) {
-    return (
-      <>
-        <Loader />
-      </>
-    );
-  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#493A53] p-8">
