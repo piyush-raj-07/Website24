@@ -68,7 +68,7 @@ export default function ProfilePage() {
     const handleSaveChanges = async () => {
         console.log({ tempUsername, tempDegree, tempBatch, tempIntro, tempImage });
         try {
-            const response = await fetch(`http://localhost:5000/user/${id}`, {
+            const response = await fetch(`http://localhost:5000/api/user`, {
                 method: 'PUT',
                 credentials: 'include',
                 headers: {
@@ -112,7 +112,7 @@ export default function ProfilePage() {
 
         const fetchUserInfo = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/user/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/user`, {
                     method: 'GET',
                     credentials: 'include',
                     headers: {
@@ -252,7 +252,7 @@ export default function ProfilePage() {
     return (
         <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white max-h-screen w-full ">
 
-            <div className="absolute inset-0">
+            <div className="absolute ">
                 <img
                     src={background}
                     alt="Background"
