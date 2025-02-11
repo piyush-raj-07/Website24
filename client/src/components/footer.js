@@ -18,7 +18,7 @@ document.head.appendChild(styleSheet);
 export const Footer = () => {
     const Year = new Date().getFullYear();
     return (
-        <footer className="relative bg-black text-white pt-16 pb-16">
+        <footer className="relative bg-black text-white pt-16 pb-16" id="footer">
             <div className="absolute top-0 left-0 w-full overflow-hidden">
                 <svg data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg"
