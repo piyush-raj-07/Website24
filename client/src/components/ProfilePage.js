@@ -68,7 +68,7 @@ export default function ProfilePage() {
     const handleSaveChanges = async () => {
         console.log({ tempUsername, tempDegree, tempBatch, tempIntro, tempImage });
         try {
-            const response = await fetch(`http://localhost:5000/user/${id}`, {
+            const response = await fetch(`http://localhost:5000/api/user`, {
                 method: 'PUT',
                 credentials: 'include',
                 headers: {
@@ -112,7 +112,7 @@ export default function ProfilePage() {
 
         const fetchUserInfo = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/user/${id}`, {
+                const response = await fetch(`http://localhost:5000/api/user`, {
                     method: 'GET',
                     credentials: 'include',
                     headers: {
@@ -147,6 +147,7 @@ export default function ProfilePage() {
                         'Content-Type': 'application/json',
                     },
                 });
+
 
                 if (response.ok) {
                     const data = await response.json();
@@ -245,10 +246,13 @@ export default function ProfilePage() {
 
 
 
+
+
+
     return (
         <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white max-h-screen w-full ">
 
-            <div className="absolute inset-0">
+            <div className="absolute ">
                 <img
                     src={background}
                     alt="Background"
@@ -332,9 +336,7 @@ export default function ProfilePage() {
                 <div className="m-4">
 
                     <div className='mx-16 flex flex-col'>
-                        <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-xl">
-                            My Blogs
-                        </div>
+
 
                         {blogs.map((blog) => (
                             <div
@@ -369,13 +371,26 @@ export default function ProfilePage() {
 
                         ))}
 
-                        <div className="flex justify-center mt-6">
+                        <div className=" justify-center mt-6">
                             <button
                                 onClick={() => navigate('/writeBlog')}
                                 className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
                             >
                                 Write a Blog
                             </button>
+
+
+
+                            <button
+                                onClick={() => navigate(`/myBlog`)}
+                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                            >
+                                See Status
+                            </button>
+
+                            <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
+                                My Blogs
+                            </div>
                         </div>
 
 
