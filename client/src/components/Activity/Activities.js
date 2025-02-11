@@ -9,12 +9,14 @@ const Activities = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
   const fetchActivities = async () => {
+ 
     try {
       setLoading(true);
       console.log("Fetching activities...");
       const res = await axios.get("http://localhost:5000/GetActivity");
-      console.log("Response:", res.data);
+
       setActivities(res.data);
       setError(null);
     } catch (error) {
@@ -27,6 +29,7 @@ const Activities = () => {
 
   useEffect(() => {
     fetchActivities();
+ 
   }, []);
 
   const particlesInit = async (engine) => {
