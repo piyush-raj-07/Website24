@@ -79,21 +79,6 @@ const Navbar = () => {
             >
               People
             </Link>
-            <Link
-              to="/notices"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/notices') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              Notices
-            </Link>
-            <Link
-              to="/Gallery"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/Gallery')
-                  ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2`
-                  : 'hover:border-b-2 hover:border-b-purple-600'
-                }`}
-            >
-              Gallery
-            </Link>
             {isAuthenticated ? (
               user && (
                 <Link to={`/profile`} className="h-10 w-10">
