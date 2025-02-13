@@ -9,6 +9,8 @@ import blogBg4 from "./ProfileImg/blog_bg4.jpg"
 import blogBg5 from "./ProfileImg/blog_bg5.jpg"
 import { Trash2 } from 'lucide-react';
 import profileCSS from "../css/Profile.css"
+import { useAuthStore } from '../store/authStore';
+import toast from 'react-hot-toast';
 
 
 export default function ProfilePage() {
@@ -24,6 +26,7 @@ export default function ProfilePage() {
     const [blogToDelete, setBlogToDelete] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const navigate = useNavigate();
+    const { logout } = useAuthStore();
     const backgroundImages = [
         blogBg1,
         blogBg2,
@@ -244,10 +247,14 @@ export default function ProfilePage() {
         );
     };
 
-
-
-
-
+    const handleLogout = async () => {
+        try {
+            await logout();
+            toast.success('Logged out successfully');
+        } catch (error) {
+            toast.error('Error logging out');
+        }
+    };
 
     return (
         <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white max-h-screen w-full ">
@@ -386,6 +393,13 @@ export default function ProfilePage() {
                                 className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
                             >
                                 See Status
+                            </button>
+
+                            <button
+                                onClick={handleLogout}
+                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                            >
+                                Logout
                             </button>
 
                             <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
