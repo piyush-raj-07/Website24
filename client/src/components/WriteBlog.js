@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import FallingStarsBackground from './Background/FallingStar';
+import { useNavigate } from "react-router-dom";
+
 
 const WriteBlog = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,7 @@ const WriteBlog = () => {
     body: '',
     cat: 'internship',
   });
+  const navigate = useNavigate();
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -35,6 +38,8 @@ const WriteBlog = () => {
         const result = await response.json();
         setSuccess('Blog written successfully!');
         setError('');
+        navigate('/profile');
+        
       } else {
         const errorData = await response.json();
         setError(errorData.message || 'Failed to write the blog');
@@ -102,11 +107,19 @@ const WriteBlog = () => {
               </select>
             </div>
 
-            <button
+            <button 
               type="submit"
               className="w-full py-3 bg-purple-800 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
             >
               Publish Blog
+            </button>
+            <button
+             className="w-full py-3 bg-purple-800 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
+              onClick={() => navigate('/profile')}
+            >
+              
+              Back
+
             </button>
           </form>
         </div>
