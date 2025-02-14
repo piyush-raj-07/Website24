@@ -337,13 +337,37 @@ export default function ProfilePage() {
 
 
                 </div>
+                <button
+                                onClick={handleLogout}
+                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                            >
+                                Logout
+                            </button>
             </div>
 
             <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto max-h-screen scrollbar-hidden">
                 <div className="m-4">
 
                     <div className='mx-16 flex flex-col'>
+                        
+                    <button
+                                onClick={() => navigate('/writeBlog')}
+                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
+                            >
+                                Write a Blog
+                            </button>
 
+
+
+                            <button
+                                onClick={() => navigate(`/myBlog`)}
+                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                            >
+                                See Status
+                            </button>
+                            <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
+                                My Blogs
+                            </div>
 
                         {blogs.map((blog) => (
                             <div
@@ -377,35 +401,6 @@ export default function ProfilePage() {
 
 
                         ))}
-
-                        <div className=" justify-center mt-6">
-                            <button
-                                onClick={() => navigate('/writeBlog')}
-                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
-                            >
-                                Write a Blog
-                            </button>
-
-
-
-                            <button
-                                onClick={() => navigate(`/myBlog`)}
-                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
-                            >
-                                See Status
-                            </button>
-
-                            <button
-                                onClick={handleLogout}
-                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
-                            >
-                                Logout
-                            </button>
-
-                            <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
-                                My Blogs
-                            </div>
-                        </div>
 
 
                     </div>
