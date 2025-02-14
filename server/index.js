@@ -24,7 +24,9 @@ const UserModel = require('./models/Users');
 const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
 
+
 //paste cloudianry Config file here  , foe reference see line no: 150 
+
 
 
   
@@ -196,6 +198,7 @@ app.get('/GetActivity', async (req, res) => {
     }
 });
 
+
 app.put('/EditActivity/:id', async (req, res) => {
     const { id } = req.params;
     const { url1, url2, title, description } = req.body;
@@ -292,6 +295,9 @@ app.get('/GetQuestion', async (req, res) => {
         console.error('Error getting question', error);
     }
 })
+
+
+
 app.listen(PORT, () => {
     console.log("SERVER STARTED ");
 });
