@@ -7,31 +7,27 @@ const AboutUs = () => {
     const [isVisible, setIsVisible] = useState(false); 
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
+        const paths = document.querySelectorAll(".animated-path");
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
+                    entry.target.classList.add("start-animation");
+                } else {
+                    entry.target.classList.remove("start-animation");
                 }
-            },
-            {
-                threshold: 0.1,
-            }
-        );
+            });
+        }, { threshold: 0.2 });
 
-        if (svgRef.current) {
-            observer.observe(svgRef.current); 
-        }
+        paths.forEach((path) => observer.observe(path));
 
         return () => {
-            if (svgRef.current) {
-                observer.unobserve(svgRef.current); 
-            }
+            paths.forEach((path) => observer.unobserve(path));
         };
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-800 p-8">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-b from-[#1f1a3d] from-35% to-[#a45dbb] p-8">
             
             <div className="w-full md:w-1/2">
                 <img
@@ -58,7 +54,7 @@ const AboutUs = () => {
                     </svg>
                     
                 </h1>
-                <p className="text-lg text-gray-600 leading-relaxed ">
+                <p className="text-lg text-black leading-relaxed ">
                     Welcome to our company! We are dedicated to providing exceptional services
                     and creating meaningful experiences. Our team of passionate professionals
                     works tirelessly to achieve excellence and drive innovation in everything we do.

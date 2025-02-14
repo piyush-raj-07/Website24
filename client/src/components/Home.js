@@ -18,7 +18,7 @@ if(isLoading)
     );
 }
     return (<>
-    <div >
+    <div>
       
     {/* <div className="h-screen bg-black flex justify-center items-center ">
         <Loader/>
@@ -29,7 +29,7 @@ if(isLoading)
     </div>
    
     
-    <div class = 'bg-gray-900  pt-10 pb-10'>
+    <div class = 'bg-gradient-to-b from-black from-0.1% to-[#1f1a3d] pb-10'>
     <Carousel >
     </Carousel>
     </div>

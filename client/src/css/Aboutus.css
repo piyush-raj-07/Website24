@@ -1,6 +1,6 @@
 .animated-path {
     fill: transparent;
-    stroke: #C084FC;
+    stroke: #c4a5e2;
     stroke-width: 0.2;
     stroke-dasharray: 150;
     stroke-dashoffset: 150; /* Initial offset to hide the stroke */
