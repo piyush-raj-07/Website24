@@ -7,7 +7,7 @@ import blogBg2 from "./ProfileImg/blog_bg2.jpg"
 import blogBg3 from "./ProfileImg/blog_bg3.jpg"
 import blogBg4 from "./ProfileImg/blog_bg4.jpg"
 import blogBg5 from "./ProfileImg/blog_bg5.jpg"
-import { Trash2 } from 'lucide-react';
+import { Trash2, Shield, BookText, Target } from 'lucide-react';
 import profileCSS from "../css/Profile.css"
 import { useAuthStore } from '../store/authStore';
 import toast from 'react-hot-toast';
@@ -21,12 +21,13 @@ export default function ProfilePage() {
     const [username, setUsername] = useState(null);
     const [degree, setDegree] = useState(null);
     const [batch, setBatch] = useState(null);
+    const [userRole, setUserRole] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
     const [blogToDelete, setBlogToDelete] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const navigate = useNavigate();
-    const { logout } = useAuthStore();
+    const { logout, user } = useAuthStore();
     const backgroundImages = [
         blogBg1,
         blogBg2,
@@ -34,7 +35,6 @@ export default function ProfilePage() {
         blogBg4,
         blogBg5,
     ];
-    const [progressData, setProgressData] = useState({ blogsCount: 0 });
     const [selectedBlog, setSelectedBlog] = useState(null);
     const [showBlogModal, setShowBlogModal] = useState(false);
 
@@ -88,23 +88,19 @@ export default function ProfilePage() {
 
             if (response.ok) {
                 const data = await response.json();
-
-
                 setUsername(data.Name);
                 setDegree(data.Degree);
                 setBatch(data.Grad_Year);
                 setIntro(data.About);
                 setImage(data.Img_URL);
-
+                setUserRole(data.Role || "user");
                 setShowModal(false);
                 console.log('Profile updated successfully');
-
             } else {
-
+                // ... error handling
             }
         } catch (err) {
             console.error('Error updating profile:', err);
-
         }
     };
 
@@ -130,7 +126,7 @@ export default function ProfilePage() {
                     setDegree(data.Degree || "B.Tech");
                     setBatch(data.Grad_Year || "2026");
                     setImage(data.Img_URL || profilePic);
-
+                    setUserRole(data.Role || "user");
                     console.log(data);
                 } else {
                     console.error('Failed to fetch user info');
@@ -155,7 +151,6 @@ export default function ProfilePage() {
                 if (response.ok) {
                     const data = await response.json();
                     setBlogs(data);
-                    setProgressData({ blogsCount: data.length });
                 } else {
                     console.error('Failed to fetch blogs');
                 }
@@ -192,7 +187,6 @@ export default function ProfilePage() {
             });
             if (response.ok) {
                 setBlogs(blogs.filter(blog => blog._id !== blogToDelete));
-                setProgressData(prev => ({ ...prev, blogsCount: prev.blogsCount - 1 }));
                 setShowConfirm(false);
                 setBlogToDelete(null);
             } else {
@@ -228,20 +222,20 @@ export default function ProfilePage() {
         return newImage;
     };
 
-    const ProgressBar = ({ label, value, maxValue }) => {
-        const percentage = (value / maxValue) * 100;
+    const Badge = ({ icon: Icon, label, value, variant = 'default' }) => {
+        const variants = {
+            admin: 'bg-white/10 text-yellow-100 hover:bg-white/20',
+            blog: 'bg-white/10 text-blue-200 hover:bg-white/20',
+            quiz: 'bg-white/10 text-emerald-200 hover:bg-white/20',
+            default: 'bg-white/10 text-gray-200 hover:bg-white/20'
+        };
 
         return (
-            <div className="mb-4">
-                <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm font-semibold">{label}</span>
-                    <span className="text-sm font-semibold">{`${value}/${maxValue}`}</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-4">
-                    <div
-                        className="bg-purple-600 h-4 rounded-full transition-all duration-500"
-                        style={{ width: `${percentage}%` }}
-                    ></div>
+            <div className={`group relative inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${variants[variant]} backdrop-blur-sm border border-white/10 shadow-lg shadow-white/10`}>
+                <Icon className="w-4 h-4" />
+                <span>{value}</span>
+                <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-200 -bottom-8 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-black/80 text-white text-xs rounded-md shadow-lg whitespace-nowrap z-10 backdrop-blur-sm">
+                    {label}
                 </div>
             </div>
         );
@@ -322,12 +316,31 @@ export default function ProfilePage() {
                             </div>
                         </div>
 
-                        <div className="rounded-xl overflow-hidden w-full my-4">
-                            <div className="p-2 bg-[#AE7BC3] bg-opacity-100">
-                                <ProgressBar label="Blog Contributions" value={progressData.blogsCount} maxValue={10} />
-                            </div>
-                            <div className="p-2 bg-[#AE7BC3] bg-opacity-100 ">
-                                <ProgressBar label="Game Score" value={4} maxValue={10} />
+                        <div className="w-full my-4">
+                            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 ">
+                                <h3 className="text-base font-medium text-white/80 mb-4 text-center uppercase tracking-wider shadow shadow-white/5">Achievements</h3>
+                                <div className="flex flex-wrap items-center gap-2 justify-center">
+                                    {(userRole === 'admin' || userRole === 'eesa') && (
+                                        <Badge
+                                            icon={Shield}
+                                            label="Admin Access"
+                                            value={userRole.toUpperCase()}
+                                            variant="admin"
+                                        />
+                                    )}
+                                    <Badge
+                                        icon={BookText}
+                                        label="Total blogs published"
+                                        value={`${blogs.length} Blogs`}
+                                        variant="blog"
+                                    />
+                                    <Badge
+                                        icon={Target}
+                                        label="Quiz performance"
+                                        value={`Score: ${user?.quizScore || 0}`}
+                                        variant="quiz"
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -338,36 +351,36 @@ export default function ProfilePage() {
 
                 </div>
                 <button
-                                onClick={handleLogout}
-                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
-                            >
-                                Logout
-                            </button>
+                    onClick={handleLogout}
+                    className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                >
+                    Logout
+                </button>
             </div>
 
             <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto max-h-screen scrollbar-hidden">
                 <div className="m-4">
 
                     <div className='mx-16 flex flex-col'>
-                        
-                    <button
-                                onClick={() => navigate('/writeBlog')}
-                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
-                            >
-                                Write a Blog
-                            </button>
+
+                        <button
+                            onClick={() => navigate('/writeBlog')}
+                            className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
+                        >
+                            Write a Blog
+                        </button>
 
 
 
-                            <button
-                                onClick={() => navigate(`/myBlog`)}
-                                className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
-                            >
-                                See Status
-                            </button>
-                            <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
-                                My Blogs
-                            </div>
+                        <button
+                            onClick={() => navigate(`/myBlog`)}
+                            className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                        >
+                            See Status
+                        </button>
+                        <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
+                            My Blogs
+                        </div>
 
                         {blogs.map((blog) => (
                             <div
