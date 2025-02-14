@@ -38,7 +38,7 @@ const Intern = () => {
               {/* Image Pod */}
               <div className="absolute -left-10 -top-14 flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-r from-[#d8b4fe] to-[#6b21a8] shadow-2xl">
                 <img
-                  src="https://pbs.twimg.com/profile_images/890901007387025408/oztASP4n.jpg"
+                  src={"https://pbs.twimg.com/profile_images/890901007387025408/oztASP4n.jpg"}
                   alt="random"
                   className="h-24 w-24 rounded-full shadow-xl"
                 />
