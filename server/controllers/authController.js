@@ -40,7 +40,7 @@ const signup = async (req, res) => {
             password: hashedPassword,
             Name,
             verificationToken,
-            verificationTokenExpiresAt: Date.now() + 7*24 * 60 * 60 * 1000,   // 24 * 7 hour
+            verificationTokenExpiresAt: Date.now() + 1 * 60 * 60 * 1000,   // 1 hour
             Degree,
             Grad_Year
         });
