@@ -19,7 +19,7 @@ const BlogsSchema = new mongoose.Schema({
         Auth_Img: { type: String },
         Auth_Email: { type: String },
         Auth_Degree: { type: String },
-        Auth_Gradyear: { type: String },
+        Auth_Grad_Year: { type: String },
         Auth_isProj: { type: Boolean },
         Auth_isVerified: { type: Boolean },
      
