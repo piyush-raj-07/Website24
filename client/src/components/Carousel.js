@@ -49,7 +49,7 @@ function Carousel( ) {
   console.log(current);
   return (
     <div
-      className="carousel"
+      className="carousel shadow-[2px_-2px_10px_0px_#c084fc]"
       onMouseEnter={() => {
         setAutoPlay(false);
         clearTimeout(timeOut);

@@ -29,7 +29,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`flex w-full items-center transition-all duration-300 h-24 ${scrolled ? 'bg-opacity-60 bg-purple-700 text-white' : 'bg-black text-purple-300'} ${window.innerWidth < 768 ? 'h-auto bg-purple-700 bg-opacity-100 z-50 text-white border-white' : ''}`}>
+    <div className={`flex max-w-screen items-center transition-all duration-300 h-24 ${scrolled ? 'bg-opacity-60 bg-purple-700 text-white' : 'bg-black text-purple-300'} ${window.innerWidth < 768 ? 'h-auto bg-purple-700 bg-opacity-100 z-50 text-white border-white' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-4">
@@ -42,43 +42,52 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="w-full flex justify-center items-center">
+            <div className='mx-6'>
             <Link
               to="/"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Home
             </Link>
+            </div>
+            <div className='mx-6'>
             <Link
               to="/blogs"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/blogs') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/blogs') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Blogs
             </Link>
+            </div>
+            
+            <div className='mx-6'>
             <Link
               to="/activities"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/activities') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/activities') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Activities
             </Link>
+            </div>
+            
+            <div className='mx-6'>
             <Link
               to="/Projects"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/projects') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/projects') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Projects
             </Link>
-            <Link
-              to="/team"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/team') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              Team
-            </Link>
+            </div>
+            <div className='mx-6'>
             <Link
               to="/people"
-              className={`text-2xl font-semibold px-0 py-2 relative transition-all duration-300 ${isActive('/people') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/people') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               People
             </Link>
+            </div>
+            
+            </div>
+            <div className="hidden  md:flex items-center  space-x-6">
             {isAuthenticated ? (
               user && (
                 <Link to={`/profile`} className="h-10 w-10">
@@ -134,13 +143,7 @@ const Navbar = () => {
             >
               Projects
             </Link>
-            <Link
-              to="/team"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/team') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Team
-            </Link>
+           
             <Link
               to="/notices"
               className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/notices') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
