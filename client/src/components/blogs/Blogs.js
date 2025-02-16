@@ -34,16 +34,16 @@ export default function Blogs() {
     <div className="gradient_background">
       <h1>Blogs Page</h1>
       <div
-        className="blogs-container"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "80px",
-          padding: "200px",
-        }}
-      >
+  className="blogs-container"
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "80px",
+    padding: "100px", // Reduced from 200px
+  }}
+>
         {cards.map((card) => (
           <div
             key={card.id}
