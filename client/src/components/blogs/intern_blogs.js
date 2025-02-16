@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Fuse from "fuse.js";
 
 const Intern = () => {
   const [blogs, setBlogs] = useState([]);
-  const [filteredBlogs, setFilteredBlogs] = useState([]); // Stores filtered results
-  const [searchQuery, setSearchQuery] = useState(""); // Search input state
+  const [filteredBlogs, setFilteredBlogs] = useState([]); 
+  const [searchQuery, setSearchQuery] = useState(""); 
+  const [searchType, setSearchType] = useState("name"); // Default: Search by title
   const [loading, setLoading] = useState(false);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const location = useLocation();
@@ -20,7 +21,7 @@ const Intern = () => {
         `http://localhost:5000/blog/catblog/${cat}`
       );
       setBlogs(response.data);
-      setFilteredBlogs(response.data); // Set initially
+      setFilteredBlogs(response.data);
       setLoading(false);
     } catch (err) {
       console.log("Error getting blogs", err);
@@ -33,11 +34,15 @@ const Intern = () => {
   }, []);
 
   // Configure Fuse.js for fuzzy search
-  const fuse = new Fuse(blogs, {
-    keys: ["title", "body"], // Search in both title & body
-    threshold: 0.3, // Lower means more strict matches
-    distance: 10000,
-  });
+  const fuse = useMemo(() => {
+    return new Fuse(blogs, {
+      keys: [
+        searchType === "name" ? "Auth_Name" : "body" // Dynamically set search key
+      ],
+      threshold: 0.3,
+      distance: 10000,
+    });
+  }, [blogs, searchType]);
 
   // Handle Search
   useEffect(() => {
@@ -47,17 +52,29 @@ const Intern = () => {
       const results = fuse.search(searchQuery);
       setFilteredBlogs(results.map((result) => result.item));
     }
-  }, [searchQuery, blogs]);
+  }, [searchQuery, blogs, searchType, fuse,cat]);
 
   return (
     <>
-      <div className="min-h-screen bg-[#493A53] p-20 pt-20 flex flex-col items-center">
-        {/* Search Bar */}
-        <div className="absolute top-28 right-[3.2rem] w-[60vh] max-w-xl mt-6 opacity-75">
+      <div className="min-h-screen bg-[#493A53] p-20 pt-8 flex flex-col items-center">
+        
+        {/* Search Bar with Dropdown */}
+        <div className="w-[60vh] max-w-xl my-6  flex space-x-2">
+          <select
+          
+            className="p-3 text-lg rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white"
+            value={searchType}
+            onChange={(e) => setSearchType(e.target.value)}
+          >
+            <option value="name">By Author</option>
+            <option value="body">By Keyword</option>
+          </select>
+
           <input
             type="text"
-            placeholder="Find blogs that match your interests..."
-            className="w-[55vh] p-3 text-lg rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500  placeholder-gray-500 placeholder:font-semibold"
+            style={{ backgroundColor: "white" }}
+            placeholder={`Find blogs by ${searchType === "name" ? "Name" : "Keyword"}...`}
+            className="w-full p-3 text-lg rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder-gray-500 placeholder:font-semibold"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -70,6 +87,10 @@ const Intern = () => {
               key={key}
               title={val.title}
               body={val.body}
+              name = {val.Auth_Name}
+              img = {val.Auth_Img}
+              degree = {val.Auth_Degree}
+              year = {val.Auth_Grad_Year}
               onClick={() => setSelectedBlog(val)}
             />
           ))}
@@ -83,10 +104,10 @@ const Intern = () => {
           onClick={() => setSelectedBlog(null)}
         >
           <div
-            className="relative p-6 bg-white rounded-lg max-w-3xl w-full max-h-[85vh] overflow-y-auto"
+            className="relative p-12 bg-white rounded-lg max-w-3xl w-full max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">
               {selectedBlog.title}
             </h1>
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -105,15 +126,12 @@ const Intern = () => {
   );
 };
 
-// BlogCard Component (Unchanged)
-const BlogCard = ({ title, body, onClick }) => {
+// BlogCard Component
+const BlogCard = ({ title, body, name,img,degree,year,onClick }) => {
   const previewText = body.length > 100 ? body.substring(0, 100) + "..." : body;
 
   return (
-    <div
-      className="relative max-w-md rounded-xl bg-white shadow-2xl top-20"
-      onClick={onClick}
-    >
+    <div className="relative max-w-md rounded-xl bg-white shadow-2xl top-20">
       {/* Image Pod */}
       <div className="absolute -left-10 -top-14 flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-r from-[#d8b4fe] to-[#6b21a8] shadow-2xl">
         <img
@@ -126,13 +144,13 @@ const BlogCard = ({ title, body, onClick }) => {
       {/* Content */}
       <div className="p-12">
         <h3 className="mb-2 text-lg text-gray-500">
-          Captn Jack Sparrow Btech 26'
+          {name} | {degree} | {year}'
         </h3>
         <h1 className="mb-4 text-3xl font-bold text-gray-800">{title}</h1>
         <p className="mb-8 text-lg leading-relaxed text-gray-800">
           {previewText}
         </p>
-        <button className="rounded-full bg-black px-8 py-3 text-lg text-white shadow-lg transition-all duration-200 hover:shadow-md ">
+        <button onClick={onClick} className="rounded-full bg-black px-8 py-3 text-lg text-white shadow-lg transition-all duration-200 hover:shadow-md">
           Read More
         </button>
       </div>

@@ -28,10 +28,10 @@ const writeBlog = async (req, res) => {
 
     try {
             //extra data
-            const name = userdetail.name;
-            const Img_URL = userdetail.user
-            const Degree = userdetail.Degree
-            const Grad_Year = userdetail.Grad_Year
+            const name = userdetail.Name;
+            const Img_URL = userdetail.Img_URL;
+            const Degree = userdetail.Degree;
+            const Grad_Year = userdetail.Grad_Year;
             const blog = new Blog({ 
                 title, 
                 body, 
