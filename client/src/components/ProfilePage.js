@@ -66,44 +66,34 @@ export default function ProfilePage() {
     }
 
     const handleSaveChanges = async (e) => {
-        e.preventDefault()
-
-        const formDataToSend = new FormData()
-
-        formDataToSend.append("username", formData.username)
-        formDataToSend.append("degree", formData.degree)
-        formDataToSend.append("batch", formData.batch)
-        formDataToSend.append("intro", formData.intro)
-        formDataToSend.append("is_Proj", formData.is_Proj)
-
+        e.preventDefault();
+    
+        const formDataToSend = new FormData();
+    
+        formDataToSend.append("username", formData.username);
+        formDataToSend.append("degree", formData.degree);
+        formDataToSend.append("batch", formData.batch);
+        formDataToSend.append("intro", formData.intro);
+        formDataToSend.append("is_Proj", formData.is_Proj ? "true" : "false"); // Ensure it's a string
+    
         if (formData.file) {
-            formDataToSend.append("file", formData.file)
+            formDataToSend.append("image", formData.file);
         }
-
+    
         try {
-            const response = await axios.put("http://localhost:5000/api/user", formDataToSend, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-            // Update local state with the new data
-            setUsername(formData.username)
-            setDegree(formData.degree)
-            setBatch(formData.batch)
-            setIntro(formData.intro)
-            setIsProj(formData.is_Proj)
-            if (formData.file) {
-                setImage(URL.createObjectURL(formData.file))
-            }
-
-            setShowModal(false)
-            toast.success("Profile updated successfully!")
+            const response = await axios.post("http://localhost:5000/api/user", formDataToSend, {
+                headers: { "Content-Type": "multipart/form-data" }  // Ensure correct headers
+            });
+    
+            console.log("Upload successful:", response.data);
+            setShowModal(false);
+            toast.success("Profile updated successfully!");
         } catch (error) {
-            console.error("Error updating user:", error)
-            toast.error("Failed to update profile.")
+            console.error("Error updating user:", error);
+            toast.error("Failed to update profile.");
         }
-    }
-
+    };
+    
     useEffect(() => {
         const fetchUserInfo = async () => {
             try {

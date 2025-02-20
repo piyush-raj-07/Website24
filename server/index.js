@@ -9,7 +9,7 @@ const adminRoutes = require('./routes/adminRoute');
 const quizRoutes = require('./routes/quizRoute');
 const userRoutes = require('./routes/userRoute');
 const cloudinary = require('cloudinary').v2;
-
+const visitRoutes = require('./routes/analyticRoute')
 
 const multer = require('multer');
 const fs = require('fs');
@@ -24,9 +24,14 @@ const UserModel = require('./models/Users');
 const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
 
+app.use(cookieParser());
 
 //paste cloudianry Config file here  , foe reference see line no: 150 
-
+cloudinary.config({
+    cloud_name: 'dmr8qadjn',
+    api_key: '946763235978171',
+    api_secret:'KN29E8B0OzV-LBwaY_NumhB_zUI',
+  });
 
 
   
@@ -49,6 +54,7 @@ app.use('/blog', blogRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/user', userRoutes);
+app.use("/api", visitRoutes);
 
 
 // storing user info

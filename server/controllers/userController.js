@@ -52,6 +52,7 @@ getUserDetails = async (req, res) => {
 const upload = multer({ dest: 'Profile/' }); // Temporary storage before Cloudinary upload
 
 const updateUserDetails = async (req, res) => {
+    
     try {
         const userId = req.userId;
         const { username, degree, batch, intro, is_Proj } = req.body;
@@ -60,14 +61,26 @@ const updateUserDetails = async (req, res) => {
 
         // Check if a file is uploaded
         if (req.file) {
+          
             const filePath = req.file.path;
-
+            console.log(filePath)
             // Upload file to Cloudinary
             const result = await cloudinary.uploader.upload(filePath, {
                 folder: 'Profile',
             });
 
             uploadedImageUrl = result.secure_url;
+
+           await UserModel.findByIdAndUpdate(
+                userId,
+                {
+             
+                    Img_URL: uploadedImageUrl
+                   
+                },
+                { new: true }
+            );
+
         }
 
         const updatedUser = await UserModel.findByIdAndUpdate(
@@ -77,7 +90,7 @@ const updateUserDetails = async (req, res) => {
                 Degree: degree,
                 Grad_Year: batch,
                 About: intro,
-                Img_URL: uploadedImageUrl,
+                // Img_URL: uploadedImageUrl,  // dekho khali img ja raha hei
                 is_Proj: is_Proj || false,
             },
             { new: true }
