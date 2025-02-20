@@ -27,11 +27,6 @@ const NewsModel = require('./models/News');
 app.use(cookieParser());
 
 //paste cloudianry Config file here  , foe reference see line no: 150 
-cloudinary.config({
-    cloud_name: 'dmr8qadjn',
-    api_key: '946763235978171',
-    api_secret:'KN29E8B0OzV-LBwaY_NumhB_zUI',
-  });
 
 
   
