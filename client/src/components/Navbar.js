@@ -35,8 +35,8 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <Link to="/">
               <img
-                className="h-14 w-14 rounded-md"
-                src="https://media.licdn.com/dms/image/v2/D4E0BAQFf2jcJ2oNktw/company-logo_200_200/company-logo_200_200/0/1698123847006/electrical_engineering_students_association_logo?e=2147483647&v=beta&t=zzl7X_9804zqoLHSmQMj9MEx4R-Uhn21av4FI-atops"
+                className="h-[7rem] w-18 rounded-md"
+                src="https://media-hosting.imagekit.io//2b180619f8de401b/EESA_LOGO_white.png?Expires=1834667508&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=UkIjLpvsWxckqKVV5oM3LN7Geu-H4lV16GDoSS5qTfJFMUHMJmVpQxOWuTgpLQuaeIMx1VCnR5Vc84otM04Hiz4iJ3JgL6vXdvf20px6BYZC7vne79MFSbW~AumtxlMGm5ezQ5sRwIfm7gyXrPOs~x5LiAbXA5mDfcxCDiOPTaitafFBMppJyf83tHTBuRWj2M2SxbLnXN6K6OTup6D8qcauBgdmgGnLxC2k9YLUkv2BFE9NGZK2B~a4puWqKfdXJmBG2y2pOl~qc0ISZyhJpQMOstnfsJDKKi~y~MTHFzayaQYY40N6RSaM8CYrpFxILN8nM4Dtvak3dbzI43boXg__"
                 alt="Logo"
               />
             </Link>
