@@ -23,6 +23,7 @@ const ActivitiesModel = require('./models/Activities');
 const UserModel = require('./models/Users');
 const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
+const Blog = require('./models/Blogs');
 
 app.use(cookieParser());
 
@@ -296,7 +297,39 @@ app.get('/GetQuestion', async (req, res) => {
         console.error('Error getting question', error);
     }
 })
+// api to get any one user data
 
+app.get('/user/:id', async (req, res) => {
+    const { id } = req.params;
+   
+    const userdetail = await UserModel.findById(id);
+
+    if (userdetail) {
+        res.status(200).json(userdetail);
+    } else {
+        res.status(404).json({ message: 'User not found' });
+    }
+});
+
+app.post('/user/blogs', async (req, res) => {
+    try {
+        const { author_id } = req.body; // Get author_id from request body
+        if (!author_id) {
+            return res.status(400).json({ error: 'Author ID is required' });
+        }
+
+        const blogs = await Blog.find({ author_id: author_id });
+
+        if (!blogs.length) {
+            return res.status(404).json({ message: 'No blogs found for this user' });
+        }
+
+        res.status(200).json(blogs);
+    } catch (error) {
+        console.error('Error fetching blogs:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 
 app.listen(PORT, () => {

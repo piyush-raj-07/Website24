@@ -30,6 +30,8 @@ export default function ProfilePage2() {
 
 
         const fetchUserInfo = async () => {
+
+            console.log(id)
             try {
                 const response = await fetch(`http://localhost:5000/user/${id}`, {
                     method: 'GET',
@@ -46,7 +48,6 @@ export default function ProfilePage2() {
                     setBatch(data.Grad_Year || "2026");
                     setImage(data.Img_URL || profilePic);
 
-                    console.log(data);
                 } else {
                     console.error('Failed to fetch user info');
                 }
@@ -58,17 +59,17 @@ export default function ProfilePage2() {
 
         const fetchBlogs = async () => {
             try {
-                const response = await fetch('http://localhost:5000/blog/myBlog', {
-                    method: 'GET',
-                    credentials: 'include',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                const response = await fetch('http://localhost:5000/user/blogs', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ author_id: id }) // Ensure userId is defined
                 });
 
                 if (response.ok) {
                     const data = await response.json();
                     setBlogs(data);
+                    console.log(data)
+
                     setProgressData({ blogsCount: data.length });
                 } else {
                     console.error('Failed to fetch blogs');
