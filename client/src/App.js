@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Blogs from "./components/blogs/Blogs.js";
-
+//import BlogDetails from "./components/BlogDetails";
 import TeamPage from "./components/Teampage";
 import Activities from "./components/Activity/Activities";
 import Navbar from "./components/Navbar";
@@ -33,7 +33,6 @@ import QuizPage from "./components/quiz/QuizPage";
 import People from "./components/Peoples/People";
 import ProfilePage2 from "./components/Peoples/PeopleProf.js";
 import Intern from "./components/blogs/intern_blogs.js";
-import { Footer } from "./components/footer.js";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -74,7 +73,6 @@ function App() {
           <Route path="/edit/:id" element={<EditBlog />} />
           <Route path="/profile/:id" element={<ProfilePage2 />} />
           <Route path="/Gallery" element={<Gallery />} />
-          
           <Route
             path="/Projects"
             element={
