@@ -72,8 +72,10 @@ const AdminPanel = () => {
         setBlogs((prevBlogs) =>
           prevBlogs.map((blog) =>
             blog._id === blogId ? { ...blog, approval: 'Approved' } : blog
-          )
+          ),
+          
         );
+        fetchBlogs()
       }
     } catch (err) {
       console.error('Error approving blog:', err);
@@ -84,6 +86,7 @@ const AdminPanel = () => {
     if (!rejectionComment) {
       setFormMessage('Please provide a comment for rejection.');
       return;
+      
     }
   
     try {
