@@ -107,7 +107,7 @@ const StyledWrapper = styled.div`
     position: relative;
     width: 70px;
     cursor: pointer;
-    background: #c084fc;
+    background: #171618;
     text-transform: uppercase;
     transition: all 0.4s ease-out;
   }
