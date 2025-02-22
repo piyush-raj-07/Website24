@@ -74,6 +74,7 @@ const AdminPanel = () => {
             blog._id === blogId ? { ...blog, approval: 'Approved' } : blog
           )
         );
+        fetchBlogs();
       }
     } catch (err) {
       console.error('Error approving blog:', err);
