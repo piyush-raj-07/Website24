@@ -26,15 +26,17 @@ const NewsModel = require('./models/News');
 const Blog = require('./models/Blogs');
 
 app.use(cookieParser());
-
-//paste cloudianry Config file here  , foe reference see line no: 150 
-
-
-  
-const PORT = 5000;
-
 require('dotenv').config();
 const mongoURI = process.env.CSTRING;
+
+//paste cloudianry Config file here  , foe reference see line no: 150 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_name,
+    api_key:  process.env.CLOUDINARY_api_key,
+    api_secret: process.env.CLOUDINARY_api_secret,
+  });
+  
+const PORT = 5000;
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -167,7 +169,7 @@ app.post('/UploadImage', upload.single('Image'), async (req, res) => {
       });
      
  
-      console.log(result.secure_url);
+    
       // Save the image, title, and subtitle in MongoDB
       const newImage = new GalleryModel({
         url: result.secure_url,

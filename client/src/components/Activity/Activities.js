@@ -64,7 +64,7 @@ const Activities = () => {
             color: { value: ["AE7BC3", "#ffffff"] },
             shape: { type: ["circle", "triangle", "square" ] },
             opacity: { value: 0.8 },
-            size: { value: { min: 2, max: 5 } },
+            size: { value: { min: 5, max: 5 } },
             move: {
               enable: true,
               speed: 0.5,

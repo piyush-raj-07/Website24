@@ -31,8 +31,6 @@ const Navbar = () => {
     closed: { rotate: 0, y: 0 }
   };
 
-  const navbarClass = 'bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white';
-
   const animatedUnderlineClass = `
     relative
     before:content-['']
@@ -52,9 +50,10 @@ const Navbar = () => {
   `;
 
   return (
-    <nav className={`relative w-full z-50 transition-all duration-300 ${navbarClass} `}>
+    <nav className="relative w-full z-50 transition-all duration-300 bg-transparent text-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-24">
+          {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
               className="h-14 w-14 rounded-md transition-transform duration-300 hover:scale-110"
@@ -63,27 +62,31 @@ const Navbar = () => {
             />
           </Link>
 
-          <div className="hidden md:flex items-center justify-center flex-grow">
-            {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
-              <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-3">
-                <Link
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className={`text-2xl font-semibold px-0 py-2 ${animatedUnderlineClass} ${
-                    isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`)
-                      ? 'before:scale-x-100'
-                      : ''
-                  }`}
-                >
-                  {item}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+          {/* Navigation Links with Glass Effect */}
+         {/* Navigation Links with Glass Effect */}
+<div className="hidden md:flex items-center justify-center w-fit bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg px-4 md:px-8 py-2">
+  {['Home', 'Blogs', 'Activities', 'Projects', 'People','Team' , 'Gallery'].map((item) => (
+    <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-2">
+      <Link
+        to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+        className={`text-2xl font-semibold px-3 py-2 ${animatedUnderlineClass} ${
+          isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`)
+            ? 'before:scale-x-100'
+            : ''
+        }`}
+      >
+        {item}
+      </Link>
+    </motion.div>
+  ))}
+</div>
 
+
+          {/* Profile or Login Button */}
           <div className="hidden md:block">
             {isAuthenticated ? (
               user && (
-                <Link to={`/profile/${user._id}`} >
+                <Link to={`/profile`}>
                   <CgProfile className="h-14 w-14 transition-transform duration-300 hover:scale-110" />
                 </Link>
               )
@@ -100,9 +103,10 @@ const Navbar = () => {
             )}
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <motion.button
-              animate={isMenuOpen ? "open" : "closed"}
+              animate={isMenuOpen ? 'open' : 'closed'}
               variants={hamburgerVariants}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="flex flex-col justify-center items-center w-10 h-10"
@@ -114,11 +118,12 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <motion.div
           initial={false}
           animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg"
+          className="md:hidden overflow-hidden bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg"
         >
           <div className="flex flex-col items-center">
             {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
@@ -137,7 +142,7 @@ const Navbar = () => {
             ))}
             {isAuthenticated ? (
               user && (
-                <Link to={`/profile/${user._id}`} onClick={() => setIsMenuOpen(false)}>
+                <Link to={`/profile`} onClick={() => setIsMenuOpen(false)}>
                   <CgProfile className="h-14 w-14 transition-transform duration-300 hover:scale-110 mt-4" />
                 </Link>
               )
