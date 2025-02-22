@@ -13,6 +13,16 @@ const BlogsSchema = new mongoose.Schema({
         type:  mongoose.Schema.Types.ObjectId,
         required: true 
     },
+
+  
+        Auth_Name: { type: String },
+        Auth_Img: { type: String },
+        Auth_Email: { type: String },
+        Auth_Degree: { type: String },
+        Auth_Grad_Year: { type: String },
+        Auth_isProj: { type: Boolean },
+        Auth_isVerified: { type: Boolean },
+     
     status: {
         type: String,
         enum: ["Not-verified", "Verified"],

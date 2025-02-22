@@ -1,3 +1,4 @@
+
 .carousel {
     background-color: transparent;
     display: flex;
@@ -5,6 +6,7 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    border-radius: 20px;
   }
   
   .carousel_wrapper {

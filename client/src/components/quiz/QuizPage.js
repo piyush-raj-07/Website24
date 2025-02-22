@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Loader, Check, X } from 'lucide-react';
 import axios from 'axios';
+import { useAuthStore } from '../../store/authStore';
 import QuestionCard from './QuestionCard';
 import InstructionsCard from './components/InstructionsCard';
 import QuizReview from './components/QuizReview';
@@ -10,6 +11,7 @@ axios.defaults.baseURL = 'http://localhost:5000/api';
 axios.defaults.withCredentials = true;
 
 const QuizPage = () => {
+    const { user } = useAuthStore();
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -97,7 +99,7 @@ const QuizPage = () => {
 
         if (currentQuestionIndex === questions.length - 1) {
             try {
-                const { data } = await axios.post('/quiz/submit', { answers: newAnswers });
+                const { data } = await axios.post('/quiz/submit', { answers: newAnswers, ...(user && { userId: user._id }) });
                 if (data.success) {
                     setScore(data.score);
                     setReviewData(data.reviewData);
