@@ -31,7 +31,7 @@ const Navbar = () => {
     closed: { rotate: 0, y: 0 }
   };
 
-  const navbarClass = 'bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white';
+  const navbarClass = ' bg-opacity-10 backdrop-filter backdrop-blur-lg text-white';
 
   const animatedUnderlineClass = `
     relative
@@ -57,14 +57,14 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex-shrink-0">
             <img
-              className="h-14 w-14 rounded-md transition-transform duration-300 hover:scale-110"
-              src="https://media.licdn.com/dms/image/v2/D4E0BAQFf2jcJ2oNktw/company-logo_200_200/company-logo_200_200/0/1698123847006/electrical_engineering_students_association_logo?e=2147483647&v=beta&t=zzl7X_9804zqoLHSmQMj9MEx4R-Uhn21av4FI-atops"
+              className="h-24 w-24 rounded-md transition-transform duration-300 hover:scale-110"
+              src="/logo.png"
               alt="Logo"
             />
           </Link>
 
-          <div className="hidden md:flex items-center justify-center flex-grow">
-            {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
+          <div className="hidden md:flex items-center justify-center flex-grow space-x-10">
+            {['Home', 'Activities', 'Peoples', 'Blogs', 'BTP'].map((item) => (
               <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-3">
                 <Link
                   to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
@@ -118,10 +118,10 @@ const Navbar = () => {
           initial={false}
           animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg"
+          className="md:hidden overflow-hidden pb-4"
         >
           <div className="flex flex-col items-center">
-            {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
+            {['Home', 'Activities', 'Peoples', 'Blogs', 'BTP'].map((item) => (
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
