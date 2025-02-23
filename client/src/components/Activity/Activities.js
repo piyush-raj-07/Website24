@@ -62,7 +62,7 @@ const Activities = () => {
           particles: {
             number: { value: 50, density: { enable: true, area: 1000 } },
             color: { value: ["AE7BC3", "#ffffff"] },
-            shape: { type: ["circle", "triangle", "square" ] },
+            shape: { type: ["circle"] },
             opacity: { value: 0.8 },
             size: { value: { min: 5, max: 5 } },
             move: {
