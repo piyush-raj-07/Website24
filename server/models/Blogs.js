@@ -45,6 +45,8 @@ const BlogsSchema = new mongoose.Schema({
         default: "Pending",
         required: true
     },
+    upvote:{type:Number , default: 0},
+    upvotedUsers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     comment: [{
         type: String,
         default: null,

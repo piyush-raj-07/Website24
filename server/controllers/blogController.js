@@ -116,4 +116,39 @@ const getMyBlogs = async (req, res) => {
         res.status(500).json({message:'Server Error'});
     }
 }
-module.exports = { getBlog, writeBlog,editBlog,deleteBlog,getAllBlogs,getAllBlogsByCategory,getMyBlogs };
+
+const upvotePost = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const userId = req.userId; 
+
+        const post = await Blog.findById(id);
+
+        if (!post) {
+            return res.status(404).json({ message: "Post not found" });
+        }
+
+
+        if (!post.upvotedUsers) {
+            post.upvotedUsers = [];
+        }
+
+
+        if (post.upvotedUsers.includes(userId)) {
+            return res.status(400).json({ message: "You have already upvoted this post" });
+        }
+
+        post.upvote += 1;
+        post.upvotedUsers.push(userId); 
+        await post.save();
+
+        res.status(200).json({ upvotes: post.upvote });
+    } catch (error) {
+        console.error("Error upvoting post:", error);
+        res.status(500).json({ message: "Server Error" });
+    }
+};
+
+
+
+module.exports = { getBlog, writeBlog,editBlog,deleteBlog,getAllBlogs,getAllBlogsByCategory,getMyBlogs,upvotePost};
