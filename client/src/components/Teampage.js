@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Linkedin, Instagram } from 'lucide-react';
+import { Footer } from "./footer";
 
 const carouselSettings = {
   dots: false,
@@ -168,6 +169,7 @@ function TeamPage() {
   }
   `;
 
+
   return (
     <div className="bg-[#0c0c0c]">
       {/* Hero Section */}
@@ -188,7 +190,7 @@ function TeamPage() {
       </div>
 
       {/* President and Founder Section */}
-      <section className="bg-gradient-to-b from-black via-purple-900 to-indigo-900 py-12 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#111111] from-0.1% to-[#3b0a45]   pb-10' py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
         <h2 className="text-4xl font-bold mb-20 text-white text-center relative z-10">Meet President and Founder</h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 px-4 relative z-10">
@@ -217,7 +219,7 @@ function TeamPage() {
       </section>
 
       {/* Heads Section */}
-      <section className="bg-gradient-to-b from-indigo-900 via-purple-900 to-black py-12 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#3b0a45] from-0.1% to-[#2c003e] py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-white text-center relative z-10">Meet Our Heads</h2>
         <div className="px-12 relative z-10">
@@ -243,15 +245,22 @@ function TeamPage() {
                 <p className="text-gray-400 text-sm">{member.role}</p>
               </div>
             ))}
+            
           </Slider>
+          
         </div>
+        
       </section>
+      
 
       {/* Teams Sections */}
       <WebTeamSection team={teamData.web} />
       <DesignTeamSection team={teamData.design} />
       <ContentTeamSection team={teamData.content} />
       <AutonomyTeamSection team={teamData.autonomy} />
+      <Footer>
+      </Footer>  
+      
       <style jsx>{customStyles}</style>
     </div>
   );
@@ -259,7 +268,7 @@ function TeamPage() {
 
 function WebTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-b from-black via-purple-900 to-indigo-900 py-12 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-[#2c003e] from-0.1% to-[#440075] pb-10' py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
         Meet Our Web Team
@@ -295,7 +304,7 @@ function WebTeamSection({ team }) {
 
 function DesignTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-b from-indigo-900 via-purple-900 to-black py-12 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-[#440075] from-0.1% to-[#52006b]  py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
         Meet Our Design Team
@@ -331,7 +340,7 @@ function DesignTeamSection({ team }) {
 
 function ContentTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-b from-black via-purple-900 to-indigo-900 py-12 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-[#52006b] from-0.1% to-[#6a0dad] py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
         Meet Our Content Team
@@ -367,7 +376,7 @@ function ContentTeamSection({ team }) {
 
 function AutonomyTeamSection({ team }) {
   return (
-    <section className="bg-gradient-to-b from-indigo-900 via-purple-900 to-black py-12 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-[#6a0dad] to-[#a45dbb] py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
         Meet Our Autonomy Team
