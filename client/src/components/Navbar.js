@@ -31,7 +31,7 @@ const Navbar = () => {
     closed: { rotate: 0, y: 0 }
   };
 
-  const navbarClass = 'bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white';
+  const navbarClass = 'bg-transparent text-white';
 
   const animatedUnderlineClass = `
     relative
@@ -63,9 +63,9 @@ const Navbar = () => {
             />
           </Link>
 
-          <div className="hidden md:flex items-center justify-center flex-grow">
+          <div className="hidden md:flex items-center justify-center flex-grow ">
             {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
-              <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-3">
+              <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-3 bg-opacity-10 backdrop-filter backdrop-blur-lg">
                 <Link
                   to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                   className={`text-2xl font-semibold px-0 py-2 ${animatedUnderlineClass} ${
