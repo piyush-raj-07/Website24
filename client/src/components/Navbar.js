@@ -42,11 +42,11 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="w-full flex justify-center items-center">
+          <div className="w-full flex justify-center items-center font-raleway font-semibold">
             <div className='mx-6'>
             <Link
               to="/"
-              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Home
             </Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
             <div className='mx-6'>
             <Link
               to="/blogs"
-              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/blogs') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/blogs') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Blogs
             </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
             <div className='mx-6'>
             <Link
               to="/activities"
-              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/activities') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/activities') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Activities
             </Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
             <div className='mx-6'>
             <Link
               to="/Projects"
-              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/projects') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl  px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/projects') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               Projects
             </Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
             <div className='mx-6'>
             <Link
               to="/people"
-              className={`text-2xl font-semibold px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/people') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
+              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/people') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
             >
               People
             </Link>

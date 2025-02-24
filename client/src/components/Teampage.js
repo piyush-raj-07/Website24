@@ -82,7 +82,7 @@ function TeamPage() {
       { name: "Content Creator 5", role: "Technical Writer", imageUrl: "https://example.com/images/content5.jpg", linkedinUrl: "https://www.linkedin.com/in/content5", instagramUrl: "https://www.instagram.com/content5" },
     ],
     autonomy: [
-      { name: "Autonomy Engineer 1", role: "Machine Learning Engineer", imageUrl: "https://example.com/images/autonomy1.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy1", instagramUrl: "https://www.instagram.com/autonomy1" },
+      { name: "Autonomy Engineer 1", role: "Machine Learning Engineer", imageUrl: "https://res.cloudinary.com/dzjd6gh2q/raw/upload/v1740401719/open_yggbzx", linkedinUrl: "https://www.linkedin.com/in/autonomy1", instagramUrl: "https://www.instagram.com/autonomy1" },
       { name: "Autonomy Engineer 2", role: "Computer Vision Specialist", imageUrl: "https://example.com/images/autonomy2.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy2", instagramUrl: "https://www.instagram.com/autonomy2" },
       { name: "Autonomy Engineer 3", role: "Robotics Engineer", imageUrl: "https://example.com/images/autonomy3.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy3", instagramUrl: "https://www.instagram.com/autonomy3" },
       { name: "Autonomy Engineer 4", role: "Control Systems Engineer", imageUrl: "https://example.com/images/autonomy4.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy4", instagramUrl: "https://www.instagram.com/autonomy4" },
@@ -175,22 +175,22 @@ function TeamPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center z-0 opacity-50" 
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/duir0ktqb/image/upload/v1734713680/Screenshot_2024-12-20_222342_fjuoar.png')",
+            backgroundImage: "url('https://res.cloudinary.com/dzjd6gh2q/image/upload/v1740392604/EESA_team_os3f17.jpg')",
           }}
           role="img"
           aria-label="Team background image"
         ></div>
         <div className="absolute inset-0 "></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[white] mb-2">Meet Our Team</h1>
-          <p className="text-[#a70ff4] text-xl md:text-2xl lg:text-3xl mb-6 font-semibold font-serif">EESA IIT Indore</p>
+          <h1 className="text-2xl font-raleway font-bold md:text-3xl lg:text-4xl text-[white] mb-2">Meet Our Team</h1>
+          <p className="text-purple-400 text-xl md:text-2xl lg:text-3xl mb-6 font-semibold font-raleway">EESA IIT Indore</p>
         </div>
       </div>
 
       {/* President and Founder Section */}
       <section className="bg-gradient-to-b from-black via-purple-900 to-indigo-900 py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-        <h2 className="text-4xl font-bold mb-20 text-white text-center relative z-10">Meet President and Founder</h2>
+        <h2 className="text-4xl font-raleway font-bold mb-20 text-white text-center relative z-10">Meet President and Founder</h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 px-4 relative z-10">
           {teamData.presidentFounder.map((member) => (
             <div key={member.id} className="text-center">
@@ -209,8 +209,8 @@ function TeamPage() {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white font-semibold">{member.name}</h3>
-              <p className="text-gray-400">{member.role}</p>
+              <h3 className="text-white font-raleway font-semibold">{member.name}</h3>
+              <p className="text-gray-400 font-libre">{member.role}</p>
             </div>
           ))}
         </div>
@@ -239,8 +239,8 @@ function TeamPage() {
                     </a>
                   </div>
                 </div>
-                <h3 className="text-white font-semibold text-lg md:text-xl">{member.name}</h3>
-                <p className="text-gray-400 text-sm">{member.role}</p>
+                <h3 className="text-white font-raleway font-semibold text-lg md:text-xl">{member.name}</h3>
+                <p className="text-gray-400 font-libre text-sm">{member.role}</p>
               </div>
             ))}
           </Slider>
@@ -261,7 +261,7 @@ function WebTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-black via-purple-900 to-indigo-900 py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+      <h2 className="text-4xl font-raleway font-bold mb-12 text-white text-center relative z-10">
         Meet Our Web Team
       </h2>
       <div className="px-12 relative z-10">
@@ -284,7 +284,7 @@ function WebTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold font-raleway text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>
@@ -297,7 +297,7 @@ function DesignTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-indigo-900 via-purple-900 to-black py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+      <h2 className="text-4xl font-raleway font-bold mb-12 text-white text-center relative z-10">
         Meet Our Design Team
       </h2>
       <div className="px-12 relative z-10">
@@ -320,7 +320,7 @@ function DesignTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>
@@ -333,7 +333,7 @@ function ContentTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-black via-purple-900 to-indigo-900 py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+      <h2 className="text-4xl font-raleway font-bold mb-12 text-white text-center relative z-10">
         Meet Our Content Team
       </h2>
       <div className="px-12 relative z-10">
@@ -356,7 +356,7 @@ function ContentTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>
@@ -369,7 +369,7 @@ function AutonomyTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-indigo-900 via-purple-900 to-black py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+      <h2 className="text-4xl font-raleway font-bold mb-12 text-white text-center relative z-10">
         Meet Our Autonomy Team
       </h2>
       <div className="px-12 relative z-10">
@@ -392,7 +392,7 @@ function AutonomyTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>

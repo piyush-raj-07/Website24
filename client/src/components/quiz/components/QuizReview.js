@@ -26,7 +26,7 @@ const QuizReview = ({ reviewData }) => {
                             {/* Question Header */}
                             <div className="flex items-start justify-between mb-4">
                                 <div className="flex-1">
-                                    <div className="flex items-center space-x-2 mb-2">
+                                    <div className="flex items-center font-raleway space-x-2 mb-2">
                                         <span className="text-sm font-medium text-gray-400">
                                             Question {index + 1}
                                         </span>
@@ -63,7 +63,7 @@ const QuizReview = ({ reviewData }) => {
                                                 : 'bg-gray-600 bg-opacity-30'
                                             }`}
                                     >
-                                        <span className={`h-6 w-6 flex-shrink-0 rounded-full border flex items-center justify-center ${optIndex === item.correctAnswer
+                                        <span className={`h-6 w-6 flex-shrink-0 rounded-full border flex font-libre items-center justify-center ${optIndex === item.correctAnswer
                                             ? 'border-green-500 text-green-500'
                                             : optIndex === item.selectedAnswer && !item.isCorrect
                                                 ? 'border-red-500 text-red-500'
@@ -71,7 +71,7 @@ const QuizReview = ({ reviewData }) => {
                                             }`}>
                                             {String.fromCharCode(65 + optIndex)}
                                         </span>
-                                        <span className={`text-sm flex-1 ${optIndex === item.correctAnswer
+                                        <span className={`text-sm flex-1 font-raleway ${optIndex === item.correctAnswer
                                             ? 'text-green-400'
                                             : optIndex === item.selectedAnswer && !item.isCorrect
                                                 ? 'text-red-400'

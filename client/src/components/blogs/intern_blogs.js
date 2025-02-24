@@ -47,10 +47,10 @@ const Intern = () => {
               {/* Content */}
               <div className="p-12">
                 <h3 className="mb-2 text-lg text-gray-500">   Captn Jack Sparrow Btech 26'</h3>
-                <h1 className="mb-4 text-3xl font-bold text-gray-800">
+                <h1 className="mb-4 text-3xl font-bold font-raleway text-gray-800">
                 {val.title}
                 </h1>
-                <p className="mb-8 text-lg leading-relaxed text-gray-800">
+                <p className="mb-8 text-lg leading-relaxed font-libre text-gray-800">
                  {val.body}
                 </p>
                 <button

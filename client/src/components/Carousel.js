@@ -73,7 +73,7 @@ function Carousel( ) {
             >
               <img className="card_image" src={image.image} alt="" />
               <div className="card_overlay">
-                <h2 className="card_title">{image.title}</h2>
+                <h2 className="card_title font-raleway">{image.title}</h2>
               </div>
             </div>
           );

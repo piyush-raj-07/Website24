@@ -18,7 +18,7 @@ document.head.appendChild(styleSheet);
 export const Footer = () => {
     const Year = new Date().getFullYear();
     return (
-        <footer className="relative bg-black text-white pt-16 pb-16" id="footer">
+        <footer className="relative bg-black text-white pt-16 pb-16 font-libre" id="footer">
             <div className="absolute top-0 left-0 w-full overflow-hidden">
                 <svg data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ export const Footer = () => {
                 <div className="relative z-10 grid lg:grid-cols-3 gap-10 sm:grid-cols-1 px-6 md:px-20 max-w-screen-xl mx-auto justify-items-center mb-10">
                     {/* First Column */}
                     <div className="text-center">
-                        <li className="text-[22px] list-none font-semibold text-purple-400 py-2 uppercase">
+                        <li className="text-[22px] list-none font-raleway font-semibold text-purple-400 py-2 uppercase">
                             Creativity
                         </li>
                         <li className="my-4 list-none">Website Guidelines & Ideas</li>
@@ -44,7 +44,7 @@ export const Footer = () => {
 
                     {/* Second Column */}
                     <div className="text-center">
-                        <li className="text-[22px] list-none font-semibold text-purple-400 py-2 uppercase">
+                        <li className="text-[22px] list-none font-raleway font-semibold text-purple-400 py-2 uppercase">
                             Inspiration
                         </li>
                         <li className="my-4 list-none">Guidelines & Ideas</li>
@@ -54,7 +54,7 @@ export const Footer = () => {
 
                     {/* Third Column */}
                     <div className="text-center">
-                        <h2 className="text-[22px] font-semibold text-purple-400 py-2 uppercase">Contact</h2>
+                        <h2 className="text-[22px] font-raleway font-semibold text-purple-400 py-2 uppercase">Contact</h2>
                         <p className="text-[16px] my-4">Email: youremail@gmail.com</p>
                         <p className="text-[16px] my-4">Phone: +1 113-456-7890</p>
                         <div className="flex justify-center space-x-4">

@@ -289,15 +289,15 @@ export default function ProfilePage() {
                                 />
                             </div>
 
-                            <h1 className='px-2 py-1 text-3xl font-serif'>{username}</h1>
-                            <h4 className='p-1 text-base font-serif'>{degree} | {batch}'</h4>
+                            <h1 className='px-2 py-1 text-3xl font-semibold font-raleway'>{username}</h1>
+                            <h4 className='p-1 text-base font-raleway'>{degree} | {batch}'</h4>
                         </div>
                     </div>
                     <div className='mx-2 my-2 flex flex-col items-center justify-center'>
                         <div className="px-2  pt-2 w-full">
                             <textarea
                                 value={intro}
-                                className="w-full h-24 bg-black bg-opacity-70 text-white border-2 border-white p-2 rounded-lg"
+                                className="w-full h-24 bg-black bg-opacity-70 text-white border-2 font-libre border-white p-2 rounded-lg"
                                 placeholder="Enter your introduction here..."
                                 disabled={!editMode}
                             />
@@ -308,7 +308,7 @@ export default function ProfilePage() {
                             <div className='flex justify-center'>
                                 <button
                                     onClick={openModal}
-                                    className="my-4 bg-purple-950 text-white px-4 py-2 rounded-lg cursor-pointer border-2 border-white"
+                                    className="my-4 bg-purple-950 text-white px-4 py-2 rounded-lg  font-libre cursor-pointer border-2 border-white"
                                 >
                                     Edit Profile
                                 </button>
@@ -318,8 +318,8 @@ export default function ProfilePage() {
 
                         <div className="w-full my-4">
                             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 ">
-                                <h3 className="text-base font-medium text-white/80 mb-4 text-center uppercase tracking-wider shadow shadow-white/5">Achievements</h3>
-                                <div className="flex flex-wrap items-center gap-2 justify-center">
+                                <h3 className="text-base font-medium font-raleway text-white/80 mb-4 text-center uppercase tracking-wider shadow shadow-white/5">Achievements</h3>
+                                <div className="flex flex-wrap font-libre items-center gap-2 justify-center">
                                     {(userRole === 'admin' || userRole === 'eesa') && (
                                         <Badge
                                             icon={Shield}
@@ -350,12 +350,14 @@ export default function ProfilePage() {
 
 
                 </div>
+                <div className='mx-6'>
                 <button
                     onClick={handleLogout}
-                    className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                    className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-libre border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
                 >
                     Logout
                 </button>
+                </div>
             </div>
 
             <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto max-h-screen scrollbar-hidden">
@@ -365,7 +367,7 @@ export default function ProfilePage() {
 
                         <button
                             onClick={() => navigate('/writeBlog')}
-                            className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3]"
+                            className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-libre border-2 border-white transition duration-300 hover:bg-[#8967B3]"
                         >
                             Write a Blog
                         </button>
@@ -374,11 +376,11 @@ export default function ProfilePage() {
 
                         <button
                             onClick={() => navigate(`/myBlog`)}
-                            className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-serif border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
+                            className="bg-[#3B1E54] text-white px-4 py-2 w-full rounded-md text-lg font-libre border-2 border-white transition duration-300 hover:bg-[#8967B3] mt-2"
                         >
                             See Status
                         </button>
-                        <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-2xl">
+                        <div className="relative text-white text-center font-raleway p-4 overflow-hidden group font-bold text-2xl">
                             My Blogs
                         </div>
 
@@ -426,15 +428,15 @@ export default function ProfilePage() {
                         <div className="bg-[#A888B5] text-black p-8 rounded-lg shadow-lg w-1/2">
                             <h2 className="text-3xl text-[#441752] font-serif font-bold border-b mb-4 pb-2 text-center">{selectedBlog.title}</h2>
                             <div className='bg-black bg-opacity-10 rounded-lg '>
-                                <p className="text-black  p-2 text-lg mb-2"><strong>Category:</strong> {selectedBlog.cat}</p>
+                                <p className="text-black font-raleway p-2 text-lg mb-2"><strong>Category:</strong> {selectedBlog.cat}</p>
                                 <div className="p-2">
-                                    <p className="text-black text-lg"><strong>Body: </strong>{selectedBlog.body}</p>
+                                    <p className="text-black font-raleway text-lg"><strong>Body: </strong>{selectedBlog.body}</p>
                                 </div>
                             </div>
                             <div className="flex justify-end mt-4">
                                 <button
                                     onClick={() => setShowBlogModal(false)}
-                                    className="bg-[#441752] text-white px-4 py-2 rounded"
+                                    className="bg-[#441752] text-white font-libre px-4 py-2 rounded"
                                 >
                                     Close
                                 </button>
@@ -446,8 +448,8 @@ export default function ProfilePage() {
                 {showConfirm && (
                     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
                         <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-                            <p className="mb-4">Are you sure you want to delete this blog?</p>
-                            <div className="flex justify-end">
+                            <p className="mb-4 font-libre">Are you sure you want to delete this blog?</p>
+                            <div className="flex justify-end font-libre">
                                 <button className="bg-red-600 text-white px-4 py-2 rounded-lg mr-2" onClick={confirmDeleteBlog}>Confirm</button>
                                 <button className="bg-gray-400 text-black px-4 py-2 rounded-lg" onClick={() => setShowConfirm(false)}>Cancel</button>
                             </div>

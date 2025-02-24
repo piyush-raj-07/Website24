@@ -87,7 +87,7 @@ const EditBlog = () => {
       <FallingStarsBackground />
       <div className="absolute top-0 bg-white bg-opacity-10 left-0 w-full h-full items-center justify-center">
         <div className="max-w-4xl mx-auto bg-white bg-opacity-5 border-2 border-white backdrop-blur-sm text-white p-8 rounded-lg shadow-2xl z-10 mt-8">
-          <h1 className="text-4xl font-bold text-center mb-6 animate__animated animate__fadeIn animate__delay-1s">
+          <h1 className="text-4xl font-bold font-raleway text-center mb-6 animate__animated animate__fadeIn animate__delay-1s">
             Edit Blog
           </h1>
 
@@ -96,39 +96,39 @@ const EditBlog = () => {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="flex flex-col">
-              <label htmlFor="title" className="text-lg">Blog Title</label>
+              <label htmlFor="title" className="text-lg font-raleway">Blog Title</label>
               <input
                 type="text"
                 id="title"
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                className="mt-2 p-4 border-2 border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
+                className="mt-2 p-4 border-2 font-libre border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
                 required
               />
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="body" className="text-lg">Blog Body</label>
+              <label htmlFor="body" className="text-lg font-raleway">Blog Body</label>
               <textarea
                 id="body"
                 name="body"
                 value={formData.body}
                 onChange={handleInputChange}
-                className="mt-2 p-4 border-2 border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
+                className="mt-2 p-4 border-2 font-libre border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
                 rows="6"
                 required
               />
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="cat" className="text-lg">Category</label>
+              <label htmlFor="cat" className="text-lg font-raleway">Category</label>
               <select
                 id="cat"
                 name="cat"
                 value={formData.cat}
                 onChange={handleInputChange}
-                className="mt-2 p-4 border-2 border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
+                className="mt-2 p-4 border-2 font-libre border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
                 required
               >
                 <option value="internship">Internship</option>
@@ -139,7 +139,7 @@ const EditBlog = () => {
 
             <button
               type="submit"
-              className="w-full py-3 bg-purple-800 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
+              className="w-full py-3 font-libre bg-purple-800 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transform transition-all duration-300 hover:scale-105"
             >
               Update Blog
             </button>

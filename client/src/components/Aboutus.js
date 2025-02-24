@@ -54,7 +54,7 @@ const AboutUs = () => {
                     </svg>
                     
                 </h1>
-                <p className="text-lg text-black leading-relaxed ">
+                <p className="text-lg text-black font-libre">
                     Welcome to our company! We are dedicated to providing exceptional services
                     and creating meaningful experiences. Our team of passionate professionals
                     works tirelessly to achieve excellence and drive innovation in everything we do.

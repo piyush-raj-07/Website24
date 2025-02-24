@@ -55,7 +55,7 @@ const ProjectTable = () => {
     ];
 
     return (
-        <div className='container d-flex justify-content-center align-items-center' style={{ minHeight: '100vh', backgroundColor: 'black' }}>
+        <div className='container d-flex justify-content-center align-items-center font-libre' style={{ minHeight: '100vh', backgroundColor: 'black' }}>
             <div className="table-container">
                 <div className='text-end'>
                     <input
@@ -77,6 +77,7 @@ const ProjectTable = () => {
                         padding: '10px', 
                         textAlign: 'center',
                         marginBottom: '20px',
+                        
                     }}
                 >
                     Professor and Project Information

@@ -32,7 +32,7 @@ const Gallery = () => {
 
   return (
     <div className="bg-black min-h-screen font-raleway text-white">
-      <h1 className="text-center text-4xl font-semibold py-10">Gallery</h1>
+      <h1 className="text-center text-4xl font-raleway font-semibold py-10">Gallery</h1>
       <div className="flex flex-wrap justify-center gap-8 p-8">
         {images.map((image, index) => (
           <div
@@ -47,8 +47,8 @@ const Gallery = () => {
             />
             <div className="absolute inset-0 bg-transparent group-hover:bg-white/10 transition-colors duration-300"></div>
             <div className="absolute bottom-5 left-5 text-white opacity-0 transform translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-              <p className="text-lg font-semibold">{image.title}</p>
-              <p className="text-sm opacity-70">{image.subtitle}</p>
+              <p className="text-lg font-raleway font-semibold">{image.title}</p>
+              <p className="text-sm font-libre opacity-70">{image.subtitle}</p>
             </div>
           </div>
         ))}
