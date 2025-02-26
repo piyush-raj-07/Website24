@@ -74,7 +74,7 @@ function App() {
           <Route path="/profile/:id" element={<ProfilePage2 />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route
-            path="/Projects"
+            path="/btp"
             element={
               <ProtectedRoute>
                 <ProjectTable />
