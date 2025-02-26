@@ -61,11 +61,22 @@ const editBlog = async (req, res) => {
         if (!blog) {
             return res.status(404).json({message:'Blog not found'});
         }
+    
+        if(blog.approval=='Denied'){
+            blog.title = req.body.title;
+            blog.body = req.body.body;
+            blog.cat=req.body.cat;
+            blog.status="Not-verified";
+            blog.approval="Pending";
+            const updatedBlog = await blog.save();
+            res.status(200).json(updatedBlog);
+        }else{
         blog.title = req.body.title;
         blog.body = req.body.body;
         blog.cat=req.body.cat;
         const updatedBlog = await blog.save();
         res.status(200).json(updatedBlog);
+        }
     } catch (err) {
         console.error(err);
         res.status(500).json({message:'Server Error'});
