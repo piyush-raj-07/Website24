@@ -4,7 +4,7 @@ const ProgressBar = ({ currentQuestion, totalQuestions }) => {
     const progress = (currentQuestion / totalQuestions) * 100;
 
     return (
-        <div className="mb-6">
+        <div className="mb-6 font-libre">
             <div className="flex justify-between text-xs sm:text-sm text-gray-400 mb-1.5 sm:mb-2">
                 <span>Question {currentQuestion + 1} of {totalQuestions}</span>
                 <span>{Math.round(progress)}% Complete</span>

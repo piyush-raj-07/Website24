@@ -213,7 +213,31 @@
               "title": "RF Energy Harvesting in Sub-6 GHz frequency band",
               "numStudents": 2,
               "supervisor": "Dr. Rinkee Chopra",
-              "coSupervisor": null
+              "coSupervisor": null,
+              "students": [
+                { "name": "K.VISHAL", "rollNo": "210002047", "specialization": "RF & MW" },
+                { "name": "N MADHU", "rollNo": "210002053", "specialization": "RF & MW" }
+              ]
+            },
+            {
+              "projectNo": "P22",
+              "title": "Automated Detection of EyeMovements",
+              "numStudents": 1,
+              "supervisor": "Dr. Ram Bilas Pachori",
+              "coSupervisor": null,
+              "students": [
+                { "name": "KILARU JAYA DIVYA", "rollNo": "210002046", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P23",
+              "title": "Automated drowsiness detection from physiological signals ",
+              "numStudents": 1,
+              "supervisor": "Dr. Ram Bilas Pachori",
+              "coSupervisor": null,
+              "students": [
+                    { "name": "ARVAPALLI VAGDEVI", "rollNo": "210002015", "specialization": "CSP" }
+                  ]
             },
             
                 {
@@ -349,8 +373,8 @@
                   "supervisor": "Dr. Vimal Bhatia",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "VAMSHI BHUKYA", "rollNo": "210002022", "specialization": null },
-                    { "name": "SRI VAISHNAV KONTHAM", "rollNo": "210002048", "specialization": null }
+                    { "name": "VAMSHI BHUKYA", "rollNo": "210002022", "specialization": "CSP" },
+                    { "name": "SRI VAISHNAV KONTHAM", "rollNo": "210002048", "specialization": "CSP" }
                   ]
                 },
                 {
@@ -361,7 +385,7 @@
                   "coSupervisor": null,
                   "students": [
                     { "name": "B.SRIRAM VISHNU KIRAN", "rollNo": "210002023", "specialization": "CSP" },
-                    { "name": "K. SAI DILEEP KUMAR", "rollNo": "210002049", "specialization": null }
+                    { "name": "K. SAI DILEEP KUMAR", "rollNo": "210002049", "specialization": "CSP" }
                   ]
                 },
                 {
@@ -382,7 +406,7 @@
                   "coSupervisor": null,
                   "students": [
                     { "name": "SUNKU VINEET", "rollNo": "210002077", "specialization": "CSP" },
-                    { "name": "A. TARUN BALAJI", "rollNo": "210002001", "specialization": null }
+                    { "name": "A. TARUN BALAJI", "rollNo": "210002001", "specialization": "CSP" }
                   ]
                 },
                 {
@@ -392,8 +416,8 @@
                   "supervisor": "Dr. Vivek Kanhangad",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "YASHVARDHAN SHAH", "rollNo": "210002085", "specialization": null },
-                    { "name": "UTKARSH VERMA", "rollNo": "210002081", "specialization": null }
+                    { "name": "YASHVARDHAN SHAH", "rollNo": "210002085", "specialization": "CSP" },
+                    { "name": "UTKARSH VERMA", "rollNo": "210002081", "specialization": "CSP" }
                   ]
                 },{
                   "projectNo": "P41",
@@ -402,7 +426,8 @@
                   "supervisor": "Dr. Vivek Kanhangad",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "AKANKSHA", "rollNo": "210002011", "specialization": "VDN" }
+                    { "name": "SARTHAK NANDRE", "rollNo": "210002067", "specialization": "CSP" },
+                    { "name": "AKANKSHA", "rollNo": "210002055", "specialization": "CSP" }
                   ]
                 },
                 

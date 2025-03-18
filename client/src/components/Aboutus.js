@@ -58,8 +58,10 @@ const AboutUs = () => {
                     <span>A</span>
                     
                 </h1>
-                <p className="text-lg text-black leading-relaxed ">
-                Students studying electrical engineering are represented by the Electrical Engineering Students Association (EESA). Our primary goal is to establish connections between the Electrical Department's instructors, students, and alumni. Overall, EESA serves as a link between them. It is an organization among the students, for the students. We hold treks, cultural events, traditional nights, talk shows, seminars, and other activities to accomplish our goal. We also provide blogs on everything our students need, including internships, placements, and more education.
+                <p className="text-lg text-black font-libre">
+                    Welcome to our company! We are dedicated to providing exceptional services
+                    and creating meaningful experiences. Our team of passionate professionals
+                    works tirelessly to achieve excellence and drive innovation in everything we do.
                 </p>
                
             </div>

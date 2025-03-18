@@ -19,7 +19,7 @@ const QuestionCard = ({ question, options, selectedOption, onOptionSelect, timeL
             <Timer timeLeft={timeLeft} />
 
             {/* Question */}
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-100 mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-raleway font-semibold text-gray-100 mb-4 sm:mb-6">
                 {question}
             </h3>
 
@@ -36,7 +36,7 @@ const QuestionCard = ({ question, options, selectedOption, onOptionSelect, timeL
                                 : 'bg-gray-700 bg-opacity-50 hover:bg-gray-600 text-gray-300'
                             }`}
                     >
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center font-libre space-x-3">
                             <div className={`h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 rounded-full border-2 flex items-center justify-center ${selectedOption === index
                                     ? 'border-white bg-white bg-opacity-20'
                                     : 'border-gray-400'

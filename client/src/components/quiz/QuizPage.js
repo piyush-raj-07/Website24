@@ -177,7 +177,7 @@ const QuizPage = () => {
                                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                                 className="mb-6"
                             >
-                                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-indigo-500 text-transparent bg-clip-text text-center">
+                                <h2 className="text-3xl font-bold font-libre bg-gradient-to-r from-purple-400 to-indigo-500 text-transparent bg-clip-text text-center">
                                     Quiz Completed!
                                 </h2>
                             </motion.div>
@@ -188,10 +188,10 @@ const QuizPage = () => {
                                 transition={{ delay: 0.4 }}
                                 className="space-y-4 mb-8"
                             >
-                                <h3 className={`text-2xl font-bold ${feedback.color} text-center`}>
+                                <h3 className={`text-2xl font-bold ${feedback.color} font-raleway text-center`}>
                                     {feedback.message}
                                 </h3>
-                                <div className="flex justify-center items-center space-x-2">
+                                <div className="flex justify-center font-libre items-center space-x-2">
                                     <span className="text-gray-300 text-lg">Score:</span>
                                     <motion.span
                                         initial={{ opacity: 0 }}
@@ -203,7 +203,7 @@ const QuizPage = () => {
                                     </motion.span>
                                     <span className="text-gray-300 text-lg">out of {questions.length}</span>
                                 </div>
-                                <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+                                <div className="w-full h-2 bg-gray-700 font-libre rounded-full overflow-hidden">
                                     <motion.div
                                         initial={{ width: 0 }}
                                         animate={{ width: `${percentage}%` }}
@@ -218,7 +218,7 @@ const QuizPage = () => {
                                 </div>
                             </motion.div>
 
-                            <div className="flex flex-col sm:flex-row justify-center gap-4">
+                            <div className="flex flex-col font-raleway sm:flex-row justify-center gap-4">
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
