@@ -9,7 +9,7 @@ const QuestionCard = ({ question, options, selectedOption, onOptionSelect, timeL
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.3 }}
-            className="w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl p-4 sm:p-6 md:p-8"
+            className="w-full bg-black bg-opacity-25 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl p-4 sm:p-6 md:p-8"
         >
             <ProgressBar
                 currentQuestion={currentQuestionIndex}
@@ -33,7 +33,7 @@ const QuestionCard = ({ question, options, selectedOption, onOptionSelect, timeL
                         onClick={() => onOptionSelect(index)}
                         className={`w-full p-3 sm:p-4 rounded-lg text-left transition duration-200 ${selectedOption === index
                                 ? 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white'
-                                : 'bg-gray-700 bg-opacity-50 hover:bg-gray-600 text-gray-300'
+                                : 'bg-gray-700 bg-opacity-50 shadow-lg hover:bg-gray-600 text-gray-200'
                             }`}
                     >
                         <div className="flex items-center font-libre space-x-3">
