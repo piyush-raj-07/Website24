@@ -2,166 +2,165 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { CgProfile } from 'react-icons/cg';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const { isAuthenticated, user } = useAuthStore();
-  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const isActive = (path) => location.pathname === path;
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
-    if (window.innerWidth >= 768) {
-      window.addEventListener('scroll', handleScroll);
-    }
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  return (
-    <div className={`flex max-w-screen items-center transition-all duration-300 h-24 ${scrolled ? 'bg-opacity-60 bg-purple-700 text-white' : 'bg-black text-purple-300'} ${window.innerWidth < 768 ? 'h-auto bg-purple-700 bg-opacity-100 z-50 text-white border-white' : ''}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-4">
-            <Link to="/">
-              <img
-                className="h-14 w-14 rounded-md"
-                src="https://media.licdn.com/dms/image/v2/D4E0BAQFf2jcJ2oNktw/company-logo_200_200/company-logo_200_200/0/1698123847006/electrical_engineering_students_association_logo?e=2147483647&v=beta&t=zzl7X_9804zqoLHSmQMj9MEx4R-Uhn21av4FI-atops"
-                alt="Logo"
-              />
-            </Link>
-          </div>
+  const linkVariants = {
+    hover: { scale: 1.1, transition: { duration: 0.2 } }
+  };
 
-          <div className="w-full flex justify-center items-center font-raleway font-semibold">
-            <div className='mx-6'>
-            <Link
-              to="/"
-              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              Home
-            </Link>
-            </div>
-            <div className='mx-6'>
-            <Link
-              to="/blogs"
-              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/blogs') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              Blogs
-            </Link>
-            </div>
-            
-            <div className='mx-6'>
-            <Link
-              to="/activities"
-              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/activities') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              Activities
-            </Link>
-            </div>
-            
-            <div className='mx-6'>
-            <Link
-              to="/Projects"
-              className={`text-2xl  px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/projects') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              Projects
-            </Link>
-            </div>
-            <div className='mx-6'>
-            <Link
-              to="/people"
-              className={`text-2xl px-0 py-2 z-10 relative transition-all duration-300 ${isActive('/people') ? `${scrolled ? 'border-b-purple-600' : 'border-b-white'} border-b-2` : 'hover:border-b-2 hover:border-b-purple-600'}`}
-            >
-              People
-            </Link>
-            </div>
-            
-            </div>
-            <div className="hidden  md:flex items-center  space-x-6">
+  const hamburgerVariants = {
+    open: { rotate: 45, y: 5 },
+    closed: { rotate: 0, y: 0 }
+  };
+
+  const animatedUnderlineClass = `
+    relative
+    before:content-['']
+    before:absolute
+    before:block
+    before:w-full
+    before:h-[2px]
+    before:bottom-0
+    before:left-0
+    before:bg-purple-600
+    before:transform
+    before:scale-x-0
+    before:transition-transform
+    before:duration-300
+    before:origin-left
+    hover:before:scale-x-100
+  `;
+
+  return (
+    <nav className="relative w-full z-50 transition-all duration-300 bg-transparent text-white">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-24">
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img
+              className="h-20 w-22 rounded-md transition-transform duration-300 hover:scale-110"
+              src="https://media-hosting.imagekit.io//6f7127647e6b43ec/EESA_LOGO_white.png?Expires=1835149649&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=kItWfIafOzth0u~AJKby3hxj16enlcvhuAW~5aEpea0cVBaDtGVCb6jV6dNmKZzTbHT61ikg1ReAHOZKZFb5cfK--BirwbDFiYzvMq4Svjt6exDtT9Xb7a~qkRKR1Tdx6GmioAwZixmExtRCsLqhLtBCjXOQZNDxMeQWb7X5Iw5vcCT5lf3ac9tBMaxzYwYTH0lOFoVuNa10haVIQYmVrjQ5eG2RW4IHFF0LxBWeYq4fF4rQ7MtSXVFTLcMCvAuIAOqHHOrH8GhNAyVSgL7gT3JBtbfwmNA~eFimzXIOcD0HN5oG3Vb9wbsd-MdsgYCDLjsVckTlHViNbsBOSsnFLQ__"
+              alt="Logo"
+            />
+          </Link>
+
+          {/* Navigation Links with Glass Effect */}
+         {/* Navigation Links with Glass Effect */}
+<div className="hidden md:flex items-center justify-center w-fit bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg px-4 md:px-8 py-2">
+  {['Home', 'Blogs', 'Activities', 'BTP', 'People'].map((item) => (
+    <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-2">
+      <Link
+        to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+        className={`text-2xl font-semibold px-3 py-2 ${animatedUnderlineClass} ${
+          isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`)
+            ? 'before:scale-x-100'
+            : ''
+        }`}
+      >
+        {item}
+      </Link>
+    </motion.div>
+  ))}
+</div>
+
+
+          {/* Profile or Login Button */}
+          <div className="hidden md:block">
             {isAuthenticated ? (
               user && (
-                <Link to={`/profile`} className="h-10 w-10">
-                  <CgProfile className="h-full w-full" />
+                <Link to={`/profile`}>
+                  <CgProfile className="h-14 w-14 transition-transform duration-300 hover:scale-110" />
                 </Link>
               )
             ) : (
-              <Link to="/login" >
-                <button className="p-3 text-white bg-purple-600 rounded-md transition-all duration-300 transform hover:bg-purple-700 hover:scale-105 hover:shadow-lg">
+              <Link to="/login">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-white bg-purple-600 rounded-md transition-all duration-300 hover:bg-purple-700 hover:shadow-lg"
+                >
                   Login
-                </button>
+                </motion.button>
               </Link>
             )}
           </div>
 
-          <div className="md:hidden flex items-center">
-            <button
-              className="text-3xl font-bold text-white"
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <motion.button
+              animate={isMenuOpen ? 'open' : 'closed'}
+              variants={hamburgerVariants}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="flex flex-col justify-center items-center w-10 h-10"
             >
-              {isMenuOpen ? '×' : '≡'}
-            </button>
+              <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 ${isMenuOpen ? 'rotate-90 translate-y-1' : '-translate-y-0.5'}`}></span>
+              <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 ${isMenuOpen ? '-rotate-180 -translate-y-1' : 'translate-y-0.5'}`}></span>
+            </motion.button>
           </div>
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden flex flex-col items-center space-y-6 mt-6 bg-purple-700 py-6">
-            <Link
-              to="/"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/blogs"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/blogs') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blogs
-            </Link>
-            <Link
-              to="/activities"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/activities') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Activities
-            </Link>
-            <Link
-              to="/projects"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/projects') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </Link>
-           
-            <Link
-              to="/notices"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/notices') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Notices
-            </Link>
-            <Link
-              to="/contact"
-              className={`text-2xl font-semibold px-4 py-2 transition-all duration-300 ${isActive('/contact') ? 'border-b-2 border-b-purple-600' : 'hover:border-b-2 hover:border-b-purple-600'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+        {/* Mobile Menu */}
+        <motion.div
+          initial={false}
+          animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden overflow-hidden bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg"
+        >
+          <div className="flex flex-col items-center">
+            {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
+              <Link
+                key={item}
+                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                className={`block text-2xl font-semibold px-4 py-2 transition-all duration-300 ${animatedUnderlineClass} ${
+                  isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`)
+                    ? 'before:scale-x-100'
+                    : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item}
+              </Link>
+            ))}
+            {isAuthenticated ? (
+              user && (
+                <Link to={`/profile`} onClick={() => setIsMenuOpen(false)}>
+                  <CgProfile className="h-14 w-14 transition-transform duration-300 hover:scale-110 mt-4" />
+                </Link>
+              )
+            ) : (
+              <Link to="/login" className="mt-4" onClick={() => setIsMenuOpen(false)}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-white bg-purple-600 rounded-md transition-all duration-300 hover:bg-purple-700 hover:shadow-lg"
+                >
+                  Login
+                </motion.button>
+              </Link>
+            )}
           </div>
-        )}
+        </motion.div>
       </div>
-    </div>
+    </nav>
   );
 };
 

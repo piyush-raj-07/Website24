@@ -46,7 +46,7 @@ function Carousel( ) {
   const slideLeft = () => {
     setCurrent(current === 0 ? images.length - 1 : current - 1);
   };
-  console.log(current);
+
   return (
     <div
       className="carousel shadow-[2px_-2px_10px_0px_#c084fc]"

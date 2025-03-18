@@ -137,7 +137,7 @@ export default function People() {
                         >
                           <td className="p-4 sm:p-5 font-medium text-purple-300">{index + 1}</td>
                           <td className="p-4 sm:p-5 text-purple-100">
-                          <Link to={`/profile/${item.id}`} className="hover:underline text-purple-400">
+                          <Link to={`/profile/${item._id}`} className="hover:underline text-purple-400">
                             {item.Name}
                           </Link>
                             </td>

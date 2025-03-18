@@ -60,11 +60,11 @@ const Activities = () => {
         options={{
           fullScreen: { enable: true, zIndex: -1 },
           particles: {
-            number: { value: 50, density: { enable: true, area: 500 } },
+            number: { value: 50, density: { enable: true, area: 1000 } },
             color: { value: ["AE7BC3", "#ffffff"] },
             shape: { type: ["circle"] },
             opacity: { value: 0.8 },
-            size: { value: { min: 2, max: 5 } },
+            size: { value: { min: 5, max: 5 } },
             move: {
               enable: true,
               speed: 0.5,

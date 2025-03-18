@@ -9,7 +9,7 @@ const adminRoutes = require('./routes/adminRoute');
 const quizRoutes = require('./routes/quizRoute');
 const userRoutes = require('./routes/userRoute');
 const cloudinary = require('cloudinary').v2;
-
+const visitRoutes = require('./routes/analyticRoute')
 
 const multer = require('multer');
 const fs = require('fs');
@@ -23,15 +23,20 @@ const ActivitiesModel = require('./models/Activities');
 const UserModel = require('./models/Users');
 const GalleryModel = require('./models/Gallery');
 const NewsModel = require('./models/News');
+const Blog = require('./models/Blogs');
 
-//paste cloudianry Config file here  , foe reference see line no: 150 
-
-
-  
-const PORT = 5000;
-
+app.use(cookieParser());
 require('dotenv').config();
 const mongoURI = process.env.CSTRING;
+
+//paste cloudianry Config file here  , foe reference see line no: 150 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_name,
+    api_key:  process.env.CLOUDINARY_api_key,
+    api_secret: process.env.CLOUDINARY_api_secret,
+  });
+  
+const PORT = 5000;
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -47,6 +52,7 @@ app.use('/blog', blogRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/user', userRoutes);
+app.use("/api", visitRoutes);
 
 
 // storing user info
@@ -163,7 +169,7 @@ app.post('/UploadImage', upload.single('Image'), async (req, res) => {
       });
      
  
-      console.log(result.secure_url);
+    
       // Save the image, title, and subtitle in MongoDB
       const newImage = new GalleryModel({
         url: result.secure_url,
@@ -195,6 +201,7 @@ app.get('/GetActivity', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
 
 app.put('/EditActivity/:id', async (req, res) => {
     const { id } = req.params;
@@ -292,6 +299,41 @@ app.get('/GetQuestion', async (req, res) => {
         console.error('Error getting question', error);
     }
 })
+// api to get any one user data
+
+app.get('/user/:id', async (req, res) => {
+    const { id } = req.params;
+   
+    const userdetail = await UserModel.findById(id);
+
+    if (userdetail) {
+        res.status(200).json(userdetail);
+    } else {
+        res.status(404).json({ message: 'User not found' });
+    }
+});
+
+app.post('/user/blogs', async (req, res) => {
+    try {
+        const { author_id } = req.body; // Get author_id from request body
+        if (!author_id) {
+            return res.status(400).json({ error: 'Author ID is required' });
+        }
+
+        const blogs = await Blog.find({ author_id: author_id });
+
+        if (!blogs.length) {
+            return res.status(404).json({ message: 'No blogs found for this user' });
+        }
+
+        res.status(200).json(blogs);
+    } catch (error) {
+        console.error('Error fetching blogs:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 app.listen(PORT, () => {
     console.log("SERVER STARTED ");
 });
