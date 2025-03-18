@@ -28,10 +28,10 @@ const LoginPage = () => {
                 className='w-full max-w-md bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden'
             >
                 <div className='p-6 sm:p-8'>
-                    <h2 className='text-2xl sm:text-3xl font-bold text-center bg-gradient-to-r from-purple-300 to-bg-purple-400 text-transparent bg-clip-text'>Welcome Back</h2>
-                    <p className='text-gray-400 text-sm sm:text-base text-center mb-6'>Sign in to your account</p>
+                    <h2 className='text-2xl sm:text-3xl font-bold font-raleway text-center bg-gradient-to-r from-purple-300 to-bg-purple-400 text-transparent bg-clip-text'>Welcome Back</h2>
+                    <p className='text-gray-400 text-sm s font-raleway m:text-base text-center mb-6'>Sign in to your account</p>
 
-                    <form onSubmit={handleLogin} className="space-y-6">
+                    <form onSubmit={handleLogin} className="space-y-6 font-libre">
                         <Input
                             icon={Mail}
                             type='text'
@@ -50,7 +50,7 @@ const LoginPage = () => {
                         />
 
                         <div className='flex justify-end'>
-                            <Link to='/forgot-password' className='text-sm text-purple-400 hover:underline'>
+                            <Link to='/forgot-password' className='text-sm font-libre text-purple-400 hover:underline'>
                                 Forgot Password?
                             </Link>
                         </div>
@@ -72,7 +72,7 @@ const LoginPage = () => {
                     </form>
                 </div>
                 <div className='px-6 sm:px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center'>
-                    <p className='text-sm text-gray-400'>
+                    <p className='text-sm font-libre text-gray-400'>
                         Don't have an account?{' '}
                         <Link to='/signup' className='text-purple-400 hover:underline'>Sign up</Link>
                     </p>

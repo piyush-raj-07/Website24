@@ -29,7 +29,7 @@ const SignupPage = () => {
     }
 
     return (
-        <div className="flex justify-center items-center gradient_background min-h-screen px-4 py-6 sm:py-12">
+        <div className="flex justify-center font-libre items-center gradient_background min-h-screen px-4 py-6 sm:py-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
