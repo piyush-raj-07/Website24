@@ -173,7 +173,7 @@ const BlogCard = ({ title, body, name, img, degree, year, user, upvotes, onUpvot
       <Link to={`/profile/${user}`}>
         <div className="absolute -left-6 -top-16 flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full bg-gradient-to-r from-[#d8b4fe] to-[#6b21a8] shadow-xl group transition-transform duration-300 hover:scale-110">
           <img
-            src={img || "https://via.placeholder.com/100"}
+            src={img || "https://media-hosting.imagekit.io//cf7d8af70956451d/image.jpg?Expires=1834903963&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=FgWU1-TXvh5XKBzzX4GsZDTmoKooBRKOp-Lag83HbRXRIdY4N3Jk7iIrFJfzxxcoTLYDdoerMijnk4F6CRf0YS1Hmf7soHEJLK5rkIJRNc0Z7HR6Xbz38~ESb3eEY-dyHcmtufN3Oesmh7qLBodfMbGxZ1KXweuGcjxzdZ6Yp8MPHtp7WEFy5yFVScrfIWuqsUZ8vwfRkPIed5Kb6T5PRc1NpJv--NzcygCZF-a9gkKqPCtR0nnMfauGYcvAnQD9SxlTd4BidT8KcBueiUUrygBxQJzmr1kj88IMPIVQa9SYADYZ8fyD5~ZYEEOgFocvQSsroVXt5Cov71tlFBPYwQ__"}
             alt="Author"
             className="h-20 w-20 sm:h-24 sm:w-24 rounded-full shadow-lg"
           />
