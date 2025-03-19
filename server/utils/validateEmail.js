@@ -1,6 +1,6 @@
 const validateEmail = (email) => {
-    const isValidDomain = email.endsWith('@iiti.ac.in');
-    const isEEStudent = email.startsWith('ee');
+    const isValidDomain = email.endsWith('@iiti.ac.in') || email.endsWith('@iiti.alum.ac.in');
+    const isEEStudent = email.startsWith('ee') || email.startsWith('EE');
 
     // check basic email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,7 +16,7 @@ const validateEmail = (email) => {
     if (!isValidDomain) {
         return {
             isValid: false,
-            error: 'Email must be from IIT Indore domain (@iiti.ac.in)'
+            error: 'Email must be from IIT Indore domain'
         };
     }
 
