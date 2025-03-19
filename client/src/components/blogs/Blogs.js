@@ -31,24 +31,13 @@ export default function Blogs() {
   };
 
   return (
-    <div className="gradient_background">
-      <h1>Blogs Page</h1>
-      <div
-  className="blogs-container"
-  style={{
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: "80px",
-    padding: "100px", // Reduced from 200px
-  }}
->
+    <div className="min-h-screen p-5 gradient_background">
+      <div className="mt-10 md:mt-20 flex flex-wrap justify-center gap-10 md:gap-12">
         {cards.map((card) => (
           <div
             key={card.id}
             onClick={() => handleCardClick(card.id)}
-            style={{ cursor: "pointer" }}
+            className="cursor-pointer transition-transform duration-300 hover:scale-105"
           >
             <Card3D cardTitle={card.cardTitle} coverImage={card.coverImage} />
           </div>
