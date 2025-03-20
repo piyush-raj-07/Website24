@@ -172,22 +172,27 @@ function TeamPage() {
 
   return (
     <div className="bg-[#0c0c0c]">
-      {/* Hero Section */}
-      <div className="relative  h-[600px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0 opacity-50" 
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dzjd6gh2q/image/upload/v1740392604/EESA_team_os3f17.jpg')",
-          }}
-          role="img"
-          aria-label="Team background image"
-        ></div>
-        <div className="absolute inset-0 "></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-2xl font-raleway font-bold md:text-3xl lg:text-4xl text-[white] mb-2">Meet Our Team</h1>
-          <p className="text-purple-400 text-xl md:text-2xl lg:text-3xl mb-6 font-semibold font-raleway">EESA IIT Indore</p>
-        </div>
-      </div>
+    <div className="relative h-80 md:h-screen w-screen overflow-hidden left-1">
+  <div 
+    className="absolute inset-0 bg-no-repeat bg-center z-0 opacity-50"
+    style={{
+      backgroundImage: "url('https://res.cloudinary.com/dzjd6gh2q/image/upload/v1740392604/EESA_team_os3f17.jpg')",
+      backgroundSize: 'contain', // Changed from 'cover' to 'contain'
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: '#000' // Optional: background color to fill empty spaces
+    }}
+    role="img"
+    aria-label="Team background image"
+  ></div>
+  <div className="absolute inset-0"></div>
+  <div className="relative z-10 flex flex-col items-center justify-center h-full text-center mt-12 px-4">
+    <h1 className="text-2xl font-raleway font-bold md:text-3xl lg:text-4xl text-[white] mb-2">Meet Our Team</h1>
+    <p className="text-purple-400 text-xl md:text-2xl lg:text-3xl mb-6 font-semibold font-raleway">EESA IIT Indore</p>
+  </div>
+</div>
+
+
 
       {/* President and Founder Section */}
       <section className="bg-gradient-to-b from-[#111111] from-0.1% to-[#3b0a45]   pb-10' py-12 relative overflow-hidden">
