@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Linkedin, Instagram } from 'lucide-react';
+import { Linkedin, Instagram, Video } from 'lucide-react';
 import { Footer } from "./footer";
 
 const carouselSettings = {
@@ -51,7 +51,7 @@ function TeamPage() {
   const teamData = {
     presidentFounder: [
       { id: "1", name: "Dr. Vijay", role: "Founder", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1734711523/Screenshot_2024-12-20_214659_bddpps.png", linkedinUrl: "https://www.linkedin.com/in/dr-vijay", instagramUrl: "https://www.instagram.com/dr.vijay" },
-      { id: "2", name: "Name of president", role: "President", imageUrl: "https://example.com/images/president1.jpg", linkedinUrl: "https://www.linkedin.com/in/president", instagramUrl: "https://www.instagram.com/president" },
+      { id: "2", name: "Name of president", role: "President", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486323/eesa_web_pic_magicstudio_foaznp8un1j_kdaipn.png", linkedinUrl: "https://www.linkedin.com/in/rishit-mehrotra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/rishit_mehrotra_?igsh=MWl4dHhoYjEzM3Yzeg==" },
     ],
     heads: [
       { id: "1", name: "Name of head", role: "Head of Web Team", imageUrl: "https://example.com/images/head1.jpg", linkedinUrl: "https://www.linkedin.com/in/head1", instagramUrl: "https://www.instagram.com/head1" },
@@ -61,35 +61,57 @@ function TeamPage() {
       { id: "5", name: "Name of head", role: "Head of Marketing", imageUrl: "https://example.com/images/head5.jpg", linkedinUrl: "https://www.linkedin.com/in/head5", instagramUrl: "https://www.instagram.com/head5" },
     ],
     web: [
-      { name: "Web Developer 1", role: "Frontend Developer", imageUrl: "http://res.cloudinary.com/duir0ktqb/image/upload/v1734531379/h78jpdjqrfd1udiwafd7.jpg", linkedinUrl: "https://www.linkedin.com/in/webdev1", instagramUrl: "https://www.instagram.com/webdev1" },
-      { name: "Web Developer 2", role: "Backend Developer", imageUrl: "http://res.cloudinary.com/duir0ktqb/image/upload/v1734531379/h78jpdjqrfd1udiwafd7.jpg", linkedinUrl: "https://www.linkedin.com/in/webdev2", instagramUrl: "https://www.instagram.com/webdev2" },
-      { name: "Web Developer 3", role: "Full Stack Developer", imageUrl: "http://res.cloudinary.com/duir0ktqb/image/upload/v1734531379/h78jpdjqrfd1udiwafd7.jpg", linkedinUrl: "https://www.linkedin.com/in/webdev3", instagramUrl: "https://www.instagram.com/webdev3" },
-      { name: "Web Developer 4", role: "UI Developer", imageUrl: "http://res.cloudinary.com/duir0ktqb/image/upload/v1734531379/h78jpdjqrfd1udiwafd7.jpg", linkedinUrl: "https://www.linkedin.com/in/webdev4", instagramUrl: "https://www.instagram.com/webdev4" },
-      { name: "Web Developer 5", role: "API Specialist", imageUrl: "http://res.cloudinary.com/duir0ktqb/image/upload/v1734531379/h78jpdjqrfd1udiwafd7.jpg", linkedinUrl: "https://www.linkedin.com/in/webdev5", instagramUrl: "https://www.instagram.com/webdev5" },
-      { name: "Piyush Raj", role: "Full Stack", imageUrl: "http://res.cloudinary.com/duir0ktqb/image/upload/v1734531379/h78jpdjqrfd1udiwafd7.jpg", linkedinUrl: "https://www.linkedin.com/in/piyushraj", instagramUrl: "https://www.instagram.com/piyushraj" }
+
+      { name: "Naveen S H", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742385589/IMG-20240524-WA0000_1_-_Captn_Plays_1_yh5mgi.jpg", linkedinUrl: "https://www.linkedin.com/in/naveen-sh-a7594b323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/naveen_sh07?igsh=ODlzNTdvaW96c2g=" },
+      { name: "Rohit Prajapati ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742385787/Screenshot_2025-02-01-19-59-44-03_e2d5b3f32b79de1d45acd1fad96fbb0f_-_Rohit_Prajapati_1_hlvja1.jpg", linkedinUrl: "linkedin.com/in/Rohit Prajapati", instagramUrl: "" },
+      { name: "Krish Pathak", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742385965/WhatsApp_Image_2025-02-02_at_12.18.37_e78e4f6e_-_Krish_Pathak_1_arkakq.jpg", linkedinUrl: "https://www.linkedin.com/in/krishpathak25/", instagramUrl: "https://www.instagram.com/krishpathak_25/" },
+      { name: "Harshita Bankure", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742386040/a0ae589a-7474-4320-be06-94b2901cbac8_-_Shivam_Sharma_az0abi.jpg", linkedinUrl: "https://www.linkedin.com/in/harshita-bankure-37508525b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/harshita_bankure?igsh=djZra3p3aGsyNjhr" },
+      { name: "Piyush Raj", role: "Full Stack", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318237/raja_-_Piyush_Raj_xu3lci.jpg", linkedinUrl: "https://www.linkedin.com/in/webdev1", instagramUrl: "https://www.instagram.com/webdev1" },
+      { name: "Janhvi Verma", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318263/WhatsApp_Image_2025-02-03_at_19.24.12_eff9c39f_-_Janhvi_Verma_bmth71.jpg", linkedinUrl: "www.linkedin.com/in/janhvi-verma0103", instagramUrl: "" },
+      { name: "Tanushree Dewangan", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742400283/IMG_3495_frqhqv.jpg", linkedinUrl: "https://www.linkedin.com/in/tanushree-dewangan-738957250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", instagramUrl: "https://www.linkedin.com/in/tanushree-dewangan-738957250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" }
+
     ],
+    // Events
     design: [
-      { name: "Designer 1", role: "UI Designer", imageUrl: "https://example.com/images/design1.jpg", linkedinUrl: "https://www.linkedin.com/in/design1", instagramUrl: "https://www.instagram.com/design1" },
-      { name: "Designer 2", role: "UX Designer", imageUrl: "https://example.com/images/design2.jpg", linkedinUrl: "https://www.linkedin.com/in/design2", instagramUrl: "https://www.instagram.com/design2" },
-      { name: "Designer 3", role: "Graphic Designer", imageUrl: "https://example.com/images/design3.jpg", linkedinUrl: "https://www.linkedin.com/in/design3", instagramUrl: "https://www.instagram.com/design3" },
-      { name: "Designer 4", role: "Motion Designer", imageUrl: "https://example.com/images/design4.jpg", linkedinUrl: "https://www.linkedin.com/in/design4", instagramUrl: "https://www.instagram.com/design4" },
-      { name: "Designer 5", role: "Product Designer", imageUrl: "https://example.com/images/design5.jpg", linkedinUrl: "https://www.linkedin.com/in/design5", instagramUrl: "https://www.instagram.com/design5" },
+      { name: "Jayanth ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318342/IMG_20241015_132023_344_-_Malireddi_Jayanth_1_gmqcxc.webp", linkedinUrl: "https://www.linkedin.com/in/jayanth-mallireddi-317654284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/im_jayanthhh/profilecard/?igsh=MWc2aTdpbmU2bWtlbg==" },
+      { name: "Mor Vrushabh Bharatbhai ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742362825/Vrushabh_Passport_size_photograph_-_Vrushabh_Mor_page-0001_dlg51w.jpg", linkedinUrl: "https://www.linkedin.com/in/design2", instagramUrl: "https://www.instagram.com/design2" },
+      { name: "B Nikhil", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318518/Nikhil_pic_1_-_Bhasuru_Nikhil_cvrwwu.jpg", linkedinUrl: "https://www.linkedin.com/in/nikhil-bhasuru-2196a6314/", instagramUrl: "https://www.instagram.com/nikhilb_183/" },
+      { name: "Yash Modi", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318511/27cb7aa1-453f-40f8-b71c-05a214b96cde_-_Yash_Modi_bqfsp8.jpg", linkedinUrl: "http://linkedin.com/in/yash-modi-6b8644332", instagramUrl: "https://www.instagram.com/imyash_m17/profilecard/?igsh=cXFxZnd1bDU4Z3N3" },
+      { name: "Tanish Kamal ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318481/IMG-20240613-WA0006_-_Tanish_Kamal_q9ibpg.jpg", linkedinUrl: "https://www.linkedin.com/in/tanish-kamal-7b2825281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/tanishkamal79/profilecard/?igsh=YXR2ZzM1cTZuN2oz" },
+      { name: "Ninad Kulkarni ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318290/IMG_20250106_222912_-_Ninad_Kulkarni_ccidas.jpg", linkedinUrl: "https://www.linkedin.com/in/ninad-kulkarni-102434317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/ninad_k_/profilecard/?igsh=anUzbGptZndqcW1j" },
+      { name: "Advay Kunte  ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318309/IMG-20241201-WA0000_-_Advay_Kunte_pjmzve.jpg", linkedinUrl: "https://www.linkedin.com/in/advay-kunte?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/advay_kunte.8/profilecard/?igsh=OGZubXA5dTk5N25t" },
+      { name: "Aditi luniya  ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318319/IMG_20241107_201322_-_Aditi_Luniya_tv6x5p.jpg", linkedinUrl: "https://www.linkedin.com/in/aditi-luniya-9960a5286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.linkedin.com/in/aditi-luniya-9960a5286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+      { name: "Naman Goyal ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742362515/9d413970-b898-4de4-b2aa-5669b99728d8_-_Naman_Goyal_1_zbwiyc.jpg", linkedinUrl: "https://www.linkedin.com/in/naman-goyal-432140282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", instagramUrl: "naman_goyal.04" },
+      { name: "Aakarsh Atluri  ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318411/Aakarsh1_-_Atluri_Aakarsh_bgtyyu.jpg", linkedinUrl: "https://www.linkedin.com/in/atluri-aakarsh-a08008320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/aakarsh_atluri/profilecard/?igsh=MXI2cTlhNmhxbnJsaA==" },
+
     ],
     content: [
-      { name: "Content Creator 1", role: "Copywriter", imageUrl: "https://example.com/images/content1.jpg", linkedinUrl: "https://www.linkedin.com/in/content1", instagramUrl: "https://www.instagram.com/content1" },
-      { name: "Content Creator 2", role: "Content Strategist", imageUrl: "https://example.com/images/content2.jpg", linkedinUrl: "https://www.linkedin.com/in/content2", instagramUrl: "https://www.instagram.com/content2" },
-      { name: "Content Creator 3", role: "Social Media Specialist", imageUrl: "https://example.com/images/content3.jpg", linkedinUrl: "https://www.linkedin.com/in/content3", instagramUrl: "https://www.instagram.com/content3" },
-      { name: "Content Creator 4", role: "SEO Specialist", imageUrl: "https://example.com/images/content4.jpg", linkedinUrl: "https://www.linkedin.com/in/content4", instagramUrl: "https://www.instagram.com/content4" },
+      { name: "Prateek Rajput", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318579/20240527_202527_-_Prateek_cnrsp6.jpg", linkedinUrl: "https://www.linkedin.com/in/prateek-rajput-46b9ba287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/prateek.r.rajput/profilecard/?igsh=cHc5bGc1d2x2amNj" },
+      { name: "Viraj Samir Patel", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318393/IMG_20241231_223503_633_-_Viraj_patel_fxonao.jpg", linkedinUrl: "https://www.linkedin.com/in/viraj-patel-5a3229330/", instagramUrl: "https://www.instagram.com/viraj_p18/" },
+      { name: "Shrish Shriyans", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318136/91bbe82d-b102-4bd4-a6f9-e86ae9212eeb_-_Shrish_Shriyans_sv07i6.jpg", linkedinUrl: "", instagramUrl: "" },
+      { name: "Hilori Jain ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318381/IMG-20240307-WA0152_-_Hilori_Jain_gkqovk.jpg", linkedinUrl: "https://www.linkedin.com/in/hilori-jain?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/hilori_jain?utm_source=qr" },
       { name: "Content Creator 5", role: "Technical Writer", imageUrl: "https://example.com/images/content5.jpg", linkedinUrl: "https://www.linkedin.com/in/content5", instagramUrl: "https://www.instagram.com/content5" },
     ],
+    // creatives
     autonomy: [
-      { name: "Autonomy Engineer 1", role: "Machine Learning Engineer", imageUrl: "https://example.com/images/autonomy1.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy1", instagramUrl: "https://www.instagram.com/autonomy1" },
-      { name: "Autonomy Engineer 2", role: "Computer Vision Specialist", imageUrl: "https://example.com/images/autonomy2.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy2", instagramUrl: "https://www.instagram.com/autonomy2" },
-      { name: "Autonomy Engineer 3", role: "Robotics Engineer", imageUrl: "https://example.com/images/autonomy3.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy3", instagramUrl: "https://www.instagram.com/autonomy3" },
-      { name: "Autonomy Engineer 4", role: "Control Systems Engineer", imageUrl: "https://example.com/images/autonomy4.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy4", instagramUrl: "https://www.instagram.com/autonomy4" },
-      { name: "Autonomy Engineer 5", role: "Sensor Fusion Specialist", imageUrl: "https://example.com/images/autonomy5.jpg", linkedinUrl: "https://www.linkedin.com/in/autonomy5", instagramUrl: "https://www.instagram.com/autonomy5" },
+      { name: "Naman V Shetty", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318475/Naman_V_Shetty_-_Naman_V_Shetty_ntmv0e.jpg", linkedinUrl: "www.linkedin.com/in/naman-v-shetty", instagramUrl: "www.instagram.com/naman._.shetty/" },
+      { name: "Aditya Naskar ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318420/IMG20241228174641_-_Aditya_Naskar_dthbsw.jpg", linkedinUrl: "https://www.linkedin.com/in/aditya-naskar-0336a9257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/xx_adi.07/profilecard/?igsh=MXRwMGNhcmM1MGR3Yg==" },
+      { name: "Abhijeet Parmar ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318404/IMG_20240906_224646_-_Abhijeet_Parmar_gu726k.jpg", linkedinUrl: "https://www.linkedin.com/in/abhijeet-parmar-a08696281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/abhijeet_parmar_05/profilecard/?igsh=eXptNjZtNGx3YnBk" },
+      { name: "Ragini jaiswal ", role: "Control Systems Engineer", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318185/20250105_172424_-_Ragini_Jaiswal_1_yeqnz6.jpg", linkedinUrl: "https://www.linkedin.com/in/ragini-jaiswal-48a5002aa", instagramUrl: "ragini_sings" },
+      { name: "Tejas Chaudhari", role: "Sensor Fusion Specialist", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486321/IMG-20250126-WA0111_rqjhgv.jpg", linkedinUrl: "https://www.linkedin.com/in/tejas-chaudhari-650543250/", instagramUrl: "https://www.instagram.com/tejas.chaudhari22/" },
+      { name: "Aakarsh Atluri  ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318411/Aakarsh1_-_Atluri_Aakarsh_bgtyyu.jpg", linkedinUrl: "https://www.linkedin.com/in/atluri-aakarsh-a08008320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/aakarsh_atluri/profilecard/?igsh=MXI2cTlhNmhxbnJsaA==" },
     ],
-  };  
+    video: [
+      { name: "K Bharath Varma", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318591/IMG_5613_-_Varma_Kalidindi_glzoms.jpg", linkedinUrl: "https://www.linkedin.com/in/bharath-varma-kalidindi-8a1763280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", instagramUrl: "https://www.instagram.com/bharath__.__varma/profilecard/?igsh=aGlmcWtuOTEwN3Uw" },
+      { name: "Sasi Kiran Pulapakura ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318569/Sasi_Kiran_Pulapakura_-_Sasi_Kiran_Pulapakura_yr2caw.jpg", linkedinUrl: "https://www.linkedin.com/in/sasi-kiran-pulapakura-3bab1b31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/sasikiranpulapakura" },
+      { name: "Tejas Chaudhari", role: "Sensor Fusion Specialist", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486321/IMG-20250126-WA0111_rqjhgv.jpg", linkedinUrl: "https://www.linkedin.com/in/tejas-chaudhari-650543250/", instagramUrl: "https://www.instagram.com/tejas.chaudhari22/" },
+      { name: "Aditya Gandhra", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318297/IMG_6758_-_Aditya_Gandhra_nr3ugu.jpg", linkedinUrl: "https://www.linkedin.com/in/adityagandhra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", instagramUrl: "https://www.instagram.com/adityagandhra?igsh=MnZjdGVjeGtlcTQ4&utm_source=qr" },
+      { name: "Aadarsh Ranjan", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318333/IMG-20241211-WA0040_-_Aadarsh_Ranjan_mngqel.jpg", linkedinUrl: "linkedin.com/in/aadarsh-ranjan-552080260", instagramUrl: "https://www.instagram.com/solanki_aadarsh_?igsh=YzljYTk1ODg3Zg==" },
+
+     
+    ]
+
+  };
 
   const customStyles = `
   .slick-slide {
@@ -173,9 +195,9 @@ function TeamPage() {
   return (
     <div className="bg-[#0c0c0c]">
       {/* Hero Section */}
-      <div className="relative  h-[600px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0 opacity-50" 
+      <div className="relative  h-[650px] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0 opacity-50"
           style={{
             backgroundImage: "url('https://res.cloudinary.com/duir0ktqb/image/upload/v1734713680/Screenshot_2024-12-20_222342_fjuoar.png')",
           }}
@@ -245,22 +267,23 @@ function TeamPage() {
                 <p className="text-gray-400 text-sm">{member.role}</p>
               </div>
             ))}
-            
+
           </Slider>
-          
+
         </div>
-        
+
       </section>
-      
+
 
       {/* Teams Sections */}
       <WebTeamSection team={teamData.web} />
       <DesignTeamSection team={teamData.design} />
       <ContentTeamSection team={teamData.content} />
       <AutonomyTeamSection team={teamData.autonomy} />
+      <VideoTeamSection team={teamData.video} />
       <Footer>
-      </Footer>  
-      
+      </Footer>
+
       <style jsx>{customStyles}</style>
     </div>
   );
@@ -307,7 +330,7 @@ function DesignTeamSection({ team }) {
     <section className="bg-gradient-to-b from-[#440075] from-0.1% to-[#52006b]  py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
-        Meet Our Design Team
+        Meet Our Events Team
       </h2>
       <div className="px-12 relative z-10">
         <Slider {...carouselSettings} className="py-8">
@@ -379,7 +402,7 @@ function AutonomyTeamSection({ team }) {
     <section className="bg-gradient-to-b from-[#6a0dad] to-[#a45dbb] py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
-        Meet Our Autonomy Team
+        Meet Our Creatives Team
       </h2>
       <div className="px-12 relative z-10">
         <Slider {...carouselSettings} className="py-8">
@@ -409,6 +432,42 @@ function AutonomyTeamSection({ team }) {
     </section>
   );
 }
+function VideoTeamSection({ team }) {
+  return (
+    <section className="bg-gradient-to-b from-[#a45dbb] from-0.1% to-[#a45dbb] py-12 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
+      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+        Meet Our Video Production & Finanace Team
+      </h2>
+      <div className="px-12 relative z-10">
+        <Slider {...carouselSettings} className="py-8">
+          {team.map((member) => (
+            <div key={member.name} className="text-center px-4">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-4 mx-auto overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 group">
+                <img
+                  src={member.imageUrl || "/placeholder.svg"}
+                  alt={member.name}
+                  className="w-full h-full object-cover bg-gray-200 transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300 mr-2">
+                    <Linkedin size={24} />
+                  </a>
+                  {/* Added Instagram link */}
+                  <a href={member.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transition-colors duration-300">
+                    <Instagram size={24} />
+                  </a>
+                </div>
+              </div>
+              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
+  );
+}
+
 
 export default TeamPage;
 
