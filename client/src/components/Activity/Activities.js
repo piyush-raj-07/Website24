@@ -146,11 +146,11 @@ const Activities = () => {
                   </a>
                 </div>
               </div>
-              <div className="absolute bottom-4 right-4 bg-opacity-75 text-white p-4 rounded-lg w-[60%]">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">
+              <div className="absolute bottom-4 right-4 bg-opacity-60 bg-black text-white font-serif p-4 rounded-lg w-[60%] top-[15rem]">
+                <h3 className="text-2xl font-bold mb-2">
                   {activity.title}
                 </h3>
-                <p className="text-sm leading-relaxed">
+                <p className="text-base leading-relaxed font-libre ">
                   {activity.description}
                 </p>
               </div>

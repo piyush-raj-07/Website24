@@ -126,7 +126,7 @@ const Navbar = () => {
           className="md:hidden overflow-hidden bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg"
         >
           <div className="flex flex-col items-center">
-            {['Home', 'Blogs', 'Activities', 'Projects', 'Team', 'Notices', 'Gallery'].map((item) => (
+            {['Home', 'Blogs', 'Activities', 'BTP', 'People'].map((item) => (
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}

@@ -48,7 +48,7 @@ export default function Card3D({ cardTitle, coverImage, description }) {
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className="relative w-[320px] h-[400px] bg-white rounded-xl shadow-2xl overflow-hidden"
+        className="relative w-[320px] h-[400px]  bg-white rounded-xl shadow-2xl overflow-hidden "
         style={{
           transformStyle: "preserve-3d",
         }}
@@ -84,7 +84,7 @@ export default function Card3D({ cardTitle, coverImage, description }) {
           style={{ transform: "translateZ(40px)" }}
         >
           <motion.h2
-            className="text-2xl font-bold mb-2 shadow-text"
+            className="text-2xl font-bold mb-2 font-raleway shadow-text"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -92,7 +92,9 @@ export default function Card3D({ cardTitle, coverImage, description }) {
             {cardTitle}
           </motion.h2>
           <motion.p
+
             className="text-sm opacity-10 group-hover:opacity-100 transition-opacity duration-300 shadow-text"
+
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}

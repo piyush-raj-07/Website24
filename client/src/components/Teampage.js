@@ -94,12 +94,14 @@ function TeamPage() {
     ],
     // creatives
     autonomy: [
+
       { name: "Naman V Shetty", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318475/Naman_V_Shetty_-_Naman_V_Shetty_ntmv0e.jpg", linkedinUrl: "www.linkedin.com/in/naman-v-shetty", instagramUrl: "www.instagram.com/naman._.shetty/" },
       { name: "Aditya Naskar ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318420/IMG20241228174641_-_Aditya_Naskar_dthbsw.jpg", linkedinUrl: "https://www.linkedin.com/in/aditya-naskar-0336a9257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/xx_adi.07/profilecard/?igsh=MXRwMGNhcmM1MGR3Yg==" },
       { name: "Abhijeet Parmar ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318404/IMG_20240906_224646_-_Abhijeet_Parmar_gu726k.jpg", linkedinUrl: "https://www.linkedin.com/in/abhijeet-parmar-a08696281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/abhijeet_parmar_05/profilecard/?igsh=eXptNjZtNGx3YnBk" },
       { name: "Ragini jaiswal ", role: "Control Systems Engineer", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318185/20250105_172424_-_Ragini_Jaiswal_1_yeqnz6.jpg", linkedinUrl: "https://www.linkedin.com/in/ragini-jaiswal-48a5002aa", instagramUrl: "ragini_sings" },
       { name: "Tejas Chaudhari", role: "Sensor Fusion Specialist", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486321/IMG-20250126-WA0111_rqjhgv.jpg", linkedinUrl: "https://www.linkedin.com/in/tejas-chaudhari-650543250/", instagramUrl: "https://www.instagram.com/tejas.chaudhari22/" },
       { name: "Aakarsh Atluri  ", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318411/Aakarsh1_-_Atluri_Aakarsh_bgtyyu.jpg", linkedinUrl: "https://www.linkedin.com/in/atluri-aakarsh-a08008320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagramUrl: "https://www.instagram.com/aakarsh_atluri/profilecard/?igsh=MXI2cTlhNmhxbnJsaA==" },
+
     ],
     video: [
       { name: "K Bharath Varma", imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318591/IMG_5613_-_Varma_Kalidindi_glzoms.jpg", linkedinUrl: "https://www.linkedin.com/in/bharath-varma-kalidindi-8a1763280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", instagramUrl: "https://www.instagram.com/bharath__.__varma/profilecard/?igsh=aGlmcWtuOTEwN3Uw" },
@@ -194,6 +196,7 @@ function TeamPage() {
 
   return (
     <div className="bg-[#0c0c0c]">
+
       {/* Hero Section */}
       <div className="relative  h-[650px] overflow-hidden">
         <div
@@ -211,10 +214,12 @@ function TeamPage() {
         </div>
       </div>
 
+    
+
       {/* President and Founder Section */}
       <section className="bg-gradient-to-b from-[#111111] from-0.1% to-[#3b0a45]   pb-10' py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-        <h2 className="text-4xl font-bold mb-20 text-white text-center relative z-10">Meet President and Founder</h2>
+        <h2 className="text-4xl font-raleway font-bold mb-20 text-white text-center relative z-10">Meet President and Founder</h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 px-4 relative z-10">
           {teamData.presidentFounder.map((member) => (
             <div key={member.id} className="text-center">
@@ -233,8 +238,8 @@ function TeamPage() {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white font-semibold">{member.name}</h3>
-              <p className="text-gray-400">{member.role}</p>
+              <h3 className="text-white font-raleway font-semibold">{member.name}</h3>
+              <p className="text-gray-400 font-libre">{member.role}</p>
             </div>
           ))}
         </div>
@@ -263,8 +268,8 @@ function TeamPage() {
                     </a>
                   </div>
                 </div>
-                <h3 className="text-white font-semibold text-lg md:text-xl">{member.name}</h3>
-                <p className="text-gray-400 text-sm">{member.role}</p>
+                <h3 className="text-white font-raleway font-semibold text-lg md:text-xl">{member.name}</h3>
+                <p className="text-gray-400 font-libre text-sm">{member.role}</p>
               </div>
             ))}
 
@@ -293,7 +298,7 @@ function WebTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-[#2c003e] from-0.1% to-[#440075] pb-10' py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+      <h2 className="text-4xl font-raleway font-bold mb-12 text-white text-center relative z-10">
         Meet Our Web Team
       </h2>
       <div className="px-12 relative z-10">
@@ -316,7 +321,7 @@ function WebTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold font-raleway text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>
@@ -329,8 +334,10 @@ function DesignTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-[#440075] from-0.1% to-[#52006b]  py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
+
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
         Meet Our Events Team
+
       </h2>
       <div className="px-12 relative z-10">
         <Slider {...carouselSettings} className="py-8">
@@ -352,7 +359,7 @@ function DesignTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>
@@ -365,7 +372,7 @@ function ContentTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-[#52006b] from-0.1% to-[#6a0dad] py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
-      <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
+      <h2 className="text-4xl font-raleway font-bold mb-12 text-white text-center relative z-10">
         Meet Our Content Team
       </h2>
       <div className="px-12 relative z-10">
@@ -388,7 +395,7 @@ function ContentTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>
@@ -401,8 +408,10 @@ function AutonomyTeamSection({ team }) {
   return (
     <section className="bg-gradient-to-b from-[#6a0dad] to-[#a45dbb] py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMDkiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwMjAyMDA5IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-10"></div>
+
       <h2 className="text-4xl font-bold mb-12 text-white text-center relative z-10">
         Meet Our Creatives Team
+
       </h2>
       <div className="px-12 relative z-10">
         <Slider {...carouselSettings} className="py-8">
@@ -424,7 +433,7 @@ function AutonomyTeamSection({ team }) {
                   </a>
                 </div>
               </div>
-              <h3 className="text-white mb-2 font-semibold text-xl">{member.name}</h3>
+              <h3 className="text-white mb-2 font-raleway font-semibold text-xl">{member.name}</h3>
             </div>
           ))}
         </Slider>

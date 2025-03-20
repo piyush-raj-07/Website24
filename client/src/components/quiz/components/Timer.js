@@ -13,7 +13,7 @@ const Timer = ({ timeLeft }) => {
                         }`}
                 />
                 <span
-                    className={`font-mono text-base sm:text-lg ${isLowTime
+                    className={`font-libre text-base sm:text-lg ${isLowTime
                         ? 'text-red-400'
                         : 'text-purple-400'
                         }`}

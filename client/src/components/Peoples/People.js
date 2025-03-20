@@ -73,13 +73,15 @@ export default function People() {
       <div className="flex-grow flex flex-col bg-black text-purple-100">
         <header className="bg-gradient-to-b from-purple-950 to-black py-4 px-4 sm:px-6 lg:px-8 shadow-lg border-b border-purple-800">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+
             <h1 className="text-2xl sm:text-3xl font-bold text-purple-400 flex items-center mb-4 sm:mb-0">
               <GraduationCap className="mr-3 text-purple-500" size={32} />
+
               Student Information
             </h1>
           </div>
         </header>
-        <main className="flex-grow flex flex-col p-4 sm:p-6 lg:p-8">
+        <main className="flex-grow flex flex-col font-libre p-4 sm:p-6 lg:p-8">
           <div className="max-w-7xl w-full mx-auto mb-6 flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
               <input

@@ -19,6 +19,8 @@ export default function ProfilePage2() {
     const [blogs, setBlogs] = useState([]);
     const [role, setRole] = useState(null);
     const [quizScore, setQuizScore] = useState(0);
+    const [selectedBlog, setSelectedBlog] = useState(null);
+    const [showBlogModal, setShowBlogModal] = useState(false);
     const backgroundImages = [
         blogBg1,
         blogBg2,
@@ -192,6 +194,10 @@ export default function ProfilePage2() {
                             <div
                                 key={blog._id}
                                 className="relative h-28 my-2 shadow-black shadow-md overflow-hidden group cursor-pointer flex justify-between items-center "
+                                onClick={() => {
+                                    setSelectedBlog(blog);
+                                    setShowBlogModal(true);
+                                  }}
                             >
                                 <img
                                     src={blog.image || getRandomBackground()}
@@ -199,13 +205,41 @@ export default function ProfilePage2() {
                                     className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                                 />
                                 <div className="absolute top-0 left-0 w-full h-full bg-purple-950 bg-opacity-45 flex items-center justify-center">
-                                    <p className="text-white text-lg font-serif">{blog.title}</p>
+                                <h2 className="text-xl font-bold">{blog.title}</h2>
+                                <p className="text-sm">Category: {blog.cat}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
+            {/* Blog Modal */}
+            {showBlogModal && selectedBlog && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
+          <div className="bg-white text-black p-8 rounded-lg shadow-lg w-1/2 max-h-[80vh] overflow-y-auto">
+            <h2 className="text-3xl text-[#441752] font-serif font-bold border-b mb-4 pb-2 text-center">
+              {selectedBlog.title}
+            </h2>
+            <div className="bg-black bg-opacity-10 rounded-lg p-4">
+              <p className="text-black text-lg mb-2">
+                <strong>Category:</strong> {selectedBlog.cat}
+              </p>
+              <p className="text-black text-lg">
+                <strong>Body: </strong>
+                {selectedBlog.body}
+              </p>
+            </div>
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => setShowBlogModal(false)}
+                className="bg-[#441752] text-white px-4 py-2 rounded hover:bg-[#5c2070] transition-colors duration-200"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
         </div>
 
     )
