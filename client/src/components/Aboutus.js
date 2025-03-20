@@ -27,7 +27,8 @@ const AboutUs = () => {
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-b from-[#634669] from-35% to-[#a45dbb] p-8">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-b from-[#38283C] via-[#6d3f7e] to-[#a45dbb]
+ p-8">
             
             <div className="w-full md:w-1/2">
                 <img
