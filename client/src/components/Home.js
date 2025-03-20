@@ -92,7 +92,7 @@ if(isLoading)
     </div>
    
     
-    <div class = 'bg-gradient-to-b from-black from-0.1% to-[#634669] pb-10'>
+    <div class = 'bg-gradient-to-b from-black from-0.1% to-[#38283C] pb-10'>
     <Carousel >
     </Carousel>
     </div>
