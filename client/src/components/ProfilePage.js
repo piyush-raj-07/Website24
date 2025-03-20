@@ -165,8 +165,8 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen w-full">
-      <div className="flex flex-col text-white w-2/5 z-10 overflow-y-auto h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
+    <div className="flex flex-col md:flex-row bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen w-full">
+      <div className="flex flex-col text-white md:w-2/5 z-10 overflow-y-auto md:h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
         <div className="m-4">
           <div className="">
             <div className="px-4 py-4 mx-4 my-2 flex flex-col justify-center items-center">
@@ -240,7 +240,7 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
+      <div className="flex flex-col text-white md:w-3/5 z-10 overflow-y-auto md:h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
         <div className="m-4">
           <div className="mx-16 flex flex-col">
             <button
