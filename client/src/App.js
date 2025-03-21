@@ -27,12 +27,13 @@ import AdminPanel from "./components/AdminPanel";
 import WriteBlog from "./components/WriteBlog";
 import MyBlog from "./components/MyBlogs";
 import EditBlog from "./components/EditBlog";
-import ProjectTable from "./components/Project.js";
+import ProjectTable from "./components/BTP/Project.js";
 import Gallery from "./components/Gallery/Gallery.js";
 import QuizPage from "./components/quiz/QuizPage";
 import People from "./components/Peoples/People";
 import ProfilePage2 from "./components/Peoples/PeopleProf.js";
 import Intern from "./components/blogs/intern_blogs.js";
+import Study from "./components/Study.js";
 function App() {
   const { isCheckingAuth, CheckAuth } = useAuthStore();
 
@@ -55,6 +56,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/Study" element={<Study />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />

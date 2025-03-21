@@ -165,8 +165,8 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen w-full">
-      <div className="flex flex-col text-white w-2/5 z-10 overflow-y-auto h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
+    <div className="flex flex-col md:flex-row bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen w-full">
+      <div className="flex flex-col text-white md:w-2/5 z-10 overflow-y-auto md:h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
         <div className="m-4">
           <div className="">
             <div className="px-4 py-4 mx-4 my-2 flex flex-col justify-center items-center">
@@ -240,7 +240,7 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
+      <div className="flex flex-col text-white md:w-3/5 z-10 overflow-y-auto md:h-full scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
         <div className="m-4">
           <div className="mx-16 flex flex-col">
             <button
@@ -384,12 +384,12 @@ export default function ProfilePage() {
       )}
 
       {showBlogModal && selectedBlog && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-          <div className="bg-[#A888B5] text-black p-8 rounded-lg shadow-lg w-1/2">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
+          <div className="bg-white text-black p-8 rounded-lg shadow-lg w-1/2 max-h-[80vh] overflow-y-auto">
             <h2 className="text-3xl text-[#441752] font-serif font-bold border-b mb-4 pb-2 text-center">
               {selectedBlog.title}
             </h2>
-            <div className="bg-black bg-opacity-10 rounded-lg">
+            <div className="bg-black bg-opacity-10 rounded-lg p-4">
               <p className="text-black p-2 text-lg mb-2">
                 <strong>Category:</strong> {selectedBlog.cat}
               </p>

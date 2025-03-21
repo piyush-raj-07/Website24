@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import toast from "react-hot-toast"
 
 const WriteBlog = () => {
   const [formData, setFormData] = useState({ title: '', body: '', cat: 'internship' });
@@ -28,15 +29,19 @@ const WriteBlog = () => {
       if (response.ok) {
         setSuccess('Blog written successfully!');
         setError('');
+        toast.success("Blog Sent Successfully")
+
         navigate('/profile');
       } else {
         const errorData = await response.json();
         setError(errorData.message || 'Failed to write the blog');
+        toast.error("Error Posting Blog")
         setSuccess('');
       }
     } catch (err) {
       console.error(err);
-      setError('Error occurred while writing the blog');
+      // setError('Error occurred while writing the blog');
+      toast.error("Error Posting Blog")
       setSuccess('');
     }
   };

@@ -39,14 +39,14 @@ const InstructionsCard = ({ onStart }) => {
                 {instructions.map((instruction, index) => (
                     <div
                         key={index}
-                        className={`${instruction.title === "Keyboard Shortcuts" ? "hidden md:flex" : "flex"} items-start space-x-4 p-4 rounded-lg bg-gray-700 bg-opacity-50`}
+                        className={`${instruction.title === "Keyboard Shortcuts" ? "hidden md:flex" : "flex"} items-start font-raleway space-x-4 p-4 rounded-lg bg-gray-700 bg-opacity-50`}
                     >
                         {instruction.icon}
                         <div>
-                            <h3 className={`${instruction.title === "Keyboard Shortcuts" ? "hidden md:flex" : "flex"} font-semibold text-gray-100 mb-1`}>
+                            <h3 className={`${instruction.title === "Keyboard Shortcuts" ? "hidden md:flex" : "flex"} font-raleway font-semibold text-gray-100 mb-1`}>
                                 {instruction.title}
                             </h3>
-                            <p className={`{instruction.title === "Keyboard Shortcuts" ? "hidden md:flex" : "flex"} text-gray-400 text-sm`}>
+                            <p className={`{instruction.title === "Keyboard Shortcuts" ? "hidden md:flex" : "flex"} font-libre text-gray-400 text-sm`}>
                                 {instruction.description}
                             </p>
                         </div>
@@ -59,7 +59,7 @@ const InstructionsCard = ({ onStart }) => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={onStart}
-                    className="px-8 py-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold rounded-lg shadow-lg hover:from-purple-600 hover:to-indigo-700 text-lg"
+                    className="px-8 py-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-libre font-bold rounded-lg shadow-lg hover:from-purple-600 hover:to-indigo-700 text-lg"
                 >
                     Start Quiz
                 </motion.button>

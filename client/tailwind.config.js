@@ -5,7 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      fontFamily: {
+        libre: ['"Libre Franklin"', 'sans-serif'],
+        raleway: ["Raleway", 'sans-serif']
+        
+      },
     },
   },
   plugins: [],

@@ -149,7 +149,7 @@ const Bg = () => {
       <div ref={largeHeaderRef} className="w-[full] bg-black overflow-x-hidden">
         <Sidebar/>
         <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl md:text-7xl font-extrabold tracking-wide z-10">
-          EESA <span className="font-light text-purple-400">IIT Indore</span>
+          <span className="font-libre tracking-wide">EESA</span> <span className="font-light font-raleway text-purple-400">IIT Indore</span>
         </h1>
       </div>
 

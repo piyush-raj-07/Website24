@@ -1,570 +1,605 @@
 [
-    {
-      "projectNo": "P1",
-      "title": "Multi-Robot Path Finding in a Constrained Environment for Large Agents",
-      "numStudents": 2,
-      "supervisor": "Dr. Sharad Kumar Singh",
-      "coSupervisor": null,
-      "students": [
-        { "name": "VISHWAS SHANKAR KORI", "rollNo": "210002084", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P2",
-      "title": "Dynamic Agent Allocation Problem in Multi-Agent Target-Defense Differential Games",
-      "numStudents": 3,
-      "supervisor": "Dr. Sharad Kumar Singh",
-      "coSupervisor": null,
-      "students": [
-        { "name": "HARSH SONI", "rollNo": "210003035", "specialization": "PEPS & CONTROL" },
-        { "name": "SHUBHNEET TIWARI", "rollNo": "210002073", "specialization": "PEPS & CONTROL" },
-        { "name": "ARUNADITYA DASH P", "rollNo": "210005010", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P3",
-      "title": "Multiple Pursuer Single Superior Evader Differential Games Amidst Known Obstacles",
-      "numStudents": 1,
-      "supervisor": "Dr. Sharad Kumar Singh",
-      "coSupervisor": null,
-      "students": [
-        { "name": "PUSHKAL MADHAWACHARYA", "rollNo": "210002059", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P4",
-      "title": "Power Electronics Converter Modeling in High-Frequency Applications using Black Box Approach",
-      "numStudents": 1,
-      "supervisor": "Dr. Lokesh Kumar Dewangan",
-      "coSupervisor": null,
-      "students": [
-        { "name": "JASH FALADU", "rollNo": "210002040", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P5",
-      "title": "Hardware Development of a Solar AC Inverter",
-      "numStudents": 1,
-      "supervisor": "Dr. Vijay A S",
-      "coSupervisor": "Prof. Amod C Umarikar",
-      "students": [
-        { "name": "SAATVIK THOURWAL", "rollNo": "210002066", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P6",
-      "title": "Maximum Power Point Tracking Algorithms for Wind Energy Conversion Systems",
-      "numStudents": 1,
-      "supervisor": "Dr. Vijay A S",
-      "coSupervisor": null,
-      "students": [
-        { "name": "SHIVANKAR SHARMA", "rollNo": "210002071", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P7",
-      "title": "Multi-Robot Path Finding in a Constrained Environment for Multi-Layer Robots",
-      "numStudents": 2,
-      "supervisor": "Dr. Sharad Kumar Singh",
-      "coSupervisor": null,
-      "students": [
-        { "name": "ISHAAN MITTAL", "rollNo": "210003039", "specialization": "PEPS & CONTROL" },
-        { "name": "DHANANJAY SINGH", "rollNo": "210002026", "specialization": "PEPS & CONTROL" },
-        { "name": "PURAV BIYANI", "rollNo": "210004009", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P8",
-      "title": "Vision-Enabled Robotic Manipulation: 3D Object Recognition and Handling",
-      "numStudents": 1,
-      "supervisor": "Dr. Sharad Kumar Singh",
-      "coSupervisor": null,
-      "students": [
-        { "name": "ABIROOP MOHAN", "rollNo": "210002004", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P9",
-      "title": "Target Defense Differential Games with Communication Impairments",
-      "numStudents": 1,
-      "supervisor": "Dr. Sharad Kumar Singh",
-      "coSupervisor": "Dr. Dibbendu Roy",
-      "students": [
-        { "name": "SHUBHAM JAIN", "rollNo": "210002072", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    {
-      "projectNo": "P10",
-      "title": "Power System Planning using Unmanned Drone/Axial Vehicle",
-      "numStudents": 1,
-      "supervisor": "Dr. Lokesh Kumar Dewangan",
-      "coSupervisor": null,
-      "students": [
-        { "name": "ABHINN TARI", "rollNo": "210002002", "specialization": "PEPS & CONTROL" }
-      ]
-    },
-    
         {
-          "projectNo": "P11",
-          "title": "Modelling and Analysis of IRS-assisted Terahertz Wireless Systems",
-          "numStudents": 1,
-          "supervisor": "Dr. Swaminathan R",
-          "coSupervisor": null,
-          "students": [
-            { "name": "JALADI DEEPAK", "rollNo": "210002039", "specialization": "CSP" }
-          ]
-        },
-        {
-          "projectNo": "P12",
-          "title": "AI-assisted service provisioning for Extended Reality applications over 5G NR",
+          "projectNo": "P1",
+          "title": "Multi-Robot Path Finding in a Constrained Environment for Large Agents",
           "numStudents": 2,
-          "supervisor": "Dr. Dibbendu Roy",
+          "supervisor": "Dr. Sharad Kumar Singh",
           "coSupervisor": null,
           "students": [
-            { "name": "ADITYA JADHAV", "rollNo": "210002038", "specialization": "CSP" },
-            { "name": "ABHISHEK MEENA", "rollNo": "200002003", "specialization": "CSP" }
+            { "name": "VISHWAS SHANKAR KORI", "rollNo": "210002084", "specialization": "PEPS & CONTROL" }
           ]
         },
         {
-          "projectNo": "P13",
-          "title": "TCP for Network Slicing using Distributed Optimization",
+          "projectNo": "P2",
+          "title": "Dynamic Agent Allocation Problem in Multi-Agent Target-Defense Differential Games",
+          "numStudents": 3,
+          "supervisor": "Dr. Sharad Kumar Singh",
+          "coSupervisor": null,
+          "students": [
+            { "name": "HARSH SONI", "rollNo": "210003035", "specialization": "PEPS & CONTROL" },
+            { "name": "SHUBHNEET TIWARI", "rollNo": "210002073", "specialization": "PEPS & CONTROL" },
+            { "name": "ARUNADITYA DASH P", "rollNo": "210005010", "specialization": "PEPS & CONTROL" }
+          ]
+        },
+        {
+          "projectNo": "P3",
+          "title": "Multiple Pursuer Single Superior Evader Differential Games Amidst Known Obstacles",
           "numStudents": 1,
-          "supervisor": "Dr. Dibbendu Roy",
+          "supervisor": "Dr. Sharad Kumar Singh",
           "coSupervisor": null,
           "students": [
-            { "name": "ASHISH KUMAR", "rollNo": "210002017", "specialization": "CSP" }
+            { "name": "PUSHKAL MADHAWACHARYA", "rollNo": "210002059", "specialization": "PEPS & CONTROL" }
           ]
         },
         {
-          "projectNo": "P14",
-          "title": "Causality-driven reinforcement learning based resource allocation for 6G networks",
+          "projectNo": "P4",
+          "title": "Power Electronics Converter Modeling in High-Frequency Applications using Black Box Approach",
+          "numStudents": 1,
+          "supervisor": "Dr. Lokesh Kumar Dewangan",
+          "coSupervisor": null,
+          "students": [
+            { "name": "JASH FALADU", "rollNo": "210002040", "specialization": "PEPS & CONTROL" }
+          ]
+        },
+        {
+          "projectNo": "P5",
+          "title": "Hardware Development of a Solar AC Inverter",
+          "numStudents": 1,
+          "supervisor": "Dr. Vijay A S",
+          "coSupervisor": "Prof. Amod C Umarikar",
+          "students": [
+            { "name": "SAATVIK THOURWAL", "rollNo": "210002066", "specialization": "PEPS & CONTROL" }
+          ]
+        },
+        {
+          "projectNo": "P6",
+          "title": "Maximum Power Point Tracking Algorithms for Wind Energy Conversion Systems",
+          "numStudents": 1,
+          "supervisor": "Dr. Vijay A S",
+          "coSupervisor": null,
+          "students": [
+            { "name": "SHIVANKAR SHARMA", "rollNo": "210002071", "specialization": "PEPS & CONTROL" }
+          ]
+        },
+        {
+          "projectNo": "P7",
+          "title": "Multi-Robot Path Finding in a Constrained Environment for Multi-Layer Robots",
           "numStudents": 2,
-          "supervisor": "Dr. Dibbendu Roy",
+          "supervisor": "Dr. Sharad Kumar Singh",
           "coSupervisor": null,
           "students": [
-            { "name": "ABHINAV GHODESWAR", "rollNo": "200002002", "specialization": "CSP" },
-            { "name": "ANURAG DAS", "rollNo": "210005009", "specialization": "CSP" }
+            { "name": "ISHAAN MITTAL", "rollNo": "210003039", "specialization": "PEPS & CONTROL" },
+            { "name": "DHANANJAY SINGH", "rollNo": "210002026", "specialization": "PEPS & CONTROL" },
+            { "name": "PURAV BIYANI", "rollNo": "210004009", "specialization": "PEPS & CONTROL" }
           ]
         },
         {
-          "projectNo": "P15",
-          "title": "Design and Analysis of Mixed and Hybrid RIS-Aided Networks",
-          "numStudents": 2,
-          "supervisor": "Dr. Prabhat Kumar Upadhyay",
-          "coSupervisor": null,
-          "students": [
-            { "name": "SNEHA JAIN", "rollNo": "210002074", "specialization": "CSP" },
-            { "name": "SRISHTI DHINGRA", "rollNo": "210002076", "specialization": "CSP" }
-          ]
-        },
-        {
-          "projectNo": "P16",
-          "title": "Security Aspects of 6G Networks Exploiting UAVs with Intelligent Reflecting Surfaces",
-          "numStudents": 2,
-          "supervisor": "Dr. Prabhat Kumar Upadhyay",
-          "coSupervisor": null,
-          "students": [
-            { "name": "AJAY CHOUDHARY", "rollNo": "210002010", "specialization": "CSP" },
-            { "name": "KHUSHI SANLA", "rollNo": "210002045", "specialization": "CSP" }
-          ]
-        },
-        {
-          "projectNo": "P17",
-          "title": "Animated Multimedia Quality Assessment",
+          "projectNo": "P8",
+          "title": "Vision-Enabled Robotic Manipulation: 3D Object Recognition and Handling",
           "numStudents": 1,
-          "supervisor": "Dr. Appina Balasubramanyam",
+          "supervisor": "Dr. Sharad Kumar Singh",
           "coSupervisor": null,
           "students": [
-            { "name": "BANOTHU CHARANYA SRI", "rollNo": "210002020", "specialization": "CSP" }
+            { "name": "ABIROOP MOHAN", "rollNo": "210002004", "specialization": "PEPS & CONTROL" }
           ]
         },
         {
-          "projectNo": "P18",
-          "title": "Virtual Reality Multimedia Processing Methods",
+          "projectNo": "P9",
+          "title": "Target Defense Differential Games with Communication Impairments",
           "numStudents": 1,
-          "supervisor": "Dr. Appina Balasubramanyam",
-          "coSupervisor": null,
+          "supervisor": "Dr. Sharad Kumar Singh",
+          "coSupervisor": "Dr. Dibbendu Roy",
           "students": [
-            { "name": "B. SAI CHARAN NAIK", "rollNo": "210002024", "specialization": "CSP" }
+            { "name": "SHUBHAM JAIN", "rollNo": "210002072", "specialization": "PEPS & CONTROL" }
           ]
         },
         {
-          "projectNo": "P19",
-          "title": "High Gain Broadband Filtering Antenna for sub-6GHz applications",
+          "projectNo": "P10",
+          "title": "Power System Planning using Unmanned Drone/Axial Vehicle",
           "numStudents": 1,
-          "supervisor": "Dr. Rinkee Chopra",
+          "supervisor": "Dr. Lokesh Kumar Dewangan",
           "coSupervisor": null,
           "students": [
-            { "name": "SHASHANT KUMAR", "rollNo": "210002070", "specialization": "RF & MW" }
+            { "name": "ABHINN TARI", "rollNo": "210002002", "specialization": "PEPS & CONTROL" }
           ]
-        },
-        {
-          "projectNo": "P20",
-          "title": "Ultrawideband Antennas for Synthetic Aperture Radars",
-          "numStudents": 1,
-          "supervisor": "Dr. Rinkee Chopra",
-          "coSupervisor": null,
-          "students": [
-            { "name": "SHAIKH BABA", "rollNo": "210002068", "specialization": "RF & MW" }
-          ]
-        },
-        {
-          "projectNo": "P21",
-          "title": "RF Energy Harvesting in Sub-6 GHz frequency band",
-          "numStudents": 2,
-          "supervisor": "Dr. Rinkee Chopra",
-          "coSupervisor": null
         },
         
             {
-              "projectNo": "P24",
-              "title": "Brain-computer interface in mobile environment",
+              "projectNo": "P11",
+              "title": "Modelling and Analysis of IRS-assisted Terahertz Wireless Systems",
+              "numStudents": 1,
+              "supervisor": "Dr. Swaminathan R",
+              "coSupervisor": null,
+              "students": [
+                { "name": "JALADI DEEPAK", "rollNo": "210002039", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P12",
+              "title": "AI-assisted service provisioning for Extended Reality applications over 5G NR",
+              "numStudents": 2,
+              "supervisor": "Dr. Dibbendu Roy",
+              "coSupervisor": null,
+              "students": [
+                { "name": "ADITYA JADHAV", "rollNo": "210002038", "specialization": "CSP" },
+                { "name": "ABHISHEK MEENA", "rollNo": "200002003", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P13",
+              "title": "TCP for Network Slicing using Distributed Optimization",
+              "numStudents": 1,
+              "supervisor": "Dr. Dibbendu Roy",
+              "coSupervisor": null,
+              "students": [
+                { "name": "ASHISH KUMAR", "rollNo": "210002017", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P14",
+              "title": "Causality-driven reinforcement learning based resource allocation for 6G networks",
+              "numStudents": 2,
+              "supervisor": "Dr. Dibbendu Roy",
+              "coSupervisor": null,
+              "students": [
+                { "name": "ABHINAV GHODESWAR", "rollNo": "200002002", "specialization": "CSP" },
+                { "name": "ANURAG DAS", "rollNo": "210005009", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P15",
+              "title": "Design and Analysis of Mixed and Hybrid RIS-Aided Networks",
+              "numStudents": 2,
+              "supervisor": "Dr. Prabhat Kumar Upadhyay",
+              "coSupervisor": null,
+              "students": [
+                { "name": "SNEHA JAIN", "rollNo": "210002074", "specialization": "CSP" },
+                { "name": "SRISHTI DHINGRA", "rollNo": "210002076", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P16",
+              "title": "Security Aspects of 6G Networks Exploiting UAVs with Intelligent Reflecting Surfaces",
+              "numStudents": 2,
+              "supervisor": "Dr. Prabhat Kumar Upadhyay",
+              "coSupervisor": null,
+              "students": [
+                { "name": "AJAY CHOUDHARY", "rollNo": "210002010", "specialization": "CSP" },
+                { "name": "KHUSHI SANLA", "rollNo": "210002045", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P17",
+              "title": "Animated Multimedia Quality Assessment",
+              "numStudents": 1,
+              "supervisor": "Dr. Appina Balasubramanyam",
+              "coSupervisor": null,
+              "students": [
+                { "name": "BANOTHU CHARANYA SRI", "rollNo": "210002020", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P18",
+              "title": "Virtual Reality Multimedia Processing Methods",
+              "numStudents": 1,
+              "supervisor": "Dr. Appina Balasubramanyam",
+              "coSupervisor": null,
+              "students": [
+                { "name": "B. SAI CHARAN NAIK", "rollNo": "210002024", "specialization": "CSP" }
+              ]
+            },
+            {
+              "projectNo": "P19",
+              "title": "High Gain Broadband Filtering Antenna for sub-6GHz applications",
+              "numStudents": 1,
+              "supervisor": "Dr. Rinkee Chopra",
+              "coSupervisor": null,
+              "students": [
+                { "name": "SHASHANT KUMAR", "rollNo": "210002070", "specialization": "RF & MW" }
+              ]
+            },
+            {
+              "projectNo": "P20",
+              "title": "Ultrawideband Antennas for Synthetic Aperture Radars",
+              "numStudents": 1,
+              "supervisor": "Dr. Rinkee Chopra",
+              "coSupervisor": null,
+              "students": [
+                { "name": "SHAIKH BABA", "rollNo": "210002068", "specialization": "RF & MW" }
+              ]
+            },
+            {
+              "projectNo": "P21",
+              "title": "RF Energy Harvesting in Sub-6 GHz frequency band",
+              "numStudents": 2,
+              "supervisor": "Dr. Rinkee Chopra",
+              "coSupervisor": null,
+              "students": [
+                { "name": "K.VISHAL", "rollNo": "210002047", "specialization": "RF & MW" },
+                { "name": "N MADHU", "rollNo": "210002053", "specialization": "RF & MW" }
+              ]
+            },
+            {
+              "projectNo": "P22",
+              "title": "Automated Detection of EyeMovements",
               "numStudents": 1,
               "supervisor": "Dr. Ram Bilas Pachori",
               "coSupervisor": null,
               "students": [
-                { "name": "SAJAN SWAROOP REDDY", "rollNo": "210002008", "specialization": "CSP" }
+                { "name": "KILARU JAYA DIVYA", "rollNo": "210002046", "specialization": "CSP" }
               ]
             },
             {
-              "projectNo": "P25",
-              "title": "Visual object identification from physiological signals",
+              "projectNo": "P23",
+              "title": "Automated drowsiness detection from physiological signals ",
               "numStudents": 1,
               "supervisor": "Dr. Ram Bilas Pachori",
               "coSupervisor": null,
               "students": [
-                { "name": "MADHUSUDHAN REDDY", "rollNo": "210002075", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P26",
-              "title": "LED based path planning for Next-Gen Smart Vehicular Navigation",
-              "numStudents": 2,
-              "supervisor": "Dr. Sumit Gautam",
-              "coSupervisor": "Prof. Vimal Bhatia",
-              "students": [
-                { "name": "PARTH TOSHNIWAL", "rollNo": "210002056", "specialization": "CSP" },
-                { "name": "RAJESH YADAV", "rollNo": "210002060", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P27",
-              "title": "Sound based path planning for Next-Gen Smart Vehicular Navigation",
-              "numStudents": 2,
-              "supervisor": "Dr. Sumit Gautam",
-              "coSupervisor": null,
-              "students": [
-                { "name": "LAKSHAY", "rollNo": "210002050", "specialization": null },
-                { "name": "SHASHANK SHARMA", "rollNo": "210002069", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P28",
-              "title": "Precoder Designing for SWIPT Multicasting Systems",
-              "numStudents": 2,
-              "supervisor": "Dr. Sumit Gautam",
-              "coSupervisor": null,
-              "students": [
-                { "name": "KARTIKEYA YADAV", "rollNo": "210002043", "specialization": "CSP" },
-                { "name": "KEDAR SINGH", "rollNo": "210002044", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P29",
-              "title": "AI/ML and Optimization based framework for traditional Wireless Communication systems",
-              "numStudents": 2,
-              "supervisor": "Dr. Sumit Gautam",
-              "coSupervisor": null,
-              "students": [
-                { "name": "NEHA JADHAV", "rollNo": "210002054", "specialization": null },
-                { "name": "RITIKA DHAKAR", "rollNo": "210002064", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P30",
-              "title": "Precoder Designing for IoT-enabled Multigroup Multicasting Systems",
-              "numStudents": 2,
-              "supervisor": "Dr. Sumit Gautam",
-              "coSupervisor": "Dr. Dibbendu Roy",
-              "students": [
-                { "name": "VISHAL KUMAR", "rollNo": "210002083", "specialization": "CSP" },
-                { "name": "TANAY KHANDELWAL", "rollNo": "210002080", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P31",
-              "title": "AI/ML and Optimization in Cooperative IoT systems with Multiuser and Multicarrier settings",
-              "numStudents": 2,
-              "supervisor": "Dr. Dibbendu Roy",
-              "coSupervisor": "Dr. Sumit Gautam",
-              "students": [
-                { "name": "SUYASH MISHRA", "rollNo": "210002078", "specialization": null },
-                { "name": "VISHWANATH DORLIKAR", "rollNo": "210002029", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P32",
-              "title": "Target Defense Differential Games with Visibility Constraints",
-              "numStudents": 1,
-              "supervisor": "Dr. Dibbendu Roy",
-              "coSupervisor": "Dr. Sharad Kumar Singh",
-              "students": [
-                { "name": "SUYASH TRIPATHI", "rollNo": "210002079", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P33",
-              "title": "AI/ML for Vehicular Communications",
-              "numStudents": 1,
-              "supervisor": "Dr. Vimal Bhatia",
-              "coSupervisor": null,
-              "students": [
-                { "name": "ADITYA GUHAGARKAR", "rollNo": "210002005", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P34",
-              "title": "AI/ML for CPS Systems",
-              "numStudents": 1,
-              "supervisor": "Dr. Vimal Bhatia",
-              "coSupervisor": null,
-              "students": [
-                { "name": "DHRUV PARASRAMPURIA", "rollNo": "210002027", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P35",
-              "title": "AI/ML for Agriculture",
-              "numStudents": 1,
-              "supervisor": "Dr. Vimal Bhatia",
-              "coSupervisor": null,
-              "students": [
-                { "name": "ABHISHEK MEHRA", "rollNo": "210002003", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P36",
-              "title": "AI/ML for CPS Systems-1(THERMAL)",
-              "numStudents": 2,
-              "supervisor": "Dr. Vimal Bhatia",
-              "coSupervisor": null,
-              "students": [
-                { "name": "VAMSHI BHUKYA", "rollNo": "210002022", "specialization": null },
-                { "name": "SRI VAISHNAV KONTHAM", "rollNo": "210002048", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P37",
-              "title": "Deep Learning for CPS Systems-2",
-              "numStudents": 2,
-              "supervisor": "Dr. Vimal Bhatia",
-              "coSupervisor": null,
-              "students": [
-                { "name": "B.SRIRAM VISHNU KIRAN", "rollNo": "210002023", "specialization": "CSP" },
-                { "name": "K. SAI DILEEP KUMAR", "rollNo": "210002049", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P38",
-              "title": "Digital Twin for CPS",
-              "numStudents": 1,
-              "supervisor": "Dr. Vimal Bhatia",
-              "coSupervisor": null,
-              "students": [
-                { "name": "KARTIKEY SHARMA", "rollNo": "210002042", "specialization": "CSP" }
-              ]
-            },
-            {
-              "projectNo": "P39",
-              "title": "Multimodal AI in Drones",
-              "numStudents": 2,
-              "supervisor": "Dr. Vivek Kanhangad",
-              "coSupervisor": null,
-              "students": [
-                { "name": "SUNKU VINEET", "rollNo": "210002077", "specialization": "CSP" },
-                { "name": "A. TARUN BALAJI", "rollNo": "210002001", "specialization": null }
-              ]
-            },
-            {
-              "projectNo": "P40",
-              "title": "Full-Body Biometrics for Drone-based Surveillance System",
-              "numStudents": 2,
-              "supervisor": "Dr. Vivek Kanhangad",
-              "coSupervisor": null,
-              "students": [
-                { "name": "YASHVARDHAN SHAH", "rollNo": "210002085", "specialization": null },
-                { "name": "UTKARSH VERMA", "rollNo": "210002081", "specialization": null }
-              ]
+                    { "name": "ARVAPALLI VAGDEVI", "rollNo": "210002015", "specialization": "CSP" }
+                  ]
             },
             
                 {
-                  "projectNo": "P42",
-                  "title": "RF centric FDSOI MOSFET design",
+                  "projectNo": "P24",
+                  "title": "Brain-computer interface in mobile environment",
                   "numStudents": 1,
-                  "supervisor": "Dr. Abhinav Kranti",
+                  "supervisor": "Dr. Ram Bilas Pachori",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "AKANKSHA", "rollNo": "210002011", "specialization": "VDN" }
+                    { "name": "SAJAN SWAROOP REDDY", "rollNo": "210002008", "specialization": "CSP" }
                   ]
                 },
                 {
-                  "projectNo": "P43",
-                  "title": "Analog circuit design with advanced MOSFETs",
+                  "projectNo": "P25",
+                  "title": "Visual object identification from physiological signals",
                   "numStudents": 1,
-                  "supervisor": "Dr. Abhinav Kranti",
+                  "supervisor": "Dr. Ram Bilas Pachori",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "MANSI CHOUDHARY", "rollNo": "210004025", "specialization": "VDN" }
+                    { "name": "MADHUSUDHAN REDDY", "rollNo": "210002075", "specialization": "CSP" }
                   ]
                 },
                 {
-                  "projectNo": "P44",
-                  "title": "Building a hand-held microscope for clinical applications",
+                  "projectNo": "P26",
+                  "title": "LED based path planning for Next-Gen Smart Vehicular Navigation",
                   "numStudents": 2,
-                  "supervisor": "Dr. Srivatsan Vasudevan",
-                  "coSupervisor": null,
+                  "supervisor": "Dr. Sumit Gautam",
+                  "coSupervisor": "Prof. Vimal Bhatia",
                   "students": [
-                    { "name": "AYUSH SHARMA", "rollNo": "210002018", "specialization": "VDN" },
-                    { "name": "GIRISH JARWAL", "rollNo": "210002033", "specialization": null }
+                    { "name": "PARTH TOSHNIWAL", "rollNo": "210002056", "specialization": "CSP" },
+                    { "name": "RAJESH YADAV", "rollNo": "210002060", "specialization": "CSP" }
                   ]
                 },
                 {
-                  "projectNo": "P45",
-                  "title": "Building a sensor based tracking of human lung movement",
-                  "numStudents": 1,
-                  "supervisor": "Dr. Srivatsan Vasudevan",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "ADITYA MEENA", "rollNo": "210002007", "specialization": "VDN" }
-                  ]
-                },
-                {
-                  "projectNo": "P46",
-                  "title": "IoT and data fusion for crop disease detection using machine learning",
-                  "numStudents": 3,
-                  "supervisor": "Prof. Shaibal Mukherjee",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "AMAN KUMAR", "rollNo": "210002012", "specialization": null },
-                    { "name": "ADITYA LAHANE", "rollNo": "210002006", "specialization": null },
-                    { "name": "PRAJWAL BASTEWARD", "rollNo": "210002021", "specialization": null }
-                  ]
-                },
-                {
-                  "projectNo": "P47",
-                  "title": "IoT-enabled portable system for heavy metal ions detection in water",
+                  "projectNo": "P27",
+                  "title": "Sound based path planning for Next-Gen Smart Vehicular Navigation",
                   "numStudents": 2,
-                  "supervisor": "Prof. Shaibal Mukherjee",
+                  "supervisor": "Dr. Sumit Gautam",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "ARYAN KUMAR", "rollNo": "210002016", "specialization": "VDN" },
-                    { "name": "ANIROODDH PATIDAR", "rollNo": "210002013", "specialization": null }
+                    { "name": "LAKSHAY", "rollNo": "210002050", "specialization": null },
+                    { "name": "SHASHANK SHARMA", "rollNo": "210002069", "specialization": null }
                   ]
                 },
                 {
-                  "projectNo": "P48",
-                  "title": "IoT-enabled portable toxic gas sensor",
-                  "numStudents": 3,
-                  "supervisor": "Prof. Shaibal Mukherjee",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "AYUSHI AGRAWAL", "rollNo": "210002019", "specialization": "VDN" },
-                    { "name": "KAMBLE APURVA NANDKUMAR", "rollNo": "210002014", "specialization": null },
-                    { "name": "SHWETHA GAJULA", "rollNo": "210002031", "specialization": null }
-                  ]
-                },
-                {
-                  "projectNo": "P49",
-                  "title": "IoT-enabled portable UA Sensor",
-                  "numStudents": 3,
-                  "supervisor": "Prof. Shaibal Mukherjee",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "DEV KUMAR JAIN", "rollNo": "210002025", "specialization": null },
-                    { "name": "PRABHAKAR AGRAWAL NAREDI", "rollNo": "210002057", "specialization": null },
-                    { "name": "RANULLAL", "rollNo": "210002061", "specialization": null }
-                  ]
-                },
-                {
-                  "projectNo": "P50",
-                  "title": "Digital IP Formal Verification Library",
-                  "numStudents": 1,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "EBRAHIM RAMPURWALA", "rollNo": "210002030", "specialization": "VDN" }
-                  ]
-                },
-                {
-                  "projectNo": "P51",
-                  "title": "Sorting Architecture using IMC for Data Science",
-                  "numStudents": 1,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "RISHABH PATIL", "rollNo": "210002062", "specialization": "VDN" }
-                  ]
-                },
-                {
-                  "projectNo": "P52",
-                  "title": "Efficient Hardware Accelerator Design",
-                  "numStudents": 1,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "MALLIDI VENKATA SIVA KIRAN", "rollNo": "210002051", "specialization": "VDN" }
-                  ]
-                },
-                {
-                  "projectNo": "P53",
-                  "title": "Compute-in-Memory using SRAM Cell",
-                  "numStudents": 1,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
-                  "coSupervisor": null,
-                  "students": [
-                    { "name": "GANTI SUBASH", "rollNo": "210002032", "specialization": "VDN" }
-                  ]
-                },
-                {
-                  "projectNo": "P54",
-                  "title": "Compute-in-Memory using SRAM Cell",
+                  "projectNo": "P28",
+                  "title": "Precoder Designing for SWIPT Multicasting Systems",
                   "numStudents": 2,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                  "supervisor": "Dr. Sumit Gautam",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "HARMAN SINGH BAGGA", "rollNo": "210002036", "specialization": "VDN" }
+                    { "name": "KARTIKEYA YADAV", "rollNo": "210002043", "specialization": "CSP" },
+                    { "name": "KEDAR SINGH", "rollNo": "210002044", "specialization": null }
                   ]
                 },
                 {
-                  "projectNo": "P55",
-                  "title": "Optimized circuits for MAC unit design in Deep Neural networks, Efficient MAC Design and implementation on FPGA for Edge AI applications",
+                  "projectNo": "P29",
+                  "title": "AI/ML and Optimization based framework for traditional Wireless Communication systems",
                   "numStudents": 2,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                  "supervisor": "Dr. Sumit Gautam",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "PRAKHAR GOEL", "rollNo": "210002058", "specialization": null },
-                    { "name": "VINNAKOTA LAVANYA LAKSHMI SAI", "rollNo": "210002082", "specialization": "VDN" }
+                    { "name": "NEHA JADHAV", "rollNo": "210002054", "specialization": null },
+                    { "name": "RITIKA DHAKAR", "rollNo": "210002064", "specialization": null }
                   ]
                 },
                 {
-                  "projectNo": "P56",
-                  "title": "Compute-in-Memory using Emerging Non-Volatile Memories",
-                  "numStudents": 1,
-                  "supervisor": "Dr. Santosh Kumar Vishvakarma",
-                  "coSupervisor": null,
+                  "projectNo": "P30",
+                  "title": "Precoder Designing for IoT-enabled Multigroup Multicasting Systems",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Sumit Gautam",
+                  "coSupervisor": "Dr. Dibbendu Roy",
                   "students": [
-                    { "name": "RUPAL SHAH", "rollNo": "210002065", "specialization": "VDN" }
+                    { "name": "VISHAL KUMAR", "rollNo": "210002083", "specialization": "CSP" },
+                    { "name": "TANAY KHANDELWAL", "rollNo": "210002080", "specialization": null }
                   ]
                 },
                 {
-                  "projectNo": "P57",
-                  "title": "Analysis of Optoelectronic Confinement in NanosSheet FET",
+                  "projectNo": "P31",
+                  "title": "AI/ML and Optimization in Cooperative IoT systems with Multiuser and Multicarrier settings",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Dibbendu Roy",
+                  "coSupervisor": "Dr. Sumit Gautam",
+                  "students": [
+                    { "name": "SUYASH MISHRA", "rollNo": "210002078", "specialization": null },
+                    { "name": "VISHWANATH DORLIKAR", "rollNo": "210002029", "specialization": null }
+                  ]
+                },
+                {
+                  "projectNo": "P32",
+                  "title": "Target Defense Differential Games with Visibility Constraints",
                   "numStudents": 1,
-                  "supervisor": "Dr. Mukesh Kumar",
+                  "supervisor": "Dr. Dibbendu Roy",
+                  "coSupervisor": "Dr. Sharad Kumar Singh",
+                  "students": [
+                    { "name": "SUYASH TRIPATHI", "rollNo": "210002079", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P33",
+                  "title": "AI/ML for Vehicular Communications",
+                  "numStudents": 1,
+                  "supervisor": "Dr. Vimal Bhatia",
                   "coSupervisor": null,
                   "students": [
-                    { "name": "G. INDRAVALLIKA", "rollNo": "210002034", "specialization": "VDN" }
+                    { "name": "ADITYA GUHAGARKAR", "rollNo": "210002005", "specialization": "CSP" }
                   ]
-                }    
-  
+                },
+                {
+                  "projectNo": "P34",
+                  "title": "AI/ML for CPS Systems",
+                  "numStudents": 1,
+                  "supervisor": "Dr. Vimal Bhatia",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "DHRUV PARASRAMPURIA", "rollNo": "210002027", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P35",
+                  "title": "AI/ML for Agriculture",
+                  "numStudents": 1,
+                  "supervisor": "Dr. Vimal Bhatia",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "ABHISHEK MEHRA", "rollNo": "210002003", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P36",
+                  "title": "AI/ML for CPS Systems-1(THERMAL)",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Vimal Bhatia",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "VAMSHI BHUKYA", "rollNo": "210002022", "specialization": "CSP" },
+                    { "name": "SRI VAISHNAV KONTHAM", "rollNo": "210002048", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P37",
+                  "title": "Deep Learning for CPS Systems-2",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Vimal Bhatia",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "B.SRIRAM VISHNU KIRAN", "rollNo": "210002023", "specialization": "CSP" },
+                    { "name": "K. SAI DILEEP KUMAR", "rollNo": "210002049", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P38",
+                  "title": "Digital Twin for CPS",
+                  "numStudents": 1,
+                  "supervisor": "Dr. Vimal Bhatia",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "KARTIKEY SHARMA", "rollNo": "210002042", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P39",
+                  "title": "Multimodal AI in Drones",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Vivek Kanhangad",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "SUNKU VINEET", "rollNo": "210002077", "specialization": "CSP" },
+                    { "name": "A. TARUN BALAJI", "rollNo": "210002001", "specialization": "CSP" }
+                  ]
+                },
+                {
+                  "projectNo": "P40",
+                  "title": "Full-Body Biometrics for Drone-based Surveillance System",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Vivek Kanhangad",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "YASHVARDHAN SHAH", "rollNo": "210002085", "specialization": "CSP" },
+                    { "name": "UTKARSH VERMA", "rollNo": "210002081", "specialization": "CSP" }
+                  ]
+                },{
+                  "projectNo": "P41",
+                  "title": "Adversary Drone Detection using Drone Mounted mmWave Radar ",
+                  "numStudents": 2,
+                  "supervisor": "Dr. Vivek Kanhangad",
+                  "coSupervisor": null,
+                  "students": [
+                    { "name": "SARTHAK NANDRE", "rollNo": "210002067", "specialization": "CSP" },
+                    { "name": "AKANKSHA", "rollNo": "210002055", "specialization": "CSP" }
+                  ]
+                },
+                
+                    {
+                      "projectNo": "P42",
+                      "title": "RF centric FDSOI MOSFET design",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Abhinav Kranti",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "AKANKSHA", "rollNo": "210002011", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P43",
+                      "title": "Analog circuit design with advanced MOSFETs",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Abhinav Kranti",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "MANSI CHOUDHARY", "rollNo": "210004025", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P44",
+                      "title": "Building a hand-held microscope for clinical applications",
+                      "numStudents": 2,
+                      "supervisor": "Dr. Srivatsan Vasudevan",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "AYUSH SHARMA", "rollNo": "210002018", "specialization": "VDN" },
+                        { "name": "GIRISH JARWAL", "rollNo": "210002033", "specialization": null }
+                      ]
+                    },
+                    {
+                      "projectNo": "P45",
+                      "title": "Building a sensor based tracking of human lung movement",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Srivatsan Vasudevan",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "ADITYA MEENA", "rollNo": "210002007", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P46",
+                      "title": "IoT and data fusion for crop disease detection using machine learning",
+                      "numStudents": 3,
+                      "supervisor": "Prof. Shaibal Mukherjee",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "AMAN KUMAR", "rollNo": "210002012", "specialization": null },
+                        { "name": "ADITYA LAHANE", "rollNo": "210002006", "specialization": null },
+                        { "name": "PRAJWAL BASTEWARD", "rollNo": "210002021", "specialization": null }
+                      ]
+                    },
+                    {
+                      "projectNo": "P47",
+                      "title": "IoT-enabled portable system for heavy metal ions detection in water",
+                      "numStudents": 2,
+                      "supervisor": "Prof. Shaibal Mukherjee",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "ARYAN KUMAR", "rollNo": "210002016", "specialization": "VDN" },
+                        { "name": "ANIROODDH PATIDAR", "rollNo": "210002013", "specialization": null }
+                      ]
+                    },
+                    {
+                      "projectNo": "P48",
+                      "title": "IoT-enabled portable toxic gas sensor",
+                      "numStudents": 3,
+                      "supervisor": "Prof. Shaibal Mukherjee",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "AYUSHI AGRAWAL", "rollNo": "210002019", "specialization": "VDN" },
+                        { "name": "KAMBLE APURVA NANDKUMAR", "rollNo": "210002014", "specialization": null },
+                        { "name": "SHWETHA GAJULA", "rollNo": "210002031", "specialization": null }
+                      ]
+                    },
+                    {
+                      "projectNo": "P49",
+                      "title": "IoT-enabled portable UA Sensor",
+                      "numStudents": 3,
+                      "supervisor": "Prof. Shaibal Mukherjee",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "DEV KUMAR JAIN", "rollNo": "210002025", "specialization": null },
+                        { "name": "PRABHAKAR AGRAWAL NAREDI", "rollNo": "210002057", "specialization": null },
+                        { "name": "RANULLAL", "rollNo": "210002061", "specialization": null }
+                      ]
+                    },
+                    {
+                      "projectNo": "P50",
+                      "title": "Digital IP Formal Verification Library",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "EBRAHIM RAMPURWALA", "rollNo": "210002030", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P51",
+                      "title": "Sorting Architecture using IMC for Data Science",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "RISHABH PATIL", "rollNo": "210002062", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P52",
+                      "title": "Efficient Hardware Accelerator Design",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "MALLIDI VENKATA SIVA KIRAN", "rollNo": "210002051", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P53",
+                      "title": "Compute-in-Memory using SRAM Cell",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "GANTI SUBASH", "rollNo": "210002032", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P54",
+                      "title": "Optimized circuits for MAC unit design in Deep Neural networks ",
+                      "numStudents": 2,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "HARMAN SINGH BAGGA", "rollNo": "210002036", "specialization": "VDN" },
+                        { "name": "PRAKHAR GOEL", "rollNo": "210002058", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P55",
+                      "title": "Efficient MAC Design and implementation on FPGA for Edge AI applications ",
+                      "numStudents": 2,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                       { "name": "VINNAKOTA LAVANYA LAKSHMI SAI", "rollNo": "210002082", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P56",
+                      "title": "Compute-in-Memory using Emerging Non-Volatile Memories",
+                      "numStudents": 1,
+                      "supervisor": "Dr. Santosh Kumar Vishvakarma",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "RUPAL SHAH", "rollNo": "210002065", "specialization": "VDN" }
+                      ]
+                    },
+                    {
+                      "projectNo": "P57",
+                      "title": "Analysis of Optoelectronic Confinement in NanosSheet FET",
+                      "numStudents": 2,
+                      "supervisor": "Dr. Mukesh Kumar",
+                      "coSupervisor": null,
+                      "students": [
+                        { "name": "G. INDRAVALLIKA", "rollNo": "210002034", "specialization": "VDN" },
+                        { "name": "G. Rishitha", "rollNo": "210002035", "specialization": "VDN" }
+                      ]
+                    }    
+      
 ]
