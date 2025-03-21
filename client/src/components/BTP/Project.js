@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import btp from './btp.json';
+import './Table.css';
 
 const ProjectTable = () => {
   const [records, setRecords] = useState(btp);
@@ -24,7 +25,7 @@ const ProjectTable = () => {
     { name: 'Project No.', selector: row => row.projectNo },
     { name: 'Project Title', selector: row => row.title },
     { name: 'Supervisor', selector: row => row.supervisor },
-    { name: 'Co-Supervisor', selector: row => row.coSupervisor || 'N/A' },
+    { name: 'Co-Supervisor', selector: row => row.coSupervisor || ' ' },
     {
       name: 'Students',
       selector: row => Array.isArray(row.students)
