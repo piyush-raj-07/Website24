@@ -56,8 +56,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              className="h-14 w-14 rounded-md transition-transform duration-300 hover:scale-110"
-              src="https://media.licdn.com/dms/image/v2/D4E0BAQFf2jcJ2oNktw/company-logo_200_200/company-logo_200_200/0/1698123847006/electrical_engineering_students_association_logo?e=2147483647&v=beta&t=zzl7X_9804zqoLHSmQMj9MEx4R-Uhn21av4FI-atops"
+              className="h-20 w-22 rounded-md transition-transform duration-300 hover:scale-110"
+              src="https://media-hosting.imagekit.io//6f7127647e6b43ec/EESA_LOGO_white.png?Expires=1835149649&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=kItWfIafOzth0u~AJKby3hxj16enlcvhuAW~5aEpea0cVBaDtGVCb6jV6dNmKZzTbHT61ikg1ReAHOZKZFb5cfK--BirwbDFiYzvMq4Svjt6exDtT9Xb7a~qkRKR1Tdx6GmioAwZixmExtRCsLqhLtBCjXOQZNDxMeQWb7X5Iw5vcCT5lf3ac9tBMaxzYwYTH0lOFoVuNa10haVIQYmVrjQ5eG2RW4IHFF0LxBWeYq4fF4rQ7MtSXVFTLcMCvAuIAOqHHOrH8GhNAyVSgL7gT3JBtbfwmNA~eFimzXIOcD0HN5oG3Vb9wbsd-MdsgYCDLjsVckTlHViNbsBOSsnFLQ__"
               alt="Logo"
             />
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
           {/* Navigation Links with Glass Effect */}
          {/* Navigation Links with Glass Effect */}
 <div className="hidden md:flex items-center justify-center w-fit bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg px-4 md:px-8 py-2">
-  {['Home', 'Blogs', 'Activities', 'Projects', 'People','Team' , 'Gallery'].map((item) => (
+  {['Home', 'Blogs', 'Activities', 'BTP', 'People'].map((item) => (
     <motion.div key={item} variants={linkVariants} whileHover="hover" className="mx-2">
       <Link
         to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
