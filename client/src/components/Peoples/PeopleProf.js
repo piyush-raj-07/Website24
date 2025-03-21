@@ -7,6 +7,17 @@ import blogBg2 from '../../components/ProfileImg/blog_bg2.jpg';
 import blogBg3 from '../../components/ProfileImg/blog_bg3.jpg';
 import blogBg4 from '../../components/ProfileImg/blog_bg4.jpg';
 import blogBg5 from '../../components/ProfileImg/blog_bg5.jpg';
+import blogBg6 from '../../components/ProfileImg/blog_bg6.jpg';
+import blogBg7 from '../../components/ProfileImg/blog_bg7.jpg';
+import blogBg8 from '../../components/ProfileImg/blog_bg8.jpg';
+import blogBg9 from '../../components/ProfileImg/blog_bg9.jpg';
+import blogBg10 from '../../components/ProfileImg/blog_bg10.jpg';
+import blogBg11 from '../../components/ProfileImg/blog_bg11.jpg';
+import blogBg12 from '../../components/ProfileImg/blog_bg12.jpg';
+import blogBg13 from '../../components/ProfileImg/blog_bg13.jpg';
+import blogBg14 from '../../components/ProfileImg/blog_bg14.jpg';
+import blogBg15 from '../../components/ProfileImg/blog_bg15.jpg';
+
 import { Shield, BookText, Target } from "lucide-react"
 
 export default function ProfilePage2() {
@@ -27,6 +38,16 @@ export default function ProfilePage2() {
         blogBg3,
         blogBg4,
         blogBg5,
+        blogBg6,
+        blogBg7,
+        blogBg8,
+        blogBg9,
+        blogBg10,
+        blogBg11,
+        blogBg12,
+        blogBg13,
+        blogBg14,
+        blogBg15
     ]
 
     useEffect(() => {
@@ -204,7 +225,7 @@ export default function ProfilePage2() {
                                     alt="Blog Background"
                                     className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                                 />
-                                <div className="absolute top-0 left-0 w-full h-full bg-purple-950 bg-opacity-45 flex items-center justify-center">
+                                <div className="absolute top-0 left-0 w-full h-full bg-purple-950 bg-opacity-45 flex flex-col items-center justify-center">
                                 <h2 className="text-xl font-bold">{blog.title}</h2>
                                 <p className="text-sm">Category: {blog.cat}</p>
                                 </div>
