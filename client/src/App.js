@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
@@ -33,9 +33,21 @@ import QuizPage from "./components/quiz/QuizPage";
 import People from "./components/Peoples/People";
 import ProfilePage2 from "./components/Peoples/PeopleProf.js";
 import Intern from "./components/blogs/intern_blogs.js";
-import Study from "./components/Study.js";
+// import Study from "./components/Study.js";
 function App() {
+  const [scrollProgress, setScrollProgress] = useState(0)
   const { isCheckingAuth, CheckAuth } = useAuthStore();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = (window.scrollY / totalHeight) * 100
+      setScrollProgress(progress)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
     CheckAuth();
@@ -48,15 +60,17 @@ function App() {
       </div>
     );
   }
-
+  
   return (
     <Router>
-      <div className="app">
+      
+      <div className="app" >
+      <div className="progress-bar" style={{ width: `${scrollProgress}%` }}></div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/Study" element={<Study />} />
+          {/* <Route path="/Study" element={<Study />} /> */}
           <Route path="/team" element={<TeamPage />} />
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Blogs" element={<Blogs />} />

@@ -130,7 +130,7 @@ const Navbar = () => {
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                className={`block text-2xl font-semibold px-4 py-2 transition-all duration-300 ${animatedUnderlineClass} ${
+                className={`block justify-center align-middle text-center text-2xl font-semibold px-4 py-2 transition-all duration-300 ${animatedUnderlineClass} ${
                   isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`)
                     ? 'before:scale-x-100'
                     : ''

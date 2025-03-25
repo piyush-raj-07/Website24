@@ -1,37 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import VANTA from 'vanta/dist/vanta.net.min';
+import React from 'react';
+import './AnimatedBg.css';
 
-function VantaBackground() {
-    const [vantaEffect, setVantaEffect] = useState(null);
-    const myRef = useRef(null);
-    
-    useEffect(() => {
-        if (!vantaEffect) {
-          setVantaEffect(
-            VANTA.NET({
-              el: myRef.current,
-              THREE: THREE,
-              mouseControls: true,
-              touchControls: true,
-              gyroControls: false,
-              minHeight: 200.00,
-              minWidth: 200.00,
-              scale: 1.00,
-              scaleMobile: 1.00,
-              color: 0xff3ff4,
-              backgroundColor: 0x0
-            })
-          );
-        }
-        return () => {
-          if (vantaEffect) vantaEffect.destroy();
-          
-        };
-      }, [vantaEffect]);
-      
-  
-    return <div ref={myRef} style={{ width: '100%', height: '100vh' }}></div>;
-  }
+const AnimatedBackground = () => {
+  return (
+    <div className="animated-background z-50">
+      {[...Array(50)].map((_, index) => (
+        <div key={index} className="particle"></div>
+      ))}
+    </div>
+  );
+};
 
-export default VantaBackground;
+export default AnimatedBackground;
