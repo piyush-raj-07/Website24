@@ -196,6 +196,8 @@ const WriteBlog = () => {
                   <option value="internship">Internship</option>
                   <option value="placement">Placement</option>
                   <option value="organization">Course</option>
+                  <option value="tech">Technical</option>
+                  <option value="general">Journey</option>
                 </select>
               </motion.div>
               <div className="flex space-x-4">

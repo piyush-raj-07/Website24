@@ -80,6 +80,7 @@ export default function ProfilePage() {
 
       console.log("Upload successful:", response.data)
       setShowModal(false)
+      fetchUserInfo()
       toast.success("Profile updated successfully!")
     } catch (error) {
       console.error("Error updating user:", error)
@@ -87,41 +88,43 @@ export default function ProfilePage() {
     }
   }
 
-  useEffect(() => {
-    const fetchUserInfo = async () => {
-      try {
-        const response = await fetch(`http://localhost:5000/api/user`, {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+  const fetchUserInfo = async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/user`, {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
 
-        if (response.ok) {
-          const data = await response.json()
-          setUsername(data.Name || "User")
-          setIntro(data.About || "No bio yet")
-          setDegree(data.Degree || "B.Tech")
-          setBatch(data.Grad_Year || "2026")
-          setImage(data.Img_URL || profilePic)
-          setIsProj(data.is_Proj || false)
+      if (response.ok) {
+        const data = await response.json()
+        setUsername(data.Name || "User")
+        setIntro(data.About || "No bio yet")
+        setDegree(data.Degree || "B.Tech")
+        setBatch(data.Grad_Year || "2026")
+        setImage(data.Img_URL || profilePic)
+        setIsProj(data.is_Proj || false)
 
-          setFormData((prevState) => ({
-            ...prevState,
-            username: data.Name || "",
-            degree: data.Degree || "",
-            batch: data.Grad_Year || "",
-            intro: data.About || "",
-            is_Proj: data.is_Proj || false,
-          }))
-        } else {
-          console.error("Failed to fetch user info")
-        }
-      } catch (err) {
-        console.error("Error fetching user info:", err)
+        setFormData((prevState) => ({
+          ...prevState,
+          username: data.Name || "",
+          degree: data.Degree || "",
+          batch: data.Grad_Year || "",
+          intro: data.About || "",
+          is_Proj: data.is_Proj || false,
+        }))
+      } else {
+        console.error("Failed to fetch user info")
       }
+    } catch (err) {
+      console.error("Error fetching user info:", err)
     }
+  }
+
+  useEffect(() => {
+    fetchUserInfo();
 
     const fetchBlogs = async () => {
       try {
