@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { useState } from 'react';
 import QR from './images/QR.jpeg'
+import wave from './images/svg.png'
 // CSS inlined as a string (e.g., Tailwind setup not applied here)
 const styles = `
   body {
-    background-color: hsl(0, 0%, 1%);
+    background-color: black;
   }
 `;
 
@@ -21,9 +22,12 @@ export const Footer = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <footer className="relative bg-black text-white pt-16 pb-16 font-libre" id="footer">
-            <div className="absolute top-0 left-0 w-full overflow-hidden">
-                <svg data-name="Layer 1"
+      <div>
+         <img src={wave} alt="Wave Image"  className='h-full w-full bg-transparent'/>
+        <footer className="relative text-white pb-16 font-libre" id="footer">
+          
+            <div className="absolute top-0 left-0 w-full overflow-hidden bg-black">
+                {/* <svg data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1200 120"
                     preserveAspectRatio="none">
@@ -32,9 +36,9 @@ export const Footer = () => {
                         250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,
                         3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                         className="relative block h-[600px] fill-[#a45dbb]"></path>
-                </svg>
+                </svg> */}
                 {/* Content container with relative positioning */}
-                <div className="relative z-10 grid lg:grid-cols-3 gap-16 md:gap-36 sm:grid-cols-1 px-6  max-w-screen-xl mx-auto justify-items-center mb-10">
+                <div className="relative z-10 grid lg:grid-cols-3 gap-16 md:gap-36 sm:grid-cols-1 px-6  max-w-screen-xl mx-auto justify-items-center mb-7">
 
                    
 
@@ -94,5 +98,6 @@ export const Footer = () => {
 
             </div>
         </footer>
+        </div>
     );
 };

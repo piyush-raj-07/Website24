@@ -169,7 +169,17 @@
   background: rgba(139, 92, 246, 0.7);
 }
 
-/* Add smooth scrolling to the entire page */
 * {
   scroll-behavior: smooth;
+}
+
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8a2be2, #ff00ff);
+  z-index: 1000;
+  transition: width 0.3s ease;
 }

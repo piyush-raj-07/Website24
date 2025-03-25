@@ -80,8 +80,13 @@ export default function ProfilePage() {
 
       console.log("Upload successful:", response.data)
       setShowModal(false)
-      fetchUserInfo()
+
       toast.success("Profile updated successfully!")
+      setUsername(formData.username || "User")
+      setIntro(response.Name || "No bio yet")
+      setDegree(response.Degree || "B.Tech")
+      setBatch(response.Grad_Year || "2026")
+      setImage(response.Img_URL || profilePic)
     } catch (error) {
       console.error("Error updating user:", error)
       toast.error("Failed to update profile.")
@@ -150,7 +155,7 @@ export default function ProfilePage() {
 
     fetchBlogs()
     fetchUserInfo()
-  }, [])
+  }, [username,degree,batch,image,intro])
 
   const handleBlogClick = (blog) => {
     setSelectedBlog(blog)
@@ -417,4 +422,3 @@ export default function ProfilePage() {
     </div>
   )
 }
-
