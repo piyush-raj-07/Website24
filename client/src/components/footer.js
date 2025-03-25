@@ -49,7 +49,7 @@ export const Footer = () => {
                         <button  className="text-purple-400 text-xl hover:text-white hover:underline transition-all duration-150 ease-in-out"
                         onClick={()=>{setShowPopup(true)}}
                         >
-                                Click to contribute
+                                click to contribute
                             </button>
                         
                     </div>

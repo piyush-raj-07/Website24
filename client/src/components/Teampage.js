@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { Linkedin, Instagram } from "lucide-react"
 import AnimatedWaveBackground from "./AnimatedB.jsx"
 import { motion } from "framer-motion"
+import { Footer } from "./footer2.js"
 
 const carouselSettings = {
   dots: false,
@@ -313,7 +314,6 @@ function TeamPage() {
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318136/91bbe82d-b102-4bd4-a6f9-e86ae9212eeb_-_Shrish_Shriyans_sv07i6.jpg",
         linkedinUrl: "",
-        instagramUrl: "",
       },
       {
         name: "Hilori Jain ",
@@ -343,12 +343,6 @@ function TeamPage() {
         name: "Aditya Naskar ",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318420/IMG20241228174641_-_Aditya_Naskar_dthbsw.jpg",
-        linkedinUrl:
-          "https://www.linkedin.com/in/aditya-naskar-0336a9257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagramUrl: "https://www.instagram.com/xx_adi.07/profilecard/?igsh=MXRwMGNhcmM1MGR3Yg==",
-      },
-      {
-        name: "Abhijeet Parmar ",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318404/IMG_20240906_224646_-_Abhijeet_Parmar_gu726k.jpg",
         linkedinUrl:
@@ -569,7 +563,7 @@ function TeamPage() {
   `
 
   return (
-    <div className="relative z-0">
+    <div className="relative z-0 ">
       <AnimatedWaveBackground style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }} />
 
 
@@ -997,31 +991,31 @@ function VideoTeamSection({ team, sectionRef, isVisible }) {
   )
 }
 
-function Footer() {
-  return (
-    <footer className="bg-[#13001A] text-white py-8 text-center relative z-10">
-      <div className="container mx-auto px-4">
-        <div className="mb-6">
-          <h3 className="text-2xl font-bold mb-4 neon-text">EESA IIT Indore</h3>
-          <p className="text-purple-300 max-w-md mx-auto">
-            Empowering students through innovation, technology, and community.
-          </p>
-        </div>
-        <div className="flex justify-center space-x-6 mb-6">
-          <a href="#" className="text-white hover:text-purple-400 transition-colors duration-300">
-            <Instagram size={24} />
-          </a>
-          <a href="#" className="text-white hover:text-purple-400 transition-colors duration-300">
-            <Linkedin size={24} />
-          </a>
-        </div>
-        <div className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} EESA IIT Indore. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  )
-}
+// function Footer() {
+//   return (
+//     <footer className="bg-[#13001A] text-white py-8 text-center relative z-10">
+//       <div className="container mx-auto px-4">
+//         <div className="mb-6">
+//           <h3 className="text-2xl font-bold mb-4 neon-text">EESA IIT Indore</h3>
+//           <p className="text-purple-300 max-w-md mx-auto">
+//             Empowering students through innovation, technology, and community.
+//           </p>
+//         </div>
+//         <div className="flex justify-center space-x-6 mb-6">
+//           <a href="#" className="text-white hover:text-purple-400 transition-colors duration-300">
+//             <Instagram size={24} />
+//           </a>
+//           <a href="#" className="text-white hover:text-purple-400 transition-colors duration-300">
+//             <Linkedin size={24} />
+//           </a>
+//         </div>
+//         <div className="text-sm text-gray-400">
+//           &copy; {new Date().getFullYear()} EESA IIT Indore. All rights reserved.
+//         </div>
+//       </div>
+//     </footer>
+//   )
+// }
 
 export default TeamPage
 
