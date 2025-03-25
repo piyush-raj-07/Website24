@@ -8,7 +8,7 @@ import { Linkedin, Instagram } from "lucide-react"
 import AnimatedWaveBackground from "./AnimatedB.jsx"
 import { motion } from "framer-motion"
 import { Footer } from "./footer2.js"
-
+import img from './images/team.jpg'
 const carouselSettings = {
   dots: false,
   infinite: true,
@@ -572,9 +572,9 @@ function TeamPage() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30 z-10"
           style={{
-            backgroundImage:
-              "url('https://res.cloudinary.com/duir0ktqb/image/upload/v1734713680/Screenshot_2024-12-20_222342_fjuoar.png')",
+            backgroundImage: `url(${img})`
           }}
+          
           role="img"
           aria-label="Team background image"
         ></div>
