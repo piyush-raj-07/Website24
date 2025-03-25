@@ -1,28 +1,33 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Sidebar from "./Sidebar";
+
 const Bg = () => {
   const canvasRef = useRef(null);
   const largeHeaderRef = useRef(null);
 
   useEffect(() => {
     let width, height, points, target, ctx, animateHeader = true;
+    let dpr = 1;
 
     const initHeader = () => {
       const canvas = canvasRef.current;
       const largeHeader = largeHeaderRef.current;
 
       width = window.innerWidth;
-      height = window.innerHeight;
+       height =window.innerHeight<750?window.innerHeight-150:window.innerHeight;
+      // height=window.innerHeight;
       target = { x: width / 2, y: height / 2 };
+      dpr = window.devicePixelRatio || 1;
 
       largeHeader.style.height = `${height}px`;
 
-      canvas.width = width;
-      canvas.height = height;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
       ctx = canvas.getContext("2d");
+      ctx.scale(dpr, dpr);
 
-      const particleDensity = width <= 768 ? 10 : 20;  
+      const particleDensity = width <= 480 ? 11 : width <= 768 ? 13 : 20;
 
       points = [];
       for (let x = 0; x < width; x += width / particleDensity) {
@@ -62,7 +67,7 @@ const Bg = () => {
 
     const animate = () => {
       if (animateHeader) {
-        ctx.clearRect(0, 0, width, height);
+        ctx.clearRect(0, 0, width * dpr, height * dpr);
         points.forEach((point) => {
           if (Math.abs(getDistance(target, point)) < 6000) {
             point.active = 0.6;
@@ -71,8 +76,8 @@ const Bg = () => {
             point.active = 0.3;
             point.circle.active = 0.4;
           } else {
-            point.active = 0;
-            point.circle.active = 0;
+            point.active = 0.0;
+            point.circle.active = 0.0;
           }
           drawLines(point);
           point.circle.draw();
@@ -124,15 +129,25 @@ const Bg = () => {
       target.y = e.pageY;
     };
 
+    const touchMove = (e) => {
+      if (e.touches.length > 0) {
+        target.x = e.touches[0].clientX;
+        target.y = e.touches[0].clientY;
+      }
+    };
+
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       largeHeaderRef.current.style.height = `${height}px`;
-      canvasRef.current.width = width;
-      canvasRef.current.height = height;
+      const canvas = canvasRef.current;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
     };
 
     window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("touchmove", touchMove);
     window.addEventListener("resize", resize);
 
     initHeader();
@@ -140,6 +155,7 @@ const Bg = () => {
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("touchmove", touchMove);
       window.removeEventListener("resize", resize);
     };
   }, []);
@@ -147,39 +163,17 @@ const Bg = () => {
   return (
     <div>
       <div ref={largeHeaderRef} className="w-full bg-black overflow-x-hidden">
-        <Sidebar/>
-        <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl md:text-7xl font-extrabold tracking-wide z-10">
-          <span className="font-libre tracking-wide">EESA</span> <span className="font-light font-raleway text-purple-400">IIT Indore</span>
+        <Sidebar />
+        <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-wide z-10">
+          <span className="font-libre tracking-wide">EESA</span>{" "}
+          <span className="font-light font-raleway text-purple-400">IIT Indore</span>
         </h1>
       </div>
 
-      <canvas ref={canvasRef} className="absolute top-0 left-0 h-full pointer-events-none z-0" />
-
-      
-      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-none z-0" />
-      
-      <div >
-        
-        {/* <section className="min-h-screen bg-gray-900 flex flex-col justify-center items-center text-center " data-aos="fade-up">
-          <h2 className="text-5xl font-bold text-white mb-6">Welcome</h2>
-          <p className="text-lg text-gray-300 max-w-3xl">
-            Discover our community, events, and opportunities to grow your skills in electronics and electrical systems.
-          </p> */}
-        {/* </section> */}
-        {/* <section className="bg-gray-800 py-20 text-center">
-          <h2 className="text-5xl font-bold text-white mb-6">About EESA</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We foster innovation, collaboration, and knowledge-sharing among tech enthusiasts and future engineers.
-          </p>
-        </section>
-        <section className="bg-gray-700 py-20 text-center">
-          <h2 className="text-5xl font-bold text-white mb-6">Join Us</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Be part of a thriving community that values creativity, learning, and hands-on experience.
-          </p>
-        </section> */}
-      </div>
-
+      <canvas
+        ref={canvasRef}
+        className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
+      />
     </div>
   );
 };
