@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import profilePic from "../../components/ProfileImg/ProfilePic.jpg";
-import background from "../../components/ProfileImg/Background.jpg";
+//import background from "../../components/ProfileImg/Background.jpg";
 import blogBg1 from '../../components/ProfileImg/blog_bg1.jpg';
 import blogBg2 from '../../components/ProfileImg/blog_bg2.jpg';
 import blogBg3 from '../../components/ProfileImg/blog_bg3.jpg';
@@ -151,7 +151,7 @@ export default function ProfilePage2() {
         <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white max-h-screen w-full ">
             <div className="absolute inset-0">
                 <img
-                    src={background}
+                    // src={background}
                     alt="Background"
                     className="w-full h-full object-cover opacity-20"
                 />
@@ -246,7 +246,6 @@ export default function ProfilePage2() {
                 <strong>Category:</strong> {selectedBlog.cat}
               </p>
               <p className="text-black text-lg">
-                <strong>Body: </strong>
                 {selectedBlog.body}
               </p>
             </div>

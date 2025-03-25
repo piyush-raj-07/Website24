@@ -121,47 +121,15 @@ function TeamPage() {
     heads: [
       {
         id: "1",
-        name: "Name of head",
+        name: "Tanushree Dewangan",
         role: "Head of Web Team",
-        imageUrl: "https://example.com/images/head1.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/head1",
-        instagramUrl: "https://www.instagram.com/head1",
+        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742400283/IMG_3495_frqhqv.jpg",
+        linkedinUrl: "https://www.linkedin.com/in/tanushree-dewangan-738957250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        instagramUrl: "https://www.linkedin.com/in/tanushree-dewangan-738957250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       },
       {
         id: "2",
-        name: "Name of head",
-        role: "Head of Design Team",
-        imageUrl: "https://example.com/images/head2.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/head2",
-        instagramUrl: "https://www.instagram.com/head2",
-      },
-      {
-        id: "3",
-        name: "Name of head",
-        role: "Head of Content Team",
-        imageUrl: "https://example.com/images/head3.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/head3",
-        instagramUrl: "https://www.instagram.com/head3",
-      },
-      {
-        id: "4",
-        name: "Name of head",
-        role: "Head of Autonomy Team",
-        imageUrl: "https://example.com/images/head4.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/head4",
-        instagramUrl: "https://www.instagram.com/head4",
-      },
-      {
-        id: "5",
-        name: "Name of head",
-        role: "Head of Marketing",
-        imageUrl: "https://example.com/images/head5.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/head5",
-        instagramUrl: "https://www.instagram.com/head5",
-      },
-    ],
-    web: [
-      {
+        role: "Head of Web Team",
         name: "Naveen S H",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742385589/IMG-20240524-WA0000_1_-_Captn_Plays_1_yh5mgi.jpg",
@@ -169,6 +137,32 @@ function TeamPage() {
           "https://www.linkedin.com/in/naveen-sh-a7594b323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/naveen_sh07?igsh=ODlzNTdvaW96c2g=",
       },
+      {
+        id: "3",
+        role: "Head of Creatives & Video Prouction",
+        name: "Tejas Chaudhari",
+        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486321/IMG-20250126-WA0111_rqjhgv.jpg",
+        linkedinUrl: "https://www.linkedin.com/in/tejas-chaudhari-650543250/",
+        instagramUrl: "https://www.instagram.com/tejas.chaudhari22/",
+      },
+      {
+        id: "4",
+        name: "Rakshit jangid",
+        role: "Head of Events",
+        imageUrl: "https://res.cloudinary.com/dmr8qadjn/image/upload/v1742924333/1_fxdzsw.jpg",
+        linkedinUrl: "https://www.linkedin.com/in/rakshit-jangid?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/rakshitjangid22?igsh=MTFjZHFuc2c1eGJ6bQ==",
+      },
+      {
+        id: "5",
+        name: "Satvik Desai",
+        role: "Head of Content & Social Media",
+        imageUrl: "https://res.cloudinary.com/dmr8qadjn/image/upload/v1742924857/satvik_ffzf37.png",
+        linkedinUrl: "https://www.linkedin.com/in/satvik-desai-b77a2524b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/satvik_3184?igsh=NGtoeTNkczJ3MWti",
+      },
+    ],
+    web: [
       {
         name: "Rohit Prajapati ",
         imageUrl:
@@ -204,14 +198,6 @@ function TeamPage() {
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318263/WhatsApp_Image_2025-02-03_at_19.24.12_eff9c39f_-_Janhvi_Verma_bmth71.jpg",
         linkedinUrl: "www.linkedin.com/in/janhvi-verma0103",
         instagramUrl: "",
-      },
-      {
-        name: "Tanushree Dewangan",
-        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742400283/IMG_3495_frqhqv.jpg",
-        linkedinUrl:
-          "https://www.linkedin.com/in/tanushree-dewangan-738957250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        instagramUrl:
-          "https://www.linkedin.com/in/tanushree-dewangan-738957250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       },
     ],
     design: [
@@ -323,13 +309,6 @@ function TeamPage() {
           "https://www.linkedin.com/in/hilori-jain?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/hilori_jain?utm_source=qr",
       },
-      {
-        name: "Content Creator 5",
-        role: "Technical Writer",
-        imageUrl: "https://example.com/images/content5.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/content5",
-        instagramUrl: "https://www.instagram.com/content5",
-      },
     ],
     autonomy: [
       {
@@ -358,13 +337,6 @@ function TeamPage() {
         instagramUrl: "ragini_sings",
       },
       {
-        name: "Tejas Chaudhari",
-        role: "Sensor Fusion Specialist",
-        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486321/IMG-20250126-WA0111_rqjhgv.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/tejas-chaudhari-650543250/",
-        instagramUrl: "https://www.instagram.com/tejas.chaudhari22/",
-      },
-      {
         name: "Aakarsh Atluri  ",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318411/Aakarsh1_-_Atluri_Aakarsh_bgtyyu.jpg",
@@ -388,13 +360,6 @@ function TeamPage() {
         linkedinUrl:
           "https://www.linkedin.com/in/sasi-kiran-pulapakura-3bab1b31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/sasikiranpulapakura",
-      },
-      {
-        name: "Tejas Chaudhari",
-        role: "Sensor Fusion Specialist",
-        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486321/IMG-20250126-WA0111_rqjhgv.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/tejas-chaudhari-650543250/",
-        instagramUrl: "https://www.instagram.com/tejas.chaudhari22/",
       },
       {
         name: "Aditya Gandhra",
