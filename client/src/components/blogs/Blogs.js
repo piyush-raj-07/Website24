@@ -7,21 +7,21 @@ const cards = [
     id: "placement",
     cardTitle: "Placement Blogs",
     coverImage:
-      "https://img.freepik.com/free-vector/illustrated-woman-being-intern-company_23-2148726151.jpg?ga=GA1.1.1025731536.1742313762&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/full-shot-people-discussing-work_23-2148868403.jpg?t=st=1742557264~exp=1742560864~hmac=82ec32d701b537d7378000799a06f3d4c4fcadcd48451daf3c01b77db2ed58f2&w=740",
       description: " Insights into campus placements, interview preparation strategies, company-specific experiences, and career growth tips. ",
   },
   {
     id: "internship",
     cardTitle: "Internship Blogs",
     coverImage:
-      "https://img.freepik.com/free-vector/internship-job-concept_23-2148721817.jpg?ga=GA1.1.1025731536.1742313762&semt=ais_keywords_boost",
+      "https://img.freepik.com/free-photo/middle-aged-hispanic-business-people_23-2151099202.jpg?t=st=1742557135~exp=1742560735~hmac=099f5935025b789c216a216c64b7d47b6f46efbae93cb1b61be021eb55b9717c&w=740",
       description: " Tips on finding internships, crafting resumes, preparing for interviews, and real-world experiences from interns.",
   },
   {
     id: "organization",
     cardTitle: "Course Blogs",
     coverImage:
-      "https://img.freepik.com/free-vector/virtual-man-laptop-teaching-online_23-2148508675.jpg?ga=GA1.1.1025731536.1742313762&semt=ais_keywords_boost",
+      "https://img.freepik.com/free-photo/creative-arrangement-world-book-day_23-2148883750.jpg?t=st=1742557030~exp=1742560630~hmac=faec90100fa88cc89e40c1df80f613001a3697daa4a317fb81897766565aa783&w=740",
       description: " In-depth insights into academic courses, including syllabus breakdowns, study tips, and student experiences.",
   },
 ];
