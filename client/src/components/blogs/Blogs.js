@@ -36,7 +36,7 @@ const cards = [
     cardTitle: "Journey Blogs",
     coverImage:
       "https://media-hosting.imagekit.io//bd3e3322ad2d465d/student-walking-graduation-ceremony.jpg?Expires=1837504901&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=FFJA6pnHqjUuzgrVIMIlGQWo52W-5~kEnDN2cXJKVp6o-pIYtHi79H9~ZzlDKp0876TFAmKxFDbPjkSEeuYFO~fKbpjFfWW2IfUKk~cqH0wVRju0r~3Rn8lyKIhZrhijtJDnrKbanMgPIJcqclRzhcOtKp83kEOsKnbwulxFWzL7RqnRz3OdQMogST6e9A8xAHmNuqTTtBpFWsM24UEMFgj5JtjgpZcrqVVfDUdU94A3nQ5yZ0yzcwlUv33YQNu9pQ9gN8pYbMakf6mMrjA43TrP6M5uTZEUbDXsmB~DvmKcVZ9HBd3WvZ2XZffk~vrGnBKraDzSq3WrmRfv-HOyug__",
-      description: " Stories, lessons, and memorable moments from academics, friendships, and challenges that shape the journey.!",
+      description: " Stories, lessons, and memorable moments from academics, friendships, and challenges that shape the journey.",
   },
 
 ];
@@ -50,7 +50,7 @@ export default function Blogs() {
 
   return (
     <div className="min-h-screen p-5 gradient_background">
-      <div className="mt-10 md:mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+      <div className="mt-12 md:mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
         {cards.map((card) => (
           <div
             key={card.id}
