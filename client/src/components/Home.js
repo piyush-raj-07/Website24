@@ -43,7 +43,7 @@ const trackVisit = async () => {
   
       try {
         // Track every visit (Session-Based)
-        await fetch("http://localhost:5000/api/track-visit", {
+        await fetch(`${process.env.REACT_APP_API}/api/track-visit`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId }),
@@ -51,7 +51,7 @@ const trackVisit = async () => {
   
         // Track unique users (Cookie-Based)
         if (!isReturning) {
-          await fetch("http://localhost:5000/api/track-unique-user", {
+          await fetch(`${process.env.REACT_APP_API}/api/track-unique-user`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userId }),

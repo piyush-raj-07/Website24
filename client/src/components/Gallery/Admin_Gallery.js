@@ -21,7 +21,7 @@ const Admin_Gallery = () => {
     setIsUploading(true); 
 
     axios
-      .post("http://localhost:5000/UploadImage", formData)
+      .post(`${process.env.REACT_APP_API}/UploadImage`, formData)
       .then((response) => {
         console.log("Upload successful:", response.data);
         alert("Image uploaded successfully!");

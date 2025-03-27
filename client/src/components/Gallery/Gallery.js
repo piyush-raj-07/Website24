@@ -10,7 +10,7 @@ const Gallery = () => {
   const fetchImages = async () => {
     setLoad(true);
     try {
-      const res = await axios.get("http://localhost:5000/GetGallery");
+      const res = await axios.get(`${process.env.REACT_APP_API}/GetGallery`);
       setImages(res.data.reverse());
     } catch (error) {
       console.log(error);

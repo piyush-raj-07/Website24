@@ -7,7 +7,7 @@ import QuestionCard from './QuestionCard';
 import InstructionsCard from './components/InstructionsCard';
 import QuizReview from './components/QuizReview';
 
-axios.defaults.baseURL = 'http://localhost:5000/api';
+axios.defaults.baseURL = `${process.env.REACT_APP_API}/api`;
 axios.defaults.withCredentials = true;
 
 const QuizPage = () => {

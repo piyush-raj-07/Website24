@@ -22,7 +22,7 @@ const [activities, setActivities] = useState([]);
         const fetchActivities = async () => {
           try {
             setLoading(true);
-            const res = await axios.get('http://localhost:5000/GetActivity');
+            const res = await axios.get(`${process.env.REACT_APP_API}/GetActivity`);
             setActivities(res.data);
             setError(null);
           } catch (err) {
@@ -58,7 +58,7 @@ const [activities, setActivities] = useState([]);
       const handleSaveEdit = async () => {
         try {
           const res = await axios.put(
-            `http://localhost:5000/EditActivity/${editingActivity}`,
+            `${process.env.REACT_APP_API}/EditActivity/${editingActivity}`,
             editValues
           );
           if (res.status === 200) {
@@ -79,7 +79,7 @@ const [activities, setActivities] = useState([]);
         
         if (isConfirmed) {
           try {
-            const response = await axios.delete(`http://localhost:5000/DeleteActivity/${activityId}`);
+            const response = await axios.delete(`${process.env.REACT_APP_API}/DeleteActivity/${activityId}`);
             if (response.status === 200) {
               setActivities((prevActivities) =>
                 prevActivities.filter((activity) => activity._id !== activityId)
@@ -96,7 +96,7 @@ const [activities, setActivities] = useState([]);
       const handleActivitySubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await fetch('http://localhost:5000/SaveActivity', {
+          const response = await fetch(`${process.env.REACT_APP_API}/SaveActivity`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(activityForm),

@@ -74,7 +74,7 @@ export default function ProfilePage() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/user", formDataToSend, {
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/user`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
       })
 
@@ -95,7 +95,7 @@ export default function ProfilePage() {
 
   const fetchUserInfo = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/user`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/api/user`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -133,7 +133,7 @@ export default function ProfilePage() {
 
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:5000/blog/myBlog", {
+        const response = await fetch(`${process.env.REACT_APP_API}/blog/myBlog`, {
           method: "GET",
           credentials: "include",
           headers: {
