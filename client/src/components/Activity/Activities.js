@@ -4,7 +4,9 @@ import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
 import Loader from "../../components/status_pages/Loader";
 
+
 const Activities = () => {
+ 
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +17,7 @@ const Activities = () => {
     try {
       setLoading(true);
       console.log("Fetching activities...");
-      const res = await axios.get("http://localhost:5000/GetActivity");
+      const res = await axios.get(`${process.env.REACT_APP_API}/GetActivity`);
 
       setActivities(res.data);
       setError(null);

@@ -19,7 +19,7 @@ const WriteBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/blog/write', {
+      const response = await fetch(`${process.env.REACT_APP_API}/blog/write`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -196,6 +196,8 @@ const WriteBlog = () => {
                   <option value="internship">Internship</option>
                   <option value="placement">Placement</option>
                   <option value="organization">Course</option>
+                  <option value="tech">Technical</option>
+                  <option value="general">Journey</option>
                 </select>
               </motion.div>
               <div className="flex space-x-4">

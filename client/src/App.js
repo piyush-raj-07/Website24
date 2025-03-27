@@ -34,6 +34,8 @@ import People from "./components/Peoples/People";
 import ProfilePage2 from "./components/Peoples/PeopleProf.js";
 import Intern from "./components/blogs/intern_blogs.js";
 // import Study from "./components/Study.js";
+
+
 function App() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const { isCheckingAuth, CheckAuth } = useAuthStore();
@@ -60,6 +62,7 @@ function App() {
       </div>
     );
   }
+
   
   return (
     <Router>
