@@ -13,7 +13,7 @@ function MyBlog() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/blog/myBlog', {
+        const response = await fetch(`${process.env.REACT_APP_API}/blog/myBlog`, {
           method: 'GET',
           credentials: 'include',
         });

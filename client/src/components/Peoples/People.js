@@ -17,7 +17,7 @@ export default function People() {
     try {
       setLoading(true);
       console.log("Fetching Userdata...");
-      const res = await axios.get("http://localhost:5000/GetAllUsers");
+      const res = await axios.get(`${process.env.REACT_APP_API}/GetAllUsers`);
       console.log("Response:", res.data);
       setUserdata(res.data);
     } catch (error) {

@@ -20,7 +20,7 @@ const Intern = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:5000/blog/catblog/${cat}`
+      `${process.env.REACT_APP_API}/blog/catblog/${cat}`
       );
       setBlogs(response.data);
       setFilteredBlogs(response.data);
@@ -69,7 +69,7 @@ const Intern = () => {
     // }));
 
     try {
-      const response = await axios.post(`http://localhost:5000/blog/upvote/${blogId}`);
+      const response = await axios.post(`${process.env.REACT_APP_API}/blog/upvote/${blogId}`);
       setUpvotes((prev) => ({
         ...prev,
         [blogId]: response.data.upvotes, // Sync with backend

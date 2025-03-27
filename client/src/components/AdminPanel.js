@@ -17,7 +17,7 @@ const AdminPanel = () => {
   useEffect(() => {
     const fetchAdminStatus = async () => {
       try {
-        const url = 'http://localhost:5000/api/admin/';
+        const url = `${process.env.REACT_APP_API}/api/admin/`;
         const response = await fetch(url, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ const AdminPanel = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/all', {
+      const response = await fetch(`${process.env.REACT_APP_API}/api/admin/all`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -62,7 +62,7 @@ const AdminPanel = () => {
 
   const handleApprove = async (blogId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/blog/approve/${blogId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/api/admin/blog/approve/${blogId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -88,7 +88,7 @@ const AdminPanel = () => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/blog/reject/${blogToReject}`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/api/admin/blog/reject/${blogToReject}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ comment: rejectionComment }),

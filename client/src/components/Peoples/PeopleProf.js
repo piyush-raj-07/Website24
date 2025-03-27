@@ -58,7 +58,7 @@ export default function ProfilePage2() {
 
             console.log(id)
             try {
-                const response = await fetch(`http://localhost:5000/user/${id}`, {
+                const response = await fetch(`${process.env.REACT_APP_API}/user/${id}`, {
                     method: 'GET',
                     credentials: 'include',
                     headers: {
@@ -87,7 +87,7 @@ export default function ProfilePage2() {
 
         const fetchBlogs = async () => {
             try {
-                const response = await fetch('http://localhost:5000/user/blogs', {
+                const response = await fetch(`${process.env.REACT_APP_API}/user/blogs`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ author_id: id }) // Ensure userId is defined
