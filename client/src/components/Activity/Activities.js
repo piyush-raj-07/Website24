@@ -1,42 +1,115 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import axios from "axios";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 import Particles from "react-tsparticles";
 import Loader from "../../components/status_pages/Loader";
 
-
 const Activities = () => {
- 
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
-  const fetchActivities = async () => {
- 
+  const fetchActivities = useCallback(async () => {
     try {
       setLoading(true);
-      console.log("Fetching activities...");
       const res = await axios.get(`${process.env.REACT_APP_API}/GetActivity`);
-
       setActivities(res.data);
       setError(null);
     } catch (error) {
-      console.log("Detailed error:", error);
+      console.error("Detailed error:", error);
       setError(`Error fetching activities: ${error.message}`);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchActivities();
- 
+  }, [fetchActivities]);
+
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
   }, []);
 
-  const particlesInit = async (engine) => {
-    await loadFull(engine);
-  };
+  // Memoized particle options with improved visibility
+  const particleOptions = useMemo(() => ({
+  fullScreen: { enable: true, zIndex: -1 },
+  fpsLimit: 60, // Corrected from fps_limit
+  particles: {
+    number: { 
+      value: 50,
+      density: { enable: true, area: 800 } 
+    },
+    color: { value: ["#AE7BC3", "#ffffff"] },
+    shape: { type: ["circle"] },
+    opacity: { 
+      value: { min: 3, max: 5 },
+      animation: {
+        enable: true,
+        speed: 0.5,
+        minimumValue: 1,
+        sync: false
+      }
+    },
+    size: { 
+      value: { min: 2, max: 5 },
+      random: { enable: true },
+      animation: {
+        enable: true,
+        speed: 3,
+        minimumValue: 1,
+        sync: false
+      }
+    },
+    move: {
+      enable: true,
+      speed: 0.5,
+      direction: "bottom",
+      random: true,
+      straight: false,
+      outMode: "out", // Corrected from out_mode
+      bounce: false,
+      attract: {
+        enable: false
+      }
+    }
+  },
+  interactivity: {
+    detectsOn: "canvas", // Corrected from detect_on
+    events: { 
+      onHover: { // Corrected from onhover
+        enable: true, 
+        mode: "repulse" 
+      },
+      onClick: { // Corrected from onclick
+        enable: true,
+        mode: "push"
+      }
+    },
+    modes: { 
+      repulse: { 
+        distance: 100,
+        duration: 0.4,
+        factor: 5
+      },
+      push: {
+        quantity: 4
+      }
+    }
+  },
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        particles: {
+          number: { value: 30 }
+        }
+      }
+    }
+  ],
+  detectRetina: true
+}), []);
+
 
   if (loading) {
     return (
@@ -59,31 +132,11 @@ const Activities = () => {
       <Particles
         id="tsparticles"
         init={particlesInit}
-        options={{
-          fullScreen: { enable: true, zIndex: -1 },
-          particles: {
-            number: { value: 50, density: { enable: true, area: 1000 } },
-            color: { value: ["AE7BC3", "#ffffff"] },
-            shape: { type: ["circle"] },
-            opacity: { value: 0.8 },
-            size: { value: { min: 5, max: 5 } },
-            move: {
-              enable: true,
-              speed: 0.5,
-              direction: "bottom",
-              outModes: { default: "out" },
-            },
-          },
-          interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" } },
-            modes: { repulse: { distance: 100 } },
-          },
-          detectRetina: true,
-        }}
+        options={particleOptions}
       />
 
       <div className="relative z-10 flex flex-col items-center w-full max-w-7xl gap-2">
-        {activities.map((activity, index) => (
+      {activities.map((activity, index) => (
           <div
             key={activity._id}
             className={`flex flex-col ${
