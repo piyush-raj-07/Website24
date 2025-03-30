@@ -199,7 +199,15 @@ function TeamPage() {
         linkedinUrl: "www.linkedin.com/in/janhvi-verma0103",
         instagramUrl: "",
       },
+      {
+        name: "Aniket Goyal",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1743244427/WhatsApp_Image_2025-03-29_at_15.58.12_15c3b96b_cf1b9s.jpg",
+        linkedinUrl: "",
+        instagramUrl: "https://www.instagram.com/anikxt_goyal?igsh=MXBnOXlva2Z6ZzRzNg==",
+      },
     ],
+    // Events
     design: [
       {
         name: "Jayanth ",
@@ -269,7 +277,7 @@ function TeamPage() {
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742362515/9d413970-b898-4de4-b2aa-5669b99728d8_-_Naman_Goyal_1_zbwiyc.jpg",
         linkedinUrl:
           "https://www.linkedin.com/in/naman-goyal-432140282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        instagramUrl: "naman_goyal.04",
+        instagramUrl: "https://www.instagram.com/naman_goyal.04?igsh=MWNjOW8xNzBqZG5jeQ==",
       },
       {
         name: "Aakarsh Atluri  ",
@@ -310,6 +318,7 @@ function TeamPage() {
         instagramUrl: "https://www.instagram.com/hilori_jain?utm_source=qr",
       },
     ],
+    // Creatives
     autonomy: [
       {
         name: "Naman V Shetty",
