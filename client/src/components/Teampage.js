@@ -100,7 +100,7 @@ function TeamPage() {
     presidentFounder: [
       {
         id: "1",
-        name: "Dr. Vijay",
+        name: "Dr. Vijay A. S",
         role: "Founder",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1734711523/Screenshot_2024-12-20_214659_bddpps.png",
@@ -109,7 +109,7 @@ function TeamPage() {
       },
       {
         id: "2",
-        name: "Name of president",
+        name: "Rishit Mehrotra",
         role: "President",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486323/eesa_web_pic_magicstudio_foaznp8un1j_kdaipn.png",
@@ -584,7 +584,7 @@ vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI
         <h2
           className={`text-4xl font-bold mb-20 text-white text-center relative z-10 neon-text ${isVisible.presidentFounder ? "zoom-in" : "opacity-0"}`}
         >
-          Meet President and Founder
+          Meet Founder and President 
         </h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 px-4 relative z-10">
           {teamData.presidentFounder.map((member, index) => (
