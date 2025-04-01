@@ -8,7 +8,7 @@ const generateTokenAndSetCookie = (res, userId) => {
     res.cookie("token", token, {
         httpOnly: true, // XSS protection
         secure: process.env.NODE_ENV === "production",
-        sameSite: "None", // CSRF protection
+        sameSite: "strict", // CSRF protection
         maxAge: 1 * 24 * 60 * 60 * 1000, // 1 days
     })
 
