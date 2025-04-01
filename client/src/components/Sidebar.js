@@ -91,12 +91,12 @@ const Sidebar = () => {
 };
 const StyledWrapper = styled.div`
   nav {
-    float: left;
-    position: relative;
-    top: 100px;
+    position: fixed;
+    top: 50%; 
     left: 0;
+    transform: translateY(-50%); 
     background: transparent;
-    z-index:10;
+    z-index: 10;
   }
 
   nav ul {

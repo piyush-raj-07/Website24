@@ -100,7 +100,7 @@ function TeamPage() {
     presidentFounder: [
       {
         id: "1",
-        name: "Dr. Vijay",
+        name: "Dr. Vijay A. S",
         role: "Founder",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1734711523/Screenshot_2024-12-20_214659_bddpps.png",
@@ -109,7 +109,7 @@ function TeamPage() {
       },
       {
         id: "2",
-        name: "Name of president",
+        name: "Rishit Mehrotra",
         role: "President",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742486323/eesa_web_pic_magicstudio_foaznp8un1j_kdaipn.png",
@@ -199,7 +199,15 @@ function TeamPage() {
         linkedinUrl: "www.linkedin.com/in/janhvi-verma0103",
         instagramUrl: "",
       },
+      {
+        name: "Aniket Goyal",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1743244427/WhatsApp_Image_2025-03-29_at_15.58.12_15c3b96b_cf1b9s.jpg",
+        linkedinUrl: "",
+        instagramUrl: "https://www.instagram.com/anikxt_goyal?igsh=MXBnOXlva2Z6ZzRzNg==",
+      },
     ],
+    // Events
     design: [
       {
         name: "Jayanth ",
@@ -269,7 +277,7 @@ function TeamPage() {
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742362515/9d413970-b898-4de4-b2aa-5669b99728d8_-_Naman_Goyal_1_zbwiyc.jpg",
         linkedinUrl:
           "https://www.linkedin.com/in/naman-goyal-432140282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        instagramUrl: "naman_goyal.04",
+        instagramUrl: "https://www.instagram.com/naman_goyal.04?igsh=MWNjOW8xNzBqZG5jeQ==",
       },
       {
         name: "Aakarsh Atluri  ",
@@ -310,6 +318,7 @@ function TeamPage() {
         instagramUrl: "https://www.instagram.com/hilori_jain?utm_source=qr",
       },
     ],
+    // Creatives
     autonomy: [
       {
         name: "Naman V Shetty",
@@ -575,7 +584,7 @@ vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI
         <h2
           className={`text-4xl font-bold mb-20 text-white text-center relative z-10 neon-text ${isVisible.presidentFounder ? "zoom-in" : "opacity-0"}`}
         >
-          Meet President and Founder
+          Meet Founder and President 
         </h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 px-4 relative z-10">
           {teamData.presidentFounder.map((member, index) => (
