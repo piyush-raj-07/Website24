@@ -166,7 +166,7 @@ function TeamPage() {
         name: "Aadarsh Ranjan",
         role: "Head of Finance",
         imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318333/IMG-20241211-WA0040_-_Aadarsh_Ranjan_mngqel.jpg",
-        linkedinUrl: "linkedin.com/in/aadarsh-ranjan-552080260",
+        linkedinUrl: "https://www.linkedin.com/in/aadarsh-ranjan-552080260/",
         instagramUrl: "https://www.instagram.com/solanki_aadarsh_?igsh=YzljYTk1ODg3Zg==",
       },
       
@@ -196,16 +196,16 @@ function TeamPage() {
       },
       {
         name: "Piyush Raj",
-        role: "Full Stack",
+        
         imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318237/raja_-_Piyush_Raj_xu3lci.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/webdev1",
-        instagramUrl: "https://www.instagram.com/webdev1",
+        linkedinUrl: "https://www.linkedin.com/in/piyush-raj-0a1975284/?originalSubdomain=in",
+        instagramUrl: "https://www.instagram.com/piyush775raj/",
       },
       {
         name: "Janhvi Verma",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318263/WhatsApp_Image_2025-02-03_at_19.24.12_eff9c39f_-_Janhvi_Verma_bmth71.jpg",
-        linkedinUrl: "www.linkedin.com/in/janhvi-verma0103",
+        linkedinUrl: "https://www.linkedin.com/in/janhvi-verma0103/",
         instagramUrl: "",
       },
       {
@@ -214,6 +214,13 @@ function TeamPage() {
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1743244427/WhatsApp_Image_2025-03-29_at_15.58.12_15c3b96b_cf1b9s.jpg",
         linkedinUrl: "",
         instagramUrl: "https://www.instagram.com/anikxt_goyal?igsh=MXBnOXlva2Z6ZzRzNg==",
+      },
+      {
+        name: "Himanshu",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1743528975/Himanshu_fbqeqy.jpg",
+        linkedinUrl: "https://www.linkedin.com/in/himanshu-8104ab299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/jadu_hkhk?igsh=MTYzam5sYjk4YXYxZA==",
       },
     ],
     // Events
@@ -246,8 +253,8 @@ function TeamPage() {
         name: "Mor Vrushabh Bharatbhai ",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742362825/Vrushabh_Passport_size_photograph_-_Vrushabh_Mor_page-0001_dlg51w.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/design2",
-        instagramUrl: "https://www.instagram.com/design2",
+        linkedinUrl: "https://www.linkedin.com/in/mor-vrushabh-bharatbhai-b98a4325b",
+        instagramUrl: "",
       },
       {
         name: "B Nikhil",
@@ -294,7 +301,7 @@ function TeamPage() {
         linkedinUrl:
           "https://www.linkedin.com/in/aditi-luniya-9960a5286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl:
-          "https://www.instagram.com/aditi-luniya-9960a5286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          "https://www.instagram.com/aditi.luniya?igsh=MTA0YjVzeTFkZGh6",
       },
       {
         name: "Naman Goyal ",
@@ -333,6 +340,8 @@ function TeamPage() {
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318136/91bbe82d-b102-4bd4-a6f9-e86ae9212eeb_-_Shrish_Shriyans_sv07i6.jpg",
         linkedinUrl: "",
+        instagramUrl: "",
+
       },
       {
         name: "Hilori Jain ",
@@ -357,8 +366,8 @@ function TeamPage() {
         name: "Naman V Shetty",
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318475/Naman_V_Shetty_-_Naman_V_Shetty_ntmv0e.jpg",
-        linkedinUrl: "www.linkedin.com/in/naman-v-shetty",
-        instagramUrl: "www.instagram.com/naman._.shetty/",
+        linkedinUrl: "https://www.linkedin.com/in/naman-v-shetty/",
+        instagramUrl: "https://www.instagram.com/naman._.shetty/",
       },
       {
         name: "Aditya Naskar ",
