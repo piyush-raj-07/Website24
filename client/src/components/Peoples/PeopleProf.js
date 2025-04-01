@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import profilePic from "../../components/ProfileImg/ProfilePic.jpg";
-//import background from "../../components/ProfileImg/Background.jpg";
 import blogBg1 from '../../components/ProfileImg/blog_bg1.jpg';
 import blogBg2 from '../../components/ProfileImg/blog_bg2.jpg';
 import blogBg3 from '../../components/ProfileImg/blog_bg3.jpg';
@@ -51,11 +50,7 @@ export default function ProfilePage2() {
     ]
 
     useEffect(() => {
-
-
-
         const fetchUserInfo = async () => {
-
             console.log(id)
             try {
                 const response = await fetch(`${process.env.REACT_APP_API}/user/${id}`, {
@@ -84,13 +79,12 @@ export default function ProfilePage2() {
             }
         };
 
-
         const fetchBlogs = async () => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_API}/user/blogs`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ author_id: id }) // Ensure userId is defined
+                    body: JSON.stringify({ author_id: id })
                 });
 
                 if (response.ok) {
@@ -106,8 +100,6 @@ export default function ProfilePage2() {
         };
 
         fetchBlogs();
-
-
         fetchUserInfo();
 
     }, [id]);
@@ -122,7 +114,6 @@ export default function ProfilePage2() {
 
         previousImage = newImage;
         return newImage;
-
     };
 
     const Badge = ({ icon: Icon, label, value, variant = "default" }) => {
@@ -135,7 +126,7 @@ export default function ProfilePage2() {
 
         return (
             <div
-                className={` group relative inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${variants[variant]} backdrop-blur-sm border border-white/10 shadow-lg shadow-white/10`}
+                className={`group relative inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${variants[variant]} backdrop-blur-sm border border-white/10 shadow-lg shadow-white/10`}
             >
                 <Icon className="w-4 h-4" />
                 <span>{value}</span>
@@ -146,29 +137,29 @@ export default function ProfilePage2() {
         )
     }
 
-
     return (
-        <div className="flex bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white max-h-screen w-full ">
+        <div className="flex flex-col md:flex-row bg-gradient-to-t from-black via-[rgba(95,3,141,0.9)] to-black text-white min-h-screen w-full">
             <div className="absolute inset-0">
                 <img
-                    // src={background}
                     alt="Background"
                     className="w-full h-full object-cover opacity-20"
                 />
             </div>
-            <div className="flex flex-col text-white border-r-2 border-white w-2/5 z-10 overflow-y-auto h-screen scrollbar-hidden">
+            
+            {/* Left panel - Profile information */}
+            <div className="flex flex-col text-white w-full md:w-2/5 z-10 overflow-y-auto md:border-r-2 md:border-white md:h-screen scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
                 <div className="m-4">
-                    <div className=''>
-                        <div className="px-4 py-4 mx-4 my-2 flex flex-col justify-center items-center ">
-                            <div className="relative flex justify-center items-center group overflow-hidden h-52 w-52 rounded-full">
+                    <div className="">
+                        <div className="px-4 py-4 mx-2 md:mx-4 my-2 flex flex-col justify-center items-center">
+                            <div className="relative flex justify-center items-center group overflow-hidden h-32 w-32 md:h-52 md:w-52 rounded-full">
                                 <img
                                     src={image || profilePic}
                                     alt="Profile"
                                     className="h-full w-full rounded-full object-cover border-2 border-purple-500 shadow-lg"
                                 />
                             </div>
-                            <h1 className='px-2 py-1 text-3xl font-serif'>{username}</h1>
-                            <h4 className='p-1 text-base font-serif'>{degree} | {batch}</h4>
+                            <h1 className='px-2 py-1 text-2xl md:text-3xl font-serif'>{username}</h1>
+                            <h4 className='p-1 text-sm md:text-base font-serif'>{degree} | {batch}</h4>
                         </div>
                     </div>
                     <div className="mx-2 my-2 flex flex-col items-center justify-center">
@@ -176,7 +167,7 @@ export default function ProfilePage2() {
                             <textarea
                                 value={intro}
                                 readOnly
-                                className="w-full h-32 bg-black bg-opacity-70 text-white border-2 border-white p-2 rounded-lg resize-y"
+                                className="w-full h-24 md:h-32 bg-black bg-opacity-70 text-white border-2 border-white p-2 rounded-lg resize-y"
                             />
                         </div>
 
@@ -203,22 +194,22 @@ export default function ProfilePage2() {
                 </div>
             </div>
 
-            <div className="flex flex-col text-white w-3/5 z-10 overflow-y-auto max-h-screen scrollbar-hidden">
+            {/* Right panel - Blogs */}
+            <div className="flex flex-col text-white w-full md:w-3/5 z-10 overflow-y-auto md:h-screen scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-transparent">
                 <div className="m-4">
-
-                    <div className='mx-16 flex flex-col'>
-                        <div className="relative text-white text-center  p-4 overflow-hidden group font-serif font-bold text-xl">
-                            {username}' blogs
+                    <div className='mx-4 md:mx-16 flex flex-col'>
+                        <div className="relative text-white text-center p-4 overflow-hidden group font-serif font-bold text-xl">
+                            {username}'s blogs
                         </div>
 
                         {blogs.map((blog) => (
                             <div
                                 key={blog._id}
-                                className="relative h-28 my-2 shadow-black shadow-md overflow-hidden group cursor-pointer flex justify-between items-center "
+                                className="relative h-28 my-2 shadow-black shadow-md overflow-hidden group cursor-pointer flex justify-between items-center"
                                 onClick={() => {
                                     setSelectedBlog(blog);
                                     setShowBlogModal(true);
-                                  }}
+                                }}
                             >
                                 <img
                                     src={blog.image || getRandomBackground()}
@@ -226,41 +217,41 @@ export default function ProfilePage2() {
                                     className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                                 />
                                 <div className="absolute top-0 left-0 w-full h-full bg-purple-950 bg-opacity-45 flex flex-col items-center justify-center">
-                                <h2 className="text-xl font-bold">{blog.title}</h2>
-                                <p className="text-sm">Category: {blog.cat}</p>
+                                    <h2 className="text-lg md:text-xl font-bold">{blog.title}</h2>
+                                    <p className="text-xs md:text-sm">Category: {blog.cat}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            {/* Blog Modal */}
+            
+            {/* Blog Modal - Matching the exact width from ProfilePage.js */}
             {showBlogModal && selectedBlog && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
-          <div className="bg-white text-black p-8 rounded-lg shadow-lg w-1/2 max-h-[80vh] overflow-y-auto">
-            <h2 className="text-3xl text-[#441752] font-serif font-bold border-b mb-4 pb-2 text-center">
-              {selectedBlog.title}
-            </h2>
-            <div className="bg-black bg-opacity-10 rounded-lg p-4">
-              <p className="text-black text-lg mb-2">
-                <strong>Category:</strong> {selectedBlog.cat}
-              </p>
-              <p className="text-black text-lg">
-                {selectedBlog.body}
-              </p>
-            </div>
-            <div className="flex justify-end mt-4">
-              <button
-                onClick={() => setShowBlogModal(false)}
-                className="bg-[#441752] text-white px-4 py-2 rounded hover:bg-[#5c2070] transition-colors duration-200"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+                <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
+                    <div className="bg-white text-black p-4 md:p-8 rounded-lg shadow-lg w-full md:w-1/2 max-h-[80vh] overflow-y-auto">
+                        <h2 className="text-2xl md:text-3xl text-[#441752] font-serif font-bold border-b mb-4 pb-2 text-center">
+                            {selectedBlog.title}
+                        </h2>
+                        <div className="bg-black bg-opacity-10 rounded-lg p-4">
+                            <p className="text-black text-base md:text-lg mb-2">
+                                <strong>Category:</strong> {selectedBlog.cat}
+                            </p>
+                            <p className="text-black text-base md:text-lg">
+                                {selectedBlog.body}
+                            </p>
+                        </div>
+                        <div className="flex justify-end mt-4">
+                            <button
+                                onClick={() => setShowBlogModal(false)}
+                                className="bg-[#441752] text-white px-4 py-2 rounded hover:bg-[#5c2070] transition-colors duration-200"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
-      )}
-        </div>
-
     )
 }
