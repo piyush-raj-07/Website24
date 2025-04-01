@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { useState } from 'react';
-import QR from './images/QR.jpeg'
+import QR from './images/EESA_QR.jpeg'
 // CSS inlined as a string (e.g., Tailwind setup not applied here)
 const styles = `
   body {
