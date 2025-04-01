@@ -1,4 +1,5 @@
 .title svg path {
+    
     fill: transparent;
     stroke: #fff;
     stroke-width: 0.1;
@@ -8,6 +9,7 @@
 }
 
 .title svg.animate path {
+    
     stroke-dashoffset: 0;
     fill: #fff;
 }

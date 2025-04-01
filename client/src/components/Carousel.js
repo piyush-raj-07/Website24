@@ -36,7 +36,7 @@ function Carousel( ) {
       autoPlay &&
       setTimeout(() => {
         slideRight();
-      }, 2500);
+      }, 4000);
   });
 
   const slideRight = () => {
