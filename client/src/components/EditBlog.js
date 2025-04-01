@@ -19,7 +19,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/blog/single/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API}/blog/single/${id}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -58,7 +58,7 @@ const EditBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/blog/edit/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/blog/edit/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

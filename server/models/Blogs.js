@@ -36,7 +36,7 @@ const BlogsSchema = new mongoose.Schema({
     },
     cat: {
         type: String,
-        enum: ["internship", "placement", "organization"],
+        enum: ["internship", "placement", "organization","tech","general"],
         required: true
     },
     approval:{
