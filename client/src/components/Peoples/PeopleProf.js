@@ -158,7 +158,7 @@ export default function ProfilePage2() {
                                     className="h-full w-full rounded-full object-cover border-2 border-purple-500 shadow-lg"
                                 />
                             </div>
-                            <h1 className='px-2 py-1 text-2xl md:text-3xl font-serif'>{username}</h1>
+                            <h1 className='px-2 py-1 text-xl md:text-3xl font-serif'>{username}</h1>
                             <h4 className='p-1 text-sm md:text-base font-serif'>{degree} | {batch}</h4>
                         </div>
                     </div>

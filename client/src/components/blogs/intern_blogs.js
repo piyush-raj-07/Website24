@@ -4,13 +4,14 @@ import axios from "axios";
 import Fuse from "fuse.js";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import Loader from "../status_pages/Loader";
 
 const Intern = () => {
   const [blogs, setBlogs] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchType, setSearchType] = useState("name");
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [upvotes, setUpvotes] = useState({});
   const location = useLocation();
@@ -88,6 +89,13 @@ const Intern = () => {
     console.log("Upvotes updated:", upvotes);
   }, [upvotes]);
 
+  if (isLoading) {
+    return (
+      <div className="h-screen bg-black flex justify-center items-center">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <>
       <div className="min-h-screen gradient_background p-4 sm:p-6 md:p-8 pt-8 flex flex-col items-center">
@@ -112,7 +120,7 @@ const Intern = () => {
         </div>
   
         {/* Blog Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-6 w-full max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-6 max-w-64 md:max-w-7xl" >
           {filteredBlogs.map((val, key) => (
             <BlogCard
               key={key}
@@ -193,7 +201,7 @@ const BlogCard = ({ title, body, name, img, degree, year, user, upvotes, onUpvot
 
       {/* Blog Content */}
       <div className="p-6 sm:p-10">
-        <h3 className="mb-1 sm:mb-2 text-sm sm:text-lg text-gray-500">
+        <h3 className="mb-1 sm:mb-2 text-sm sm:text-lg text-gray-500 mt-1">
           {name} | {degree} | {year}'
         </h3>
         <h1 className="mb-2 sm:mb-4 text-xl sm:text-2xl font-bold text-gray-800">{title}</h1>
