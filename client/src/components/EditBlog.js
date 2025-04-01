@@ -108,11 +108,11 @@ const EditBlog = () => {
       },
       modes: {
         push: {
-          quantity: 4,
+          quantity: 10,
         },
         repulse: {
-          distance: 200,
-          duration: 0.4,
+          distance: 70,
+          duration: 0.8,
         },
       },
     },
@@ -124,7 +124,7 @@ const EditBlog = () => {
         color: "#8B5CF6",
         distance: 150,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.8,
         width: 1,
       },
       move: {
@@ -133,8 +133,8 @@ const EditBlog = () => {
         outModes: {
           default: "bounce",
         },
-        random: false,
-        speed: 2,
+        random: true,
+        speed: 0.5, 
         straight: false,
       },
       number: {
@@ -142,20 +142,21 @@ const EditBlog = () => {
           enable: true,
           area: 800,
         },
-        value: 80,
+        value: 90,
       },
       opacity: {
-        value: 0.5,
+        value: 1,
       },
       shape: {
         type: "circle",
       },
       size: {
-        value: { min: 1, max: 5 },
+        value: { min: 0.5, max: 6 },
       },
     },
     detectRetina: true,
-  };
+};
+
 
   return (
     <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">

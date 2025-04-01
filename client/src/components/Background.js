@@ -15,7 +15,7 @@ const Bg = () => {
       const largeHeader = largeHeaderRef.current;
 
       width = window.innerWidth;
-       height =window.innerHeight<750?window.innerHeight-300:window.innerHeight;
+       height =window.innerHeight<750?window.innerHeight:window.innerHeight;
       target = { x: width / 2, y: height / 2 };
       dpr = window.devicePixelRatio || 1;
 
