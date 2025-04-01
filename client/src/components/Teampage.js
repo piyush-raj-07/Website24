@@ -161,6 +161,15 @@ function TeamPage() {
         linkedinUrl: "https://www.linkedin.com/in/satvik-desai-b77a2524b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/satvik_3184?igsh=NGtoeTNkczJ3MWti",
       },
+      {
+        id: "6",
+        name: "Aadarsh Ranjan",
+        role: "Head of Finance",
+        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318333/IMG-20241211-WA0040_-_Aadarsh_Ranjan_mngqel.jpg",
+        linkedinUrl: "linkedin.com/in/aadarsh-ranjan-552080260",
+        instagramUrl: "https://www.instagram.com/solanki_aadarsh_?igsh=YzljYTk1ODg3Zg==",
+      },
+      
     ],
     web: [
       {
@@ -216,6 +225,22 @@ function TeamPage() {
         linkedinUrl:
           "https://www.linkedin.com/in/jayanth-mallireddi-317654284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/im_jayanthhh/profilecard/?igsh=MWc2aTdpbmU2bWtlbg==",
+      },
+      {
+        name: "P Havish  ",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1743445339/IMG-20250102-WA0024_-_Havish_1_fxrf5o.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/havish-p-15325031a/",
+        instagramUrl: "https://www.instagram.com/havishmurugan7/",
+      },
+      {
+        name: "Anmol Kumar ",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318273/anmol_pic_yymicr.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/kumar-anmol-196156250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/uniqueverseak?igsh=MW8zZ2VoODNka2Ezdw==",
       },
       {
         name: "Mor Vrushabh Bharatbhai ",
@@ -317,6 +342,14 @@ function TeamPage() {
           "https://www.linkedin.com/in/hilori-jain?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/hilori_jain?utm_source=qr",
       },
+      {
+        name: "Anshita Pandey ",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318585/IMG-20230928-WA0026_-_Anshita_Pandey_rfcyyd.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/anshita-pandey-b10b12286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/anshita_pandeyy/profilecard/?igsh=M2RsM2gycGtkZjJl",
+      },
     ],
     // Creatives
     autonomy: [
@@ -332,10 +365,10 @@ function TeamPage() {
         imageUrl:
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318420/IMG20241228174641_-_Aditya_Naskar_dthbsw.jpg",
         imageUrl:
-          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318404/IMG_20240906_224646_-_Abhijeet_Parmar_gu726k.jpg",
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318420/IMG20241228174641_-_Aditya_Naskar_dthbsw.jpg",
         linkedinUrl:
-          "https://www.linkedin.com/in/abhijeet-parmar-a08696281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagramUrl: "https://www.instagram.com/abhijeet_parmar_05/profilecard/?igsh=eXptNjZtNGx3YnBk",
+          "https://www.linkedin.com/in/aditya-naskar-0336a9257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/xx_adi.07/profilecard/?igsh=MXRwMGNhcmM1MGR3Yg==",
       },
       {
         name: "Ragini jaiswal ",
@@ -353,6 +386,14 @@ function TeamPage() {
           "https://www.linkedin.com/in/atluri-aakarsh-a08008320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/aakarsh_atluri/profilecard/?igsh=MXI2cTlhNmhxbnJsaA==",
       },
+      {
+        name: "Abhijeet Parmar   ",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318404/IMG_20240906_224646_-_Abhijeet_Parmar_gu726k.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/abhijeet-parmar-a08696281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/abhijeet_parmar_05/profilecard/?igsh=eXptNjZtNGx3YnBk",
+      },
     ],
     video: [
       {
@@ -368,7 +409,7 @@ function TeamPage() {
           "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318569/Sasi_Kiran_Pulapakura_-_Sasi_Kiran_Pulapakura_yr2caw.jpg",
         linkedinUrl:
           "https://www.linkedin.com/in/sasi-kiran-pulapakura-3bab1b31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagramUrl: "https://www.instagram.com/sasikiranpulapakura",
+        instagramUrl: "https://www.instagram.com/sasikiranpulapakhttps://www.instagram.com/hilori_jaiura",
       },
       {
         name: "Aditya Gandhra",
@@ -378,12 +419,21 @@ function TeamPage() {
         instagramUrl: "https://www.instagram.com/adityagandhra?igsh=MnZjdGVjeGtlcTQ4&utm_source=qr",
       },
       {
-        name: "Aadarsh Ranjan",
-        imageUrl:
-          "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318333/IMG-20241211-WA0040_-_Aadarsh_Ranjan_mngqel.jpg",
-        linkedinUrl: "linkedin.com/in/aadarsh-ranjan-552080260",
-        instagramUrl: "https://www.instagram.com/solanki_aadarsh_?igsh=YzljYTk1ODg3Zg==",
+        name: "K Bharath Varma",
+        imageUrl: "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318591/IMG_5613_-_Varma_Kalidindi_glzoms.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/bharath-varma-kalidindi-8a1763280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        instagramUrl: "https://www.instagram.com/bharath__.__varma/profilecard/?igsh=aGlmcWtuOTEwN3Uw",
       },
+      {
+        name: "Sasi Kiran Pulapakura ",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318569/Sasi_Kiran_Pulapakura_-_Sasi_Kiran_Pulapakura_yr2caw.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/sasi-kiran-pulapakura-3bab1b31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/sasikiranpulapakhttps://www.instagram.com/hilori_jaiura",
+      },
+     
     ],
   }
 
@@ -543,36 +593,37 @@ function TeamPage() {
 
       {/* Hero Section */}
       <div className="relative bg-black h-[650px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 z-10"
-          style={{
-            backgroundImage: `url(${img})`
-          }}
-          
-          role="img"
-          aria-label="Team background image"
-        ></div>
-        <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
-          <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 neon-text"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Meet Our Team
-          </motion.h1>
+  <div
+    className="absolute inset-0 bg-contain bg-center opacity-30 z-10 lg:bg-cover"
+    style={{
+      backgroundImage: `url(${img})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+    }}
+    role="img"
+    aria-label="Team background image"
+  ></div>
 
-          <motion.p
-            className="text-[#a70ff4] text-xl md:text-2xl lg:text-3xl mb-10 font-semibold"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            EESA IIT Indore
-          </motion.p>
-        </div>
-      </div>
+  <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+    <motion.h1
+      className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 neon-text"
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      Meet Our Team
+    </motion.h1>
 
+    <motion.p
+      className="text-[#a70ff4] text-xl md:text-2xl lg:text-3xl mb-10 font-semibold"
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+    >
+      EESA IIT Indore
+    </motion.p>
+  </div>
+</div>
 
       {/* President and Founder Section */}
       <section ref={sectionRefs.presidentFounder} className="py-20 relative overflow-hidden">
@@ -748,7 +799,7 @@ function WebTeamSection({ team, sectionRef, isVisible }) {
     </section>
   )
 }
-
+//Events
 function DesignTeamSection({ team, sectionRef, isVisible }) {
   return (
     <section ref={sectionRef} className="py-20 relative overflow-hidden">
@@ -810,7 +861,7 @@ function ContentTeamSection({ team, sectionRef, isVisible }) {
       <h2
         className={`text-4xl font-bold mb-16 text-white text-center relative z-10 neon-text ${isVisible ? "zoom-in" : "opacity-0"}`}
       >
-        Meet Our Content Team
+        Meet Our Content and Social Media Team
       </h2>
       <div
         className={`px-12 relative z-10 ${isVisible ? "fade-in-up" : "opacity-0"}`}
@@ -918,7 +969,7 @@ function VideoTeamSection({ team, sectionRef, isVisible }) {
       <h2
         className={`text-4xl font-bold mb-16 text-white text-center relative z-10 neon-text ${isVisible ? "zoom-in" : "opacity-0"}`}
       >
-        Meet Our Video Production & Finance Team
+        Meet Our Video Production Team
       </h2>
       <div
         className={`px-12 relative z-10 ${isVisible ? "fade-in-up" : "opacity-0"}`}
