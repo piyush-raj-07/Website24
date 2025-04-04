@@ -49,7 +49,7 @@ export const Footer = () => {
                         <button  className="text-purple-400 text-xl hover:text-white hover:underline transition-all duration-150 ease-in-out"
                         onClick={()=>{setShowPopup(true)}}
                         >
-                                click to contribute
+                                Click To Contribute
                             </button>
                         
                     </div>
@@ -69,7 +69,7 @@ export const Footer = () => {
                     <div className="text-center">
                         <h2 className="text-[22px] font-raleway font-semibold text-purple-400 py-2 uppercase">Contact Us</h2>
                         <p className="text-[16px] my-4">Email: eesa@iiti.ac.in</p>
-                        <p className="text-[16px] my-4">Phone: +91 8090004900</p>
+                        <p className="text-[16px] my-4">Phone: +91 80900 04900</p>
                         <div className="flex justify-center space-x-4">
                             
                             <a className="text-white text-4xl hover:text-purple-500 transform hover:scale-150 transition-all duration-150 ease-in-out" href="https://www.linkedin.com/company/electrical-engineering-students-association/" target='blank'><FaLinkedinIn /></a>
