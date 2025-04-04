@@ -5,6 +5,7 @@ import Fuse from "fuse.js";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import Loader from "../status_pages/Loader";
+import Sidebar from "../Sidebar";
 
 const Intern = () => {
   const [blogs, setBlogs] = useState([]);
@@ -99,6 +100,7 @@ const Intern = () => {
   return (
     <>
       <div className="min-h-screen gradient_background p-4 sm:p-6 md:p-8 pt-8 flex flex-col items-center">
+        <Sidebar/>
         {/* Search Section */}
         <div className="w-full max-w-2xl my-4 md:my-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <select

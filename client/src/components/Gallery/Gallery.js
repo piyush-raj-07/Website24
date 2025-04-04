@@ -62,13 +62,13 @@ const Gallery = () => {
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative p-4 bg-white rounded-lg max-w-3xl w-full"
+            className="relative p-4 bg-white max-w-3xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={selectedImage.url}
               alt={selectedImage.title}
-              className="w-full max-h-[70vh] object-contain rounded-md"
+              className="w-full max-h-[70vh] object-contain"
             />
             <div className="mt-4 text-center">
               <h2 className="text-2xl text-gray-900 font-semibold">{selectedImage.title}</h2>

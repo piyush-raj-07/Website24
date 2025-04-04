@@ -33,7 +33,7 @@ const cards = [
   },
   {
     id: "general",
-    cardTitle: "Journey Blogs",
+    cardTitle: "Generic Blogs",
     coverImage: journeyImg,
       description: " Stories, lessons, and memorable moments from academics, friendships, and challenges that shape the journey.",
   },

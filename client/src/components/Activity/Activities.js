@@ -198,7 +198,7 @@ const Activities = () => {
                           alt="Instagram"
                           className="w-4 h-4"
                         />
-                        <span className="text-sm">visit @EESA for more..</span>
+                        <span className="text-sm">Visit @EESA for more..</span>
                       </a>
                     </div>
                   </div>
