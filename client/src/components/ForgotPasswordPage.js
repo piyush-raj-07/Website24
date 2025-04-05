@@ -4,6 +4,7 @@ import { ArrowLeft, Mail, Loader } from "lucide-react";
 import { Link } from "react-router-dom";
 import Input from "./ui/Input";
 import { useAuthStore } from "../store/authStore";
+import backgroundcss from "../css/Login.css";
 
 const ForgotPasswordPage = () => {
     const [email, setEmail] = useState('')
@@ -22,7 +23,14 @@ const ForgotPasswordPage = () => {
         }
     }
     return (
-        <div className="flex font-libre justify-center items-center gradient_background min-h-screen px-4 py-6 sm:py-12">
+        <div className="flex font-libre justify-center items-center min-h-screen px-4 py-6 sm:py-12">
+            <div className="area">
+            <ul className="circles">
+                {Array.from({ length: 10 }).map((_, i) => (
+                    <li key={i}></li>
+                ))}
+            </ul>
+        </div>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -30,7 +38,7 @@ const ForgotPasswordPage = () => {
                 className='w-full max-w-md bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden'
             >
                 <div className="p-6 sm:p-8">
-                    <h2 className='text-2xl sm:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-purple-400 to-indigo-500 text-transparent bg-clip-text'>
+                    <h2 className='text-2xl sm:text-3xl font-bold mb-6 text-center bg-purple-400 text-transparent bg-clip-text'>
                         Forgot Password
                     </h2>
 

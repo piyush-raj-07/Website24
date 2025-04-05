@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import btp from './btp.json';
-import Sidebar from '../Sidebar';
 
 const ProjectTable = () => {
   const [records, setRecords] = useState(btp);
@@ -43,7 +42,7 @@ const ProjectTable = () => {
   return (
     <StyledWrapper className=''>
       <div className="table-container">
-        <Sidebar/>
+       
         <input
           type="text"
           placeholder=" Search by any keyword..."

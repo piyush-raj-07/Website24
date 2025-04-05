@@ -219,9 +219,9 @@ const Activities = () => {
             {/* Tablet and Desktop View */}
             <div className={`hidden sm:flex ${
               index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-            } w-full justify-between items-start gap-6`}>
+            } w-full justify-between items-start gap-6 scale-125`}>
               <div className="relative p-4 rounded-lg shadow-lg sm:w-[65%] md:w-[50%] overflow-hidden h-[350px] md:h-[400px]">
-                <div className="absolute top-4 left-4 w-[80%] h-[80%] overflow-hidden group">
+                <div className="absolute top-4 left-16 w-[80%] h-[80%] overflow-hidden group">
                   <div
                     className="w-full h-full relative"
                     style={{
