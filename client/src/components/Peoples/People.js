@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, User, Calendar, BookOpen } from "lucide-react";
 import Loader from "../status_pages/Loader";
-import Sidebar from "../Sidebar";
 
 export default function People() {
   const [userdata, setUserdata] = useState([]);
@@ -71,7 +70,6 @@ export default function People() {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-purple-100">
-      <Sidebar/>
       <div className="flex-grow flex flex-col bg-black text-purple-100">
         <header className="bg-gradient-to-b from-purple-950 to-black py-4 px-4 sm:px-6 lg:px-8 shadow-lg border-b border-purple-800">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">

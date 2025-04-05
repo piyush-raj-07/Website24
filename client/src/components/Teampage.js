@@ -403,6 +403,22 @@ function TeamPage() {
           "https://www.linkedin.com/in/abhijeet-parmar-a08696281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/abhijeet_parmar_05/profilecard/?igsh=eXptNjZtNGx3YnBk",
       },
+      {
+        name: "Dara Nissy Krithika ",
+        imageUrl:
+          "https://res.cloudinary.com/dmr8qadjn/image/upload/v1743842076/nissi_ci3olu.jpg",
+        linkedinUrl:
+          "https://www.linkedin.com/in/nissi-krithika-dara-bb2712325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/sasikiranpulapakhttps://www.instagram.com/",
+      },
+      {
+        name: "Nainsi Kushwaha",
+        imageUrl:
+          "https://res.cloudinary.com/dmr8qadjn/image/upload/v1743842087/naincy_p1lreg.jpg",
+        linkedinUrl:
+          "http://linkedin.com/in/nainsi-kushwaha-b4754a337",
+        instagramUrl: "https://www.instagram.com/nain.c_876?igsh=MWVnd200NXVseXNjYQ%3D%3D&utm_source=qr",
+      },
     ],
     video: [
       {
