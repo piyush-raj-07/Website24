@@ -12,28 +12,33 @@ const Admin_Gallery = () => {
       alert("Please select a file to upload.");
       return;
     }
-
+  
     const formData = new FormData();
-    formData.append("Image", file);
+    formData.append("Image", file); // Make sure this matches `upload.single('Image')` on backend
     formData.append("title", title);
     formData.append("subtitle", subtitle);
-
+  
     setIsUploading(true); 
-
+  
     axios
-      .post(`${process.env.REACT_APP_API}/UploadImage`, formData)
+      .post(`${process.env.REACT_APP_API}/UploadImage`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
       .then((response) => {
         console.log("Upload successful:", response.data);
         alert("Image uploaded successfully!");
       })
       .catch((err) => {
-        console.error("Upload failed:", err);
+        console.error("Upload failed:", err.response?.data || err.message);
         alert("Failed to upload image.");
       })
       .finally(() => {
         setIsUploading(false); 
       });
   };
+  
 
   return (
     <div className="p-4 max-w-md mx-auto">

@@ -120,7 +120,7 @@ const Intern = () => {
         </div>
   
         {/* Blog Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-6 max-w-64 md:max-w-7xl" >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-6 max-w-64  sm:max-w-7xl" >
           {filteredBlogs.map((val, key) => (
             <BlogCard
               key={key}

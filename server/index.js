@@ -148,46 +148,53 @@ app.get('/GetGallery', async (req, res) => {
 })
 
 // Save Image in gallery
-const upload = multer({ dest: ' Gallery/' });
+const streamifier = require("streamifier");
 
-app.post('/UploadImage', upload.single('Image'), async (req, res) => {
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
-
+app.post("/UploadImage", upload.single("Image"), async (req, res) => {
     try {
-        
+
       const { title, subtitle } = req.body;
   
-      if (!req.file) {
-        return res.status(400).json({ error: 'Image file is required.' });
+      if (!req.file || !req.file.buffer) {
+        return res.status(400).json({ error: "Image file is missing or invalid." });
       }
-      
-      const filePath = req.file.path;
-
-      // Upload file to Cloudinary
-      const result = await cloudinary.uploader.upload(filePath, {
-        folder: 'Gallery',
-      });
-     
- 
-    
-      // Save the image, title, and subtitle in MongoDB
+  
+      const streamUpload = (buffer) => {
+        return new Promise((resolve, reject) => {
+          const stream = cloudinary.uploader.upload_stream(
+            { folder: "Gallery" },
+            (error, result) => {
+              if (result) resolve(result);
+              else reject(error);
+            }
+          );
+          streamifier.createReadStream(buffer).pipe(stream);
+        });
+      };
+  
+      const result = await streamUpload(req.file.buffer);
+  
       const newImage = new GalleryModel({
         url: result.secure_url,
-        title:title,
-        subtitle:subtitle,
+        title,
+        subtitle,
       });
-   
+  
       await newImage.save();
-
-
+  
       res.json({
-        message: 'Image, title, and subtitle uploaded successfully!',
+        message: "Image uploaded successfully!",
         imageUrl: result.secure_url,
       });
     } catch (error) {
-      res.status(500).json({ error: 'Upload failed', details: error.message });
+      console.error("Upload error:", error);
+      res.status(500).json({ error: "Upload failed", details: error.message });
     }
   });
+  
 
   
 app.get('/GetActivity', async (req, res) => {
