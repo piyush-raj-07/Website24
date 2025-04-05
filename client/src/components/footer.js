@@ -80,10 +80,10 @@ export const Footer = () => {
                 </div>
                 {showPopup && (
   <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50">
-    <div className="bg-white rounded-lg p-6 relative max-w-lg w-full">
+    <div className="bg-white rounded-lg  p-6 relative max-w-lg w-full">
       <button
         onClick={() => setShowPopup(false)}
-        className="absolute top-[-20px] right-[-20px] text-gray-700 text-4xl h-10 w-10  transition-all bg-purple-300 rounded-md"
+        className="absolute top-[7px] right-[5px] md:top-[-5px] md:right-[-20px] text-gray-700 text-4xl h-10 w-10  transition-all bg-purple-300 rounded-md"
       >
         &times;
       </button>
