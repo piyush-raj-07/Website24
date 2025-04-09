@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { CgProfile } from 'react-icons/cg';
 import { motion } from 'framer-motion';
-
+import logo from './images/EESA_LOGO_white.webp'
 const Navbar = () => {
   const { isAuthenticated, user } = useAuthStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,7 +57,7 @@ const Navbar = () => {
           <Link to="/" className="flex-shrink-0">
             <img
               className="h-20 w-22 rounded-md transition-transform duration-300 hover:scale-110"
-              src="https://media-hosting.imagekit.io//6f7127647e6b43ec/EESA_LOGO_white.png?Expires=1835149649&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=kItWfIafOzth0u~AJKby3hxj16enlcvhuAW~5aEpea0cVBaDtGVCb6jV6dNmKZzTbHT61ikg1ReAHOZKZFb5cfK--BirwbDFiYzvMq4Svjt6exDtT9Xb7a~qkRKR1Tdx6GmioAwZixmExtRCsLqhLtBCjXOQZNDxMeQWb7X5Iw5vcCT5lf3ac9tBMaxzYwYTH0lOFoVuNa10haVIQYmVrjQ5eG2RW4IHFF0LxBWeYq4fF4rQ7MtSXVFTLcMCvAuIAOqHHOrH8GhNAyVSgL7gT3JBtbfwmNA~eFimzXIOcD0HN5oG3Vb9wbsd-MdsgYCDLjsVckTlHViNbsBOSsnFLQ__"
+              src={logo}
               alt="Logo"
             />
           </Link>
