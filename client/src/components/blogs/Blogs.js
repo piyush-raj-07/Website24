@@ -4,7 +4,7 @@ import Card3D from "../Card3D";
 import placementImg from "../images/placement.jpg";
 import internshipImg from "../images/internship.jpg";
 import courseImg from "../images/course.jpg";
-import techImg from "../images/tech.jpg";
+import techImg from "../images/tech.webp";
 import journeyImg from "../images/journey.jpg";
 const cards = [
   {

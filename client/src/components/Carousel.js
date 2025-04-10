@@ -6,24 +6,20 @@ import "../css/Carousel.css";
 function Carousel( ) {
     const images = [
         {
-          image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          title: "Image 1",
+          image: "https://res.cloudinary.com/dmr8qadjn/image/upload/v1744266138/car2_ksecmv.webp",
+          title: "",
         },
         {
-          image: "https://img.freepik.com/premium-photo/celebration-central_1029473-240494.jpg?ga=GA1.1.118142083.1729702313&semt=ais_hybrid",
-          title: "Image 2 ",
+          image: "https://res.cloudinary.com/dmr8qadjn/image/upload/v1744265762/car1_vchoo9.webp",
+          title: "",
         },
         {
-          image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          title: "Image 3 ",
+          image: "https://res.cloudinary.com/dmr8qadjn/image/upload/v1744266139/car3_owqesg.webp",
+          title: "",
         },
         {
-          image: "https://img.freepik.com/premium-photo/celebration-central_1029473-240494.jpg?ga=GA1.1.118142083.1729702313&semt=ais_hybrid",
-          title: "Image 4 ",
-        },
-        {
-          image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          title: "Image 5",
+          image: "https://res.cloudinary.com/dmr8qadjn/image/upload/v1744266139/car4_fnhhgh.webp",
+          title: "",
         },
       ];
       

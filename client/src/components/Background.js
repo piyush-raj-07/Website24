@@ -15,7 +15,7 @@ const Bg = () => {
       const largeHeader = largeHeaderRef.current;
 
       width = window.innerWidth;
-       height =window.innerHeight<750?window.innerHeight:window.innerHeight;
+      height = window.innerHeight < 750 ? window.innerHeight : window.innerHeight;
       target = { x: width / 2, y: height / 2 };
       dpr = window.devicePixelRatio || 1;
 
@@ -160,20 +160,24 @@ const Bg = () => {
   }, []);
 
   return (
-    <div>
-      <div ref={largeHeaderRef} className="w-full bg-black overflow-x-hidden">
-        <Sidebar />
-        <h1 className="absolute text-white text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-wide z-10">
-          <span className="font-libre tracking-wide">EESA</span>{" "}
-          <span className="font-light font-raleway text-purple-400">IIT Indore</span>
-        </h1>
-      </div>
+    <div     ref={largeHeaderRef}
+ 
+    className="relative w-full h-screen bg-black overflow-hidden">
+  <Sidebar />
 
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
-      />
-    </div>
+  <div className="flex  justify-center mt-44 h-full relative z-1 lg:items-center lg:mt-0 lg:h-5/6 md:mt-56">
+    <h1 className="text-white text-center text-4xl sm:text-5xl  z-10 md:text-7xl font-extrabold tracking-wide flex flex-col lg lg:flex-row ">
+      <span className="font-libre tracking-wide">EESA</span>{" "}
+      <span className="font-light font-raleway text-purple-400 mt-4 md:mt-8 lg:mt-0 lg:ml-8">IIT Indore</span>
+    </h1>
+  </div>
+
+  <canvas
+    ref={canvasRef}
+    className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
+  />
+</div>
+
   );
 };
 
