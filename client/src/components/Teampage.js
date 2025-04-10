@@ -311,14 +311,6 @@ function TeamPage() {
           "https://www.linkedin.com/in/naman-goyal-432140282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         instagramUrl: "https://www.instagram.com/naman_goyal.04?igsh=MWNjOW8xNzBqZG5jeQ==",
       },
-      {
-        name: "Aakarsh Atluri  ",
-        imageUrl:
-          "https://res.cloudinary.com/duir0ktqb/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1742318411/Aakarsh1_-_Atluri_Aakarsh_bgtyyu.jpg",
-        linkedinUrl:
-          "https://www.linkedin.com/in/atluri-aakarsh-a08008320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagramUrl: "https://www.instagram.com/aakarsh_atluri/profilecard/?igsh=MXI2cTlhNmhxbnJsaA==",
-      },
     ],
     content: [
       {
@@ -362,13 +354,7 @@ function TeamPage() {
     ],
     // Creatives
     autonomy: [
-      {
-        name: "Naman V Shetty",
-        imageUrl:
-          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318475/Naman_V_Shetty_-_Naman_V_Shetty_ntmv0e.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/naman-v-shetty/",
-        instagramUrl: "https://www.instagram.com/naman._.shetty/",
-      },
+  
       {
         name: "Aditya Naskar ",
         imageUrl:
@@ -412,12 +398,12 @@ function TeamPage() {
         instagramUrl: "https://www.instagram.com/sasikiranpulapakhttps://www.instagram.com/",
       },
       {
-        name: "Nainsi Kushwaha",
+        name: "Visharad Gupta",
         imageUrl:
-          "https://res.cloudinary.com/dmr8qadjn/image/upload/v1743842087/naincy_p1lreg.jpg",
+          "https://res.cloudinary.com/dmr8qadjn/image/upload/v1744265294/varshid_ycpcgu.jpg",
         linkedinUrl:
-          "http://linkedin.com/in/nainsi-kushwaha-b4754a337",
-        instagramUrl: "https://www.instagram.com/nain.c_876?igsh=MWVnd200NXVseXNjYQ%3D%3D&utm_source=qr",
+          "https://www.linkedin.com/in/visharad-gupta-a41b17341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagramUrl: "https://www.instagram.com/gvisharad?igsh=NXN4ZnEybWxueHk3",
       },
     ],
     video: [
@@ -457,6 +443,21 @@ function TeamPage() {
         linkedinUrl:
           "https://www.linkedin.com/in/sasi-kiran-pulapakura-3bab1b31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagramUrl: "https://www.instagram.com/sasikiranpulapakhttps://www.instagram.com/hilori_jaiura",
+      },
+      {
+        name: "Nainsi Kushwaha",
+        imageUrl:
+          "https://res.cloudinary.com/dmr8qadjn/image/upload/v1743842087/naincy_p1lreg.jpg",
+        linkedinUrl:
+          "http://linkedin.com/in/nainsi-kushwaha-b4754a337",
+        instagramUrl: "https://www.instagram.com/nain.c_876?igsh=MWVnd200NXVseXNjYQ%3D%3D&utm_source=qr",
+      },
+      {
+        name: "Naman V Shetty",
+        imageUrl:
+          "https://res.cloudinary.com/duir0ktqb/image/upload/v1742318475/Naman_V_Shetty_-_Naman_V_Shetty_ntmv0e.jpg",
+        linkedinUrl: "https://www.linkedin.com/in/naman-v-shetty/",
+        instagramUrl: "https://www.instagram.com/naman._.shetty/",
       },
      
     ],
