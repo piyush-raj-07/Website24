@@ -150,7 +150,7 @@ const forgotPassword = async (req, res) => {
 
         await user.save();
 
-        await sendPasswordResetEmail(user.UserEmail, `http://localhost:3000/reset-password/${resetPasswordToken}`); // frondtend url
+        await sendPasswordResetEmail(user.UserEmail, `https://eesa.iiti.ac.in/reset-password/${resetPasswordToken}`); // frondtend url
 
         res.status(200).json({ success: true, message: 'Password reset email sent successfully' });
     } catch (error) {
