@@ -6,6 +6,7 @@ import internshipImg from "../images/internship.jpg";
 import courseImg from "../images/course.jpg";
 import techImg from "../images/tech.webp";
 import journeyImg from "../images/journey.jpg";
+import mastersImg from "../images/masters.jpg";
 const cards = [
   {
     id: "placement",
@@ -37,6 +38,12 @@ const cards = [
     coverImage: journeyImg,
       description: " Stories, lessons, and memorable moments from academics, friendships, and challenges that shape the journey.",
   },
+    {
+    id: "masters",
+    cardTitle: "Master's Blogs",
+    coverImage: mastersImg,
+      description: " Dive into stories, strategies, and advice from students pursuing or preparing for Master's programs. Explore tips, life abroad, research journeys, and much more.",
+  },
 
 ];
 
@@ -49,12 +56,12 @@ export default function Blogs() {
 
   return (
     <div className="min-h-screen p-5 gradient_background ">
-      <div className="mt-12 md:mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-10 ">
+      <div className="mt-12 md:mt-24 grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4   gap-10 ">
         {cards.map((card) => (
           <div
             key={card.id}
             onClick={() => handleCardClick(card.id)}
-            className="cursor-pointer transition-transform duration-300 hover:scale-105 m-auto"
+            className="cursor-pointer transition-transform duration-300 hover:scale-105 m-auto  "
           >
             <Card3D cardTitle={card.cardTitle} coverImage={card.coverImage} description={card.description} />
           </div>
