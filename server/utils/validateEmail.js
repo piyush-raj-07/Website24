@@ -1,5 +1,5 @@
 const validateEmail = (email) => {
-    const isValidDomain = email.endsWith('@iiti.ac.in') || email.endsWith('@iiti.alum.ac.in');
+    const isValidDomain = email.endsWith('@iiti.ac.in') || email.endsWith('@alum.iiti.ac.in');
     const isEEStudent = email.startsWith('ee') || email.startsWith('EE');
 
     // check basic email format
